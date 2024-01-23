@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+?>
+
+
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
 
@@ -47,7 +53,7 @@
                         <div class="col-lg-6 d-flex justify-content-center align-items-center border-0 rounded-lg auth-h100">
                             <div class="w-100 p-3 p-md-5 card border-0 bg-dark text-light" style="max-width: 32rem;">
                                 <!-- Form -->
-                                <form class="row g-1 p-3 p-md-4" action="">
+                                <form class="row g-1 p-3 p-md-4" method="post" action="controller/compte/forgot-password.php">
 
                                     <div class="col-12 text-center mb-1 mb-lg-5">
                                         <img src="../assets/images/forgot-password.svg" class="w240 mb-4" alt="" />

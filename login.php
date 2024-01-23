@@ -72,7 +72,7 @@ session_start();
                       <div class="form-label">
                         <span class="d-flex justify-content-between align-items-center">
                           Password
-                          <a class="text-secondary" href="forgot-pass.php">Forgot Password?</a>
+                          <a class="text-secondary" href="forgot-password.php">Forgot Password?</a>
                         </span>
                       </div>
 
