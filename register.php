@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION["email"])) {
+    header("location:dashboard.php");
+}
+?>
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
 
@@ -48,11 +54,23 @@
                     <div class="col-lg-6 d-flex justify-content-center align-items-center border-0 rounded-lg auth-h100">
                         <div class="w-100 p-3 p-md-5 card border-0 bg-dark text-light" style="max-width: 32rem;">
                             <!-- Form -->
-                            <form class="row g-1 p-3 p-md-4">
-                                <div class="col-12 text-center mb-1 mb-lg-5">
+                            <form class="row g-1 p-3 p-md-4" method="post" action="controller/compte/register.php">
+                               
+                            <div class="col-12 text-center mb-1 mb-lg-5">
                                     <h1>Create your account</h1>
                                     <span>Free access to our dashboard.</span>
                                 </div>
+                                <?php
+                                if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
+                                    echo '<div class="card shadow mb-4">
+                                    <div class="card-body ' . $_SESSION["error-type"] . '" id="card">
+                                        ' . $_SESSION["error"] . '
+                                    </div>
+                                </div>';
+                                    unset($_SESSION["error"]);
+                                    unset($_SESSION["error-type"]);
+                                }
+                                ?>
                                 <div class="col-6">
                                     <div class="mb-2">
                                         <label class="form-label">Full name</label>
@@ -92,10 +110,10 @@
                                     </div>
                                 </div>
                                 <div class="col-12 text-center mt-4">
-                                    <a href="auth-signin.html" class="btn btn-lg btn-block btn-light lift text-uppercase" alt="SIGNUP">SIGN UP</a>
+                                <button type="submit" class="btn btn-lg btn-block btn-light lift text-uppercase" atl="signup" name="btn">S'incrire</button>
                                 </div>
                                 <div class="col-12 text-center mt-4">
-                                    <span class="text-muted">Already have an account? <a href="auth-signin.html" title="Sign in" class="text-secondary">Sign in here</a></span>
+                                    <span class="text-muted">Already have an account? <a href="login.php" title="Sign in" class="text-secondary">Sign in here</a></span>
                                 </div>
                             </form>
                             <!-- End Form -->
