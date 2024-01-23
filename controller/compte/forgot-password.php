@@ -11,12 +11,12 @@ if (isset($_POST['btn'])) {
     if ($result != null) {
         $token = $code->generateCode($email);
         $_SESSION["error"] = "Nous avons envoyé un email de réinitialisation de mot de passe à votre adresse email.";
-        $_SESSION["error-type"] = "bg-success text-white";
+        $_SESSION["error-type"] = "alert-success";
         $code->sendCode($email, "Réinitialisation de mot de passe", "Bonjour, <br> C'est votre lien pour réinitialiser votre mot de passe: <a href='http://localhost:4000/reset-password.php?token=" . $token . "'>Cliquez Ici</a>");
         header("Location: ../../forgot-password.php");
     } else {
         $_SESSION["error"] = "Email n'existe pas";
-        $_SESSION["error-type"] = "bg-danger text-white";
+        $_SESSION["error-type"] = "alert-danger";
 
         header("Location: ../../forgot-password.php");
     }

@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+if (isset($_SESSION["email"])) {
+    header("location:dashboard.php");
+}
 ?>
 
 
@@ -14,8 +16,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Mot de passe oublié?</title>
-    <link rel="icon" href="../favicon.ico" type="image/x-icon"> <!-- Favicon-->
-    <!-- project css file  -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/my-task.style.min.css">
 </head>
 
@@ -78,7 +79,7 @@ session_start();
                                         </div>
                                     </div>
                                     <div class="col-12 text-center mt-4">
-                                        <button name="btn" type="submit" title="" class="btn btn-lg btn-block btn-light lift text-uppercase">Envoyer</button>
+                                        <button name="btn" type="submit" title="" class="btn btn-lg btn-block btn-light lift text-uppercase" onclick="timeout()" id="btn">Envoyer</button>
                                     </div>
                                     <div class="col-12 text-center mt-4">
                                         <span class="text-muted"><a href="login.php" class="text-secondary">Retour à la Connexion</a></span>
@@ -99,7 +100,14 @@ session_start();
 
     <!-- Jquery Core Js -->
     <script src="../assets/bundles/libscripts.bundle.js"></script>
-
+    <script>
+        function timeout() {
+            setTimeout(function() {
+                $('#btn').disabled = true;
+            }, 3000);
+            $('#btn').disabled = false;
+        }
+    </script>
 </body>
 
 <!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ui-elements/auth-password-reset.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:06:07 GMT -->
