@@ -253,7 +253,7 @@ session_start();
                       </div>
                     </div>
                     <div class="list-group m-2">
-                      <a href="ui-elements/auth-signin.html" class="list-group-item list-group-item-action border-0"><i class="icofont-logout fs-6 me-3"></i>Déconnexion</a>
+                      <a href="deconnexion.php" class="list-group-item list-group-item-action border-0"><i class="icofont-logout fs-6 me-3"></i>Déconnexion</a>
                       <div>
                         <hr class="dropdown-divider border-dark" />
                       </div>
