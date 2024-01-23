@@ -9,7 +9,7 @@
     <title>:: My-Task:: Signup</title>
     <link rel="icon" href="../favicon.ico" type="image/x-icon"> <!-- Favicon-->
     <!-- project css file  -->
-    <link rel="stylesheet" href="../assets/css/my-task.style.min.css">
+    <link rel="stylesheet" href="assets/css/my-task.style.min.css">
 </head>
 
 <body data-mytask="theme-indigo">
