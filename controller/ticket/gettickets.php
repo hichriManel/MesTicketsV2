@@ -33,11 +33,12 @@ $fait = $crud->getByStatutNum("Cloture");
     <link href="../../vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 	<link href="../../vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="../../vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-   <link class="main-css" href="../../assets/css/style.css" rel="stylesheet">
+   <link class="main-css" href="../../assets/css/my-task.style.min.css" rel="stylesheet">
 	
 				
 </head>
 <body>
+
 <thead>
   <tr>
     <th>Numéro de ticket</th>
@@ -65,12 +66,12 @@ $fait = $crud->getByStatutNum("Cloture");
     echo "<td>" . $row[6] . "</td>";
     echo "<td>" . $row[7] . "</td>";
     if ($row[8] == "enCours") {
-      echo "<td><span class='badge badge-danger'>" . $row[8] . "</span></td>";
+      echo "<td><span class='badge bg-warning'>" . $row[8] . "</span></td>";
     } else {
-      echo "<td><span class='badge badge-success'>" . $row[8] . "</span></td>";
+      echo "<td><span class='badge bg-success'>" . $row[8] . "</span></td>";
     }
     if ($row[8] == "enCours") {
-      echo "<td><a href='../ReclamationTickets/controller/ticket/cloture.php?id=" . $row[0] . "'><button>Cloturer</button></a></td>";
+      echo "<td><a href='cloture.php?id=" . $row[0] . "'><button>Cloturer</button></a></td>";
     }
     echo "</tr>";
   }
