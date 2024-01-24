@@ -19,7 +19,7 @@ if ($_SESSION["type"] == "client") {
   <link rel="stylesheet" href="assets/css/my-task.style.min.css" />
 </head>
 
-<body data-mytask="theme-indigo">
+<body data-mytask="theme-indigo" onload="load()">
   <div id="mytask-layout">
     <!--header nav-->
     <div class="sidebar px-4 py-4 py-md-5 me-0">
@@ -32,7 +32,7 @@ if ($_SESSION["type"] == "client") {
               <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
             </svg>
           </span>
-          <span class="logo-text">My-Task</span>
+          <span class="logo-text">Edit profile</span>
         </a>
         <!-- Menu: main ul -->
 
@@ -349,345 +349,334 @@ if ($_SESSION["type"] == "client") {
       </div>
 
       <div class="card mb-3">
+<<<<<<< HEAD
         <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+=======
+        <<<<<<< HEAD <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+>>>>>>> 3c6d198e81676efe810f1f21ab3b8c8bb4f4974a
           <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
-        </div>
-        <div class="card-body">
-          <form>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row g-3 align-items-center">
             <div class="col-md-6">
-              <label class="form-label">Type de Compte</label>
+              <label for="firstname" class="form-label">Prénom</label>
+              <input type="text" class="form-control" name="Prénom" required value="<?php echo $_SESSION['prenom'] ?>">
+            </div>
+            <div class="col-md-6">
+              <label for="lastname" class="form-label">Nom</label>
+              <input type="text" class="form-control" name="nom" value="<?php echo $_SESSION['nom'] ?>" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" name="tel" required>
+            </div>
+            <div class="col-md-6">
+              <label for="emailaddress" class="form-label">Email Address</label>
+              <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'] ?>" required>
+            </div>
+            <div class="col-md-6">
+              <label for="admitdate" class="form-label">Votre Mot de Passe</label>
+              <input type="password" class="form-control" id="mdp" required>
+            </div>
+            <div class="col-md-6">
+              <label for="admitdate" class="form-label">Nouveau Mot de Passe</label>
+              <input type="password" class="form-control" name="cmdp" required>
+            </div>
+            <div class="col-md-6">
+              <label for="admitdate" class="form-label"><?php if ($_SESSION['type'] == "client") {
+                                                          echo "Adresse de l'entreprise <input type='text' class='form-control' name='noms' id='admitdate' required>";
+                                                        } else {
+                                                          echo "Matricule<input type='text' class='form-control' name='mat' id='admitdate' required>";
+                                                        } ?></label>
+
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Gender</label>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="typec" value="client">
-                    <label class="form-check-label">
-                      client
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios11" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios11">
+                      Male
                     </label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="typec" value="admin" checked="checked">
-                    <label class="form-check-label">
-                      Admin
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios22" value="option2">
+                    <label class="form-check-label" for="exampleRadios22">
+                      Female
                     </label>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row g-3 align-items-center">
-              <div class="col-md-6">
-                <label for="firstname" class="form-label">Prénom</label>
-                <input type="text" class="form-control" name="Prénom" required value="<?php echo $_SESSION['prenom'] ?>">
-              </div>
-              <div class="col-md-6">
-                <label for="lastname" class="form-label">Nom</label>
-                <input type="text" class="form-control" name="nom" value="<?php echo $_SESSION['nom'] ?>" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" name="tel" required>
-              </div>
-              <div class="col-md-6">
-                <label for="emailaddress" class="form-label">Email Address</label>
-                <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'] ?>" required>
-              </div>
-              <div class="col-md-6">
-                <label for="admitdate" class="form-label">Votre Mot de Passe</label>
-                <input type="password" class="form-control" id="mdp" required>
-              </div>
-              <div class="col-md-6">
-                <label for="admitdate" class="form-label">Nouveau Mot de Passe</label>
-                <input type="password" class="form-control" name="cmdp" required>
-              </div>
-              <div class="col-md-6">
-                <label for="admitdate" class="form-label">Matricule</label>
-                <input type="text" class="form-control" id="admitdate" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Gender</label>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios11" value="option1" checked>
-                      <label class="form-check-label" for="exampleRadios11">
-                        Male
-                      </label>
+            =======
+            <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+              <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="col-md-6">
+                  <label class="form-label">Type de Compte</label>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="typec" value="client">
+                        <label class="form-check-label">
+                          client
+                        </label>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios22" value="option2">
-                      <label class="form-check-label" for="exampleRadios22">
-                        Female
-                      </label>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="typec" value="admin" checked="checked">
+                        <label class="form-check-label">
+                          Admin
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
               </div>
+=======
+                <div class="row g-3 align-items-center">
+                  <div class="col-md-6">
+                    <label for="firstname" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" name="Prénom" required value="<?php echo $_SESSION['prenom'] ?>">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="lastname" class="form-label">Nom</label>
+                    <input type="text" class="form-control" name="nom" value="<?php echo $_SESSION['nom'] ?>" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" name="tel" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="emailaddress" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'] ?>" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="admitdate" class="form-label">Votre Mot de Passe</label>
+                    <input type="password" class="form-control" id="mdp" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="admitdate" class="form-label">Nouveau Mot de Passe</label>
+                    <input type="password" class="form-control" name="cmdp" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="admitdate" class="form-label">Matricule</label>
+                    <input type="text" class="form-control" id="admitdate" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Gender</label>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios11" value="option1" checked>
+                          <label class="form-check-label" for="exampleRadios11">
+                            Male
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios22" value="option2">
+                          <label class="form-check-label" for="exampleRadios22">
+                            Female
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+>>>>>>> 3c6d198e81676efe810f1f21ab3b8c8bb4f4974a
 
-            </div>
-
-            <button type="submit" class="btn btn-primary mt-4">Submit</button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Modal Members-->
-      <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title fw-bold" id="addUserLabel">
-                Employee Invitation
-              </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="inviteby_email">
-                <div class="input-group mb-3">
-                  <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1" />
-                  <button class="btn btn-dark" type="button" id="button-addon2">
-                    Sent
-                  </button>
                 </div>
-              </div>
-              <div class="members_list">
-                <h6 class="fw-bold">Employee</h6>
-                <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
-                  <li class="list-group-item py-3 text-center text-md-start">
-                    <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
-                      <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
-                      </div>
-                      <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0 fw-bold">Rachel Carr(you)</h6>
-                        <span class="text-muted">rachel.carr@gmail.com</span>
-                      </div>
-                      <div class="members-action">
-                        <span class="members-role">Admin</span>
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icofont-ui-settings fs-6"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item py-3 text-center text-md-start">
-                    <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
-                      <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
-                      </div>
-                      <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0 fw-bold">
-                          Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a>
-                        </h6>
-                        <span class="text-muted">lucas.baker@gmail.com</span>
-                      </div>
-                      <div class="members-action">
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Members
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="icofont-check-circled"></i>
 
-                                <span>All operations permission</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icofont-ui-settings fs-6"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item py-3 text-center text-md-start">
-                    <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
-                      <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
-                      </div>
-                      <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0 fw-bold">Una Coleman</h6>
-                        <span class="text-muted">una.coleman@gmail.com</span>
-                      </div>
-                      <div class="members-action">
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Members
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="icofont-check-circled"></i>
+                <button type="submit" class="btn btn-primary mt-4">Submit</button>
+              </form>
+            </div>
+          </div>
 
-                                <span>All operations permission</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="btn-group">
-                          <div class="btn-group">
-                            <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="icofont-ui-settings fs-6"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a>
-                              </li>
-                            </ul>
+          <!-- Modal Members-->
+          <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fw-bold" id="addUserLabel">
+                    Employee Invitation
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="inviteby_email">
+                    <div class="input-group mb-3">
+                      <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1" />
+                      <button class="btn btn-dark" type="button" id="button-addon2">
+                        Sent
+                      </button>
+                    </div>
+                  </div>
+                  <div class="members_list">
+                    <h6 class="fw-bold">Employee</h6>
+                    <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
+                      <li class="list-group-item py-3 text-center text-md-start">
+                        <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
+                          <div class="no-thumbnail mb-2 mb-md-0">
+                            <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
+                          </div>
+                          <div class="flex-fill ms-3 text-truncate">
+                            <h6 class="mb-0 fw-bold">Rachel Carr(you)</h6>
+                            <span class="text-muted">rachel.carr@gmail.com</span>
+                          </div>
+                          <div class="members-action">
+                            <span class="members-role">Admin</span>
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="icofont-ui-settings fs-6"></i>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                      </li>
+                      <li class="list-group-item py-3 text-center text-md-start">
+                        <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
+                          <div class="no-thumbnail mb-2 mb-md-0">
+                            <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
+                          </div>
+                          <div class="flex-fill ms-3 text-truncate">
+                            <h6 class="mb-0 fw-bold">
+                              Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a>
+                            </h6>
+                            <span class="text-muted">lucas.baker@gmail.com</span>
+                          </div>
+                          <div class="members-action">
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Members
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <a class="dropdown-item" href="#">
+                                    <i class="icofont-check-circled"></i>
+
+                                    <span>All operations permission</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item" href="#">
+                                    <i class="fs-6 p-2 me-1"></i>
+                                    <span>Only Invite & manage team</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="icofont-ui-settings fs-6"></i>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item py-3 text-center text-md-start">
+                        <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
+                          <div class="no-thumbnail mb-2 mb-md-0">
+                            <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
+                          </div>
+                          <div class="flex-fill ms-3 text-truncate">
+                            <h6 class="mb-0 fw-bold">Una Coleman</h6>
+                            <span class="text-muted">una.coleman@gmail.com</span>
+                          </div>
+                          <div class="members-action">
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Members
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <a class="dropdown-item" href="#">
+                                    <i class="icofont-check-circled"></i>
+
+                                    <span>All operations permission</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item" href="#">
+                                    <i class="fs-6 p-2 me-1"></i>
+                                    <span>Only Invite & manage team</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="btn-group">
+                              <div class="btn-group">
+                                <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="icofont-ui-settings fs-6"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li>
+                                    <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
+                                  </li>
+                                  <li>
+                                    <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
+                                  </li>
+                                  <li>
+                                    <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a>
+                                  </li>
+                                  <li>
+                                    <a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Jquery Core Js -->
-  <script src="assets/bundles/libscripts.bundle.js"></script>
+    <!-- Jquery Core Js -->
+    <script src="assets/bundles/libscripts.bundle.js"></script>
 
-  <!-- Plugin Js-->
-  <script src="assets/bundles/apexcharts.bundle.js"></script>
+    <!-- Plugin Js-->
+    <script src="assets/bundles/apexcharts.bundle.js"></script>
 
-  <!-- Jquery Page Js -->
-  <script src="../js/template.js"></script>
-  <script src="../js/page/hr.js"></script>
-  <script>
-    // Employees Analytics
-    $(document).ready(function() {
-      var options = {
-        series: [{
-          name: "Available",
-          data: [4, 19, 7, 35, 14, 27, 9, 12],
-        }, ],
-        chart: {
-          height: 140,
-          type: "line",
-          toolbar: {
-            show: false,
-          },
-        },
-        grid: {
-          show: false,
-          xaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-        },
-        stroke: {
-          width: 4,
-          curve: "smooth",
-          colors: ["var(--chart-color2)"],
-        },
-        xaxis: {
-          type: "datetime",
-          categories: [
-            "1/11/2021",
-            "2/11/2021",
-            "3/11/2021",
-            "4/11/2021",
-            "5/11/2021",
-            "6/11/2021",
-            "7/11/2021",
-            "8/11/2021",
-          ],
-          tickAmount: 10,
-          labels: {
-            formatter: function(value, timestamp, opts) {
-              return opts.dateFormatter(new Date(timestamp), "dd MMM");
-            },
-          },
-        },
-        fill: {
-          type: "gradient",
-          gradient: {
-            shade: "dark",
-            gradientToColors: ["var(--chart-color3)"],
-            shadeIntensity: 1,
-            type: "horizontal",
-            opacityFrom: 1,
-            opacityTo: 1,
-            stops: [0, 100, 100, 100],
-          },
-        },
-        markers: {
-          size: 3,
-          colors: ["#FFA41B"],
-          strokeColors: "#ffffff",
-          strokeWidth: 2,
-          hover: {
-            size: 7,
-          },
-        },
-        yaxis: {
-          show: false,
-          min: -10,
-          max: 50,
-        },
-      };
-
-      var chart = new ApexCharts(
-        document.querySelector("#apex-emplyoeeAnalytics"),
-        options
-      );
-      chart.render();
-    });
-  </script>
+    <!-- Jquery Page Js -->
+    <script src="../js/template.js"></script>
+    <script src="../js/page/hr.js"></script>
+    <script>
+      function load() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+          document.getElementById("edit-form").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "controller/compte/editprofile.php?id=<?php echo $_GET['id']; ?>", true);
+        xhttp.send();
+      }
+    </script>
 </body>
-
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:05:23 GMT -->
 
 </html>

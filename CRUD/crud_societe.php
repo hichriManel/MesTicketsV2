@@ -55,7 +55,6 @@ class Societe
 
     public function deleteSociete($id)
     {
-
         $sql = "DELETE FROM societe WHERE id=:id";
         $result = $this->cnx->prepare($sql);
         $result->bindParam(':id', $id);
