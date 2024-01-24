@@ -414,17 +414,17 @@ if (isset($_GET['id'])) {
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function() {
         document.getElementById("profil").innerHTML = this.responseText;
-        console.log(this.responseText);
       }
       xhttp.open("GET", "controller/compte/getprofile.php?id=<?php echo $_GET['id']; ?>");
       xhttp.send();
     }
+
     function table() {
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function() {
         document.getElementById("exemple").innerHTML = this.responseText;
       }
-      xhttp.open("GET", "controller/ticket/getprofileticket.php");
+      xhttp.open("GET", "controller/ticket/getprofileticket.php?id=<?php echo $_GET['id']; ?>");
       xhttp.send();
 
     }
