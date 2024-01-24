@@ -90,6 +90,7 @@ LEFT JOIN
         $stmt = $this->pdo->query($req);
         return $stmt->fetch();
     }
+
     public function getByStatutNum($statut)
     {
         $req = "SELECT count(ticketId) FROM ticket WHERE status='{$statut}';";
