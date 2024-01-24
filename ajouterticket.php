@@ -378,7 +378,7 @@ session_start();
                                 </form>
                             </div>
                         </div>
-      </div>
+    </div>
 
       <!-- Modal Members-->
       <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
@@ -546,93 +546,7 @@ session_start();
   <!-- Jquery Page Js -->
   <script src="../js/template.js"></script>
   <script src="../js/page/hr.js"></script>
-  <script>
-    // Employees Analytics
-    $(document).ready(function() {
-      var options = {
-        series: [{
-          name: "Available",
-          data: [4, 19, 7, 35, 14, 27, 9, 12],
-        }, ],
-        chart: {
-          height: 140,
-          type: "line",
-          toolbar: {
-            show: false,
-          },
-        },
-        grid: {
-          show: false,
-          xaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-        },
-        stroke: {
-          width: 4,
-          curve: "smooth",
-          colors: ["var(--chart-color2)"],
-        },
-        xaxis: {
-          type: "datetime",
-          categories: [
-            "1/11/2021",
-            "2/11/2021",
-            "3/11/2021",
-            "4/11/2021",
-            "5/11/2021",
-            "6/11/2021",
-            "7/11/2021",
-            "8/11/2021",
-          ],
-          tickAmount: 10,
-          labels: {
-            formatter: function(value, timestamp, opts) {
-              return opts.dateFormatter(new Date(timestamp), "dd MMM");
-            },
-          },
-        },
-        fill: {
-          type: "gradient",
-          gradient: {
-            shade: "dark",
-            gradientToColors: ["var(--chart-color3)"],
-            shadeIntensity: 1,
-            type: "horizontal",
-            opacityFrom: 1,
-            opacityTo: 1,
-            stops: [0, 100, 100, 100],
-          },
-        },
-        markers: {
-          size: 3,
-          colors: ["#FFA41B"],
-          strokeColors: "#ffffff",
-          strokeWidth: 2,
-          hover: {
-            size: 7,
-          },
-        },
-        yaxis: {
-          show: false,
-          min: -10,
-          max: 50,
-        },
-      };
 
-      var chart = new ApexCharts(
-        document.querySelector("#apex-emplyoeeAnalytics"),
-        options
-      );
-      chart.render();
-    });
-  </script>
 </body>
 
 <!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:05:23 GMT -->
