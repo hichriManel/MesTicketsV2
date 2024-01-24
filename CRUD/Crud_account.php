@@ -20,14 +20,12 @@ class CRUD
     }
     function Login($email, $pass)
     {
-
         $sql = "select mdp from account where email='$email';";
         $res = $this->pdo->query($sql);
         $hashedPassword = $res->fetch(PDO::FETCH_NUM)[0];
         if (password_verify($pass, $hashedPassword)) {
-            $sql = "select * from account where email='$email';";
-            $res = $this->pdo->query($sql);
-            return $res->fetch(PDO::FETCH_NUM);
+            $id = $this->getId($email);
+            return $this->Afficher($id);
         } else {
             return null;
         }
@@ -37,6 +35,12 @@ class CRUD
         $sql = "update account set status = 'Verifie' where email='$email';";
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM) == null ? false : true;
+    }
+    function getId($email)
+    {
+        $sql = "select id from account where email='$email';";
+        $res = $this->pdo->query($sql);
+        return $res->fetch(PDO::FETCH_NUM)[0];
     }
     function Register($nom, $prenom, $email, $tel, $mdp, $type, $matricule, $status, $gender, $noms, $tels, $adresse)
     {
@@ -84,10 +88,10 @@ class CRUD
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM) == null ? false : true;
     }
-    function Afficher($email)
+    function Afficher($id)
     {
 
-        $sql = "select *  from account where email=$email;";
+        $sql = "select *  from account where id='$id';";
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM);
     }

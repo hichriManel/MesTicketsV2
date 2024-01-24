@@ -48,6 +48,34 @@ WHERE
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_NUM);
     }
+    public function getAllTickets()
+    {
+        $req = "SELECT 
+    t.ticketId, 
+    t.demande, 
+    t.DateHeure, 
+    s.nom AS societe_nom, 
+    t.Diagnostic, 
+    a.nom AS account_nom, 
+    t.Categorie, 
+    t.Priorite, 
+    t.Status,
+    c.cloture_par,
+    c.dateheur AS cloture_dateheur
+FROM 
+    ticket t
+JOIN 
+    account a ON a.email = t.contact
+JOIN 
+    societe s ON s.id = a.centre
+LEFT JOIN
+    cloture c ON c.ticket_id = t.ticketId
+
+";
+        $stmt = $this->pdo->prepare($req);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_NUM);
+    }
     public function getTicketById($reference)
     {
         $req = "SELECT * FROM ticket WHERE reference={$reference}";
@@ -75,8 +103,16 @@ WHERE
 
     public function supprimerTicket($tickets)
     {
-        $req = "DELETE FROM immobilier WHERE reference={$tickets}";
+        $req = "DELETE FROM tickets WHERE ticketid={$tickets}";
         $stmt = $this->pdo->exec($req);
         return $stmt;
+    }
+    function getTicketByClient($client)
+    {
+        $req = "SELECT t.*,c.cloture_par,c.dateheur FROM ticket t 
+        join cloture c on c.ticket_id = t.ticketid WHERE contact='{$client}'
+        union SELECT t.*,null,null FROM ticket t WHERE contact='{$client}';;";
+        $stmt = $this->pdo->query($req);
+        return $stmt->fetch();
     }
 }
