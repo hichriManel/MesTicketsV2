@@ -260,15 +260,15 @@ session_start();
                                                     ?></span>
                   </p>
                   <small><?php
-                  if (isset($_SESSION['type'])) {
-                    if ($_SESSION['type'] == "supervisor") {
-                        echo "Superviseur";
-                    } else {
-                        echo "Admin";  // Corrected from "Supervisor"
-                    }
-                } else {
-                    echo "Client";
-                }
+                          if ($_SESSION["type"] == "supervisor") {
+                            echo "Superviseur";
+                          } else {
+                            if ($_SESSION["type"] == "supervisor") {
+                              echo "Admin";
+                            } else {
+                              echo "Client";
+                            }
+                          }
                           ?> Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
@@ -350,27 +350,6 @@ session_start();
                             </div>
                             <div class="card-body">
                                 <form>
-                                    <div class="col-md-6">
-                                            <label class="form-label">Type de Compte</label>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="typec"  value="client" >
-                                                        <label class="form-check-label" >
-                                                        client
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="typec"  value="admin" checked="checked">
-                                                        <label class="form-check-label" >
-                                                           Admin
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     <div class="row g-3 align-items-center">
                                         <div class="col-md-6">
                                             <label for="firstname" class="form-label">Prénom</label>
@@ -397,8 +376,8 @@ session_start();
                                             <input type="password" class="form-control" name="cmdp" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="admitdate" class="form-label">Matricule</label>
-                                            <input type="text" class="form-control" id="admitdate" required>
+                                            <label for="admitdate" class="form-label"><?php if ($_SESSION['type']=="client"){echo"Adresse de l'entreprise <input type='text' class='form-control' name='noms' id='admitdate' required>";}else{echo"Matricule<input type='text' class='form-control' name='mat' id='admitdate' required>";}?></label>
+                                            
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Gender</label>

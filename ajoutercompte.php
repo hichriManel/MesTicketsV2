@@ -260,15 +260,15 @@ session_start();
                                                     ?></span>
                   </p>
                   <small><?php
-                  if (isset($_SESSION['type'])) {
-                    if ($_SESSION['type'] == "supervisor") {
-                        echo "Superviseur";
-                    } else {
-                        echo "Admin";  // Corrected from "Supervisor"
-                    }
-                } else {
-                    echo "Client";
-                }
+                          if ($_SESSION["type"] == "supervisor") {
+                            echo "Superviseur";
+                          } else {
+                            if ($_SESSION["type"] == "supervisor") {
+                              echo "Admin";
+                            } else {
+                              echo "Client";
+                            }
+                          }
                           ?> Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
@@ -338,7 +338,7 @@ session_start();
             </div>
             <!-- Theme switcher -->
             <div class="form-check form-switch theme-switch">
-              <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-switch" />
+              <input class="form-ch                                                                                                                     eck-input fs-6" type="checkbox" role="switch" id="theme-switch" />
             </div>
           </div>
         </nav>
