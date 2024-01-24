@@ -125,4 +125,10 @@ LEFT JOIN
         $stmt = $this->pdo->exec($req);
         return $stmt;
     }
+    public function getTicketByContact($contact)
+    {
+        $req = "SELECT * FROM ticket WHERE contact='{$contact}'";
+        $stmt = $this->pdo->query($req);
+        return $stmt->fetch();
+    }
 }
