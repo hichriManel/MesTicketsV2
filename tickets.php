@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+if (isset($_GET["status"])) {
+  $st = $_GET["status"];
+}
 ?>
 
 <!doctype html>
@@ -70,10 +72,10 @@ session_start();
                 <a class="ms-link" href="tickets.php"><span>Tout</span></a>
               </li>
               <li>
-                <a class="ms-link" href="tickets.php?status=En Cours"><span>En Cours</span></a>
+                <a class="ms-link" href="tickets.php?status=enCours"><span>En Cours</span></a>
               </li>
               <li>
-                <a class="ms-link" href="tickets.php?status=Complété"><span>Complété</span></a>
+                <a class="ms-link" href="tickets.php?status=Cloture"><span>Complété</span></a>
               </li>
             </ul>
           </li>
@@ -682,8 +684,16 @@ session_start();
         xhttp.onload = function() {
           document.getElementById("exemple").innerHTML = this.responseText;
         }
+        <?php
+        if (isset($_GET["status"])) {
+        ?>xhttp.open("GET", "controller/ticket/gettickets.php?status=<?php echo $st ?>");
+      <?php
+        } else {
+      ?>
         xhttp.open("GET", "controller/ticket/gettickets.php");
-        xhttp.send();
+      <?php
+        } ?>
+      xhttp.send();
 
       }
       setInterval(table, 6000);

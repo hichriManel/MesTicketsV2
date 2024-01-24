@@ -66,10 +66,10 @@ session_start();
                 <a class="ms-link" href="tickets.php"><span>Tout</span></a>
               </li>
               <li>
-                <a class="ms-link" href="tickets.php?status=En Cours"><span>En Cours</span></a>
+                <a class="ms-link" href="tickets.php?status=enCours"><span>En Cours</span></a>
               </li>
               <li>
-                <a class="ms-link" href="tickets.php?status=Complété"><span>Complété</span></a>
+                <a class="ms-link" href="tickets.php?status=Cloture"><span>Complété</span></a>
               </li>
             </ul>
           </li>

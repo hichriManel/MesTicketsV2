@@ -21,7 +21,8 @@ class CrudTicket
 
     public function getTickets()
     {
-        $req = "SELECT 
+        if ($_SESSION['type'] == 'admin') {
+            $req = "SELECT 
     t.ticketId, 
     t.demande, 
     t.DateHeure, 
@@ -44,13 +45,8 @@ LEFT JOIN
 WHERE 
     (c.cloture_par = '{$_SESSION['email']}' AND t.Status = 'Cloture') OR (t.Status = 'enCours');
 ";
-        $stmt = $this->pdo->prepare($req);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_NUM);
-    }
-    public function getAllTickets()
-    {
-        $req = "SELECT 
+        } else {
+            $req = "SELECT 
     t.ticketId, 
     t.demande, 
     t.DateHeure, 
@@ -69,9 +65,9 @@ JOIN
 JOIN 
     societe s ON s.id = a.centre
 LEFT JOIN
-    cloture c ON c.ticket_id = t.ticketId
-
+    cloture c ON c.ticket_id = t.ticketId;
 ";
+        }
         $stmt = $this->pdo->prepare($req);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_NUM);
@@ -94,6 +90,7 @@ LEFT JOIN
         $stmt = $this->pdo->query($req);
         return $stmt->fetch();
     }
+
     public function getByStatutNum($statut)
     {
         $req = "SELECT count(ticketId) FROM ticket WHERE status='{$statut}';";
@@ -101,18 +98,31 @@ LEFT JOIN
         return $stmt->fetch()[0];
     }
 
-    public function supprimerTicket($tickets)
+    public function getDiagByid($id)
     {
-        $req = "DELETE FROM tickets WHERE ticketid={$tickets}";
+        $req = "SELECT Diagnostic FROM ticket WHERE ticketId={$id}";
+        $stmt = $this->pdo->query($req);
+        return $stmt->fetch()[0];
+    }
+    public function clotureExist($id)
+    {
+        $req = "SELECT count(ticket_id) FROM cloture WHERE ticket_id={$id}";
+        $stmt = $this->pdo->query($req);
+        return $stmt->fetch()[0];
+    }
+    public function cloture($id, $diag)
+    {
+        $this->updateDiag($id, $diag);
+        if ($this->clotureExist($id) == 0) {
+            $req = "INSERT INTO cloture VALUES({$id},'{$_SESSION['email']}',now())";
+            $stmt = $this->pdo->exec($req);
+            return $stmt;
+        }
+    }
+    public function updateDiag($id, $diag)
+    {
+        $req = "UPDATE ticket SET Diagnostic='{$diag}',Status='Cloture' WHERE ticketId={$id}";
         $stmt = $this->pdo->exec($req);
         return $stmt;
-    }
-    function getTicketByClient($client)
-    {
-        $req = "SELECT t.*,c.cloture_par,c.dateheur FROM ticket t 
-        join cloture c on c.ticket_id = t.ticketid WHERE contact='{$client}'
-        union SELECT t.*,null,null FROM ticket t WHERE contact='{$client}';;";
-        $stmt = $this->pdo->query($req);
-        return $stmt->fetch();
     }
 }
