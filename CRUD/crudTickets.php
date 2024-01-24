@@ -75,8 +75,16 @@ WHERE
 
     public function supprimerTicket($tickets)
     {
-        $req = "DELETE FROM immobilier WHERE reference={$tickets}";
+        $req = "DELETE FROM tickets WHERE ticketid={$tickets}";
         $stmt = $this->pdo->exec($req);
         return $stmt;
+    }
+    function getTicketByClient($client)
+    {
+        $req = "SELECT t.*,c.cloture_par,c.dateheur FROM ticket t 
+        join cloture c on c.ticket_id = t.ticketid WHERE contact='{$client}'
+        union SELECT t.*,null,null FROM ticket t WHERE contact='{$client}';;";
+        $stmt = $this->pdo->query($req);
+        return $stmt->fetch();
     }
 }
