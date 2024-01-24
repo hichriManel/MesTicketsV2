@@ -87,7 +87,7 @@ class CRUD
     function Afficher($email)
     {
 
-        $sql = "select *  from account where email=$email;";
+        $sql = "select *  from account where email='$email';";
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM);
     }

@@ -113,7 +113,6 @@ session_start();
               <!--Help-->
               <?php
               if ($_SESSION["type"] == "supervisor") {
-
               ?>
                 <div class="d-flex">
                   <div class="avatar-list avatar-list-stacked px-3">
@@ -233,9 +232,25 @@ session_start();
               <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                 <div class="u-info me-2">
                   <p class="mb-0 text-end line-height-sm">
-                    <span class="font-weight-bold">Dylan Hunter</span>
+                    <span class="font-weight-bold"><?php
+                                                    if ($_SESSION["type"] == "supervisor") {
+                                                      echo "Superviseur";
+                                                    } else {
+                                                      echo $_SESSION['nom'] . ' ' . $_session['prenom'];
+                                                    }
+                                                    ?></span>
                   </p>
-                  <small>Admin Profile</small>
+                  <small><?php
+                          if ($_SESSION["type"] == "supervisor") {
+                            echo "Superviseur";
+                          } else {
+                            if ($_SESSION["type"] == "supervisor") {
+                              echo "Admin";
+                            } else {
+                              echo "Client";
+                            }
+                          }
+                          ?> Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
                   <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile" />
@@ -248,9 +263,15 @@ session_start();
                         <img class="avatar rounded-circle" src="assets/images/profile_av.png" alt="profile" />
                         <div class="flex-fill ms-3">
                           <p class="mb-0">
-                            <span class="font-weight-bold">Dylan Hunter</span>
+                            <span class="font-weight-bold"><?php
+                                                            if ($_SESSION["type"] == "supervisor") {
+                                                              echo "Superviseur";
+                                                            } else {
+                                                              echo $_SESSION['nom'] . ' ' . $_session['prenom'];
+                                                            }
+                                                            ?></span>
                           </p>
-                          <small class="">Dylan.hunter@gmail.com</small>
+                          <small class=""><?php echo $_SESSION["email"]; ?></small>
                         </div>
                       </div>
 
@@ -260,11 +281,18 @@ session_start();
                     </div>
                     <div class="list-group m-2">
                       <a href="deconnexion.php" class="list-group-item list-group-item-action border-0"><i class="icofont-logout fs-6 me-3"></i>Déconnexion</a>
-                      <div>
-                        <hr class="dropdown-divider border-dark" />
-                      </div>
-                      <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
-                        un Compte</a>
+                      <?php
+                      if ($_SESSION["type"] == "supervisor") {
+                      ?>
+                        <div>
+                          <hr class="dropdown-divider border-dark" />
+                        </div>
+                        <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
+                          un Compte</a>
+                      <?php
+                      }
+                      ?>
+
                     </div>
                   </div>
                 </div>
