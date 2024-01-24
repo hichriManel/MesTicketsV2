@@ -44,7 +44,7 @@ if (isset($_GET["status"])) {
 
           <?php if ($_SESSION['type'] == "client") {
             echo '<li class="collapsed">
-                <a class="m-link active" data-bs-toggle="collapse"  href="ajouterticket.php">
+                <a class="m-link" data-bs-toggle="collapse"  href="ajouterticket.php">
                   <i class="icofont-home fs-5"></i> <span>Nouveau Ticket</span>
                 </a>
               </li>';
