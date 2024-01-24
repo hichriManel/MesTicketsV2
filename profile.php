@@ -1,9 +1,8 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
-
-
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:05:45 GMT -->
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -21,7 +20,8 @@
 <body data-mytask="theme-indigo">
 
   <div id="mytask-layout">
-    <div class="sidebar px-4 py-4 py-md-5 me-0">
+   <!--header nav-->
+   <div class="sidebar px-4 py-4 py-md-5 me-0">
       <div class="d-flex flex-column h-100">
         <a href="index.php" class="mb-0 brand-icon">
           <span class="logo-icon">
@@ -36,15 +36,31 @@
         <!-- Menu: main ul -->
 
         <ul class="menu-list flex-grow-1 mt-3">
-          <li class="collapsed">
-            <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="index.php">
-              <i class="icofont-home fs-5"></i> <span>Dashboard</span>
-            </a>
-            <!-- Menu: Sub menu ul -->
-          </li>
+
+
+          <?php if ($_SESSION['type'] == "client") {
+            echo '<li class="collapsed">
+                <a class="m-link active" data-bs-toggle="collapse"  href="ajouterticket.php">
+                  <i class="icofont-home fs-5"></i> <span>Nouveau Ticket</span>
+                </a>
+              </li>';
+          } else {
+            echo '<li class="collapsed">
+                <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="index.php">
+                  <i class="icofont-home fs-5"></i> <span>Dashboard</span>
+                </a>
+                <!-- Menu: Sub menu ul -->
+              </li>';
+          }
+          ?>
           <li class="collapsed">
             <a class="m-link" data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
-              <i class="icofont-ticket"></i><span>Tickets</span>
+              <i class="icofont-ticket"></i><?php if ($_SESSION['type'] == "client") {
+                                              echo "<span>Mes Tickets</span>";
+                                            } else {
+                                              echo "<span>Tickets</span>";
+                                            }
+                                            ?>
               <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="project-Components">
@@ -59,71 +75,80 @@
               </li>
             </ul>
           </li>
+          <?php if ($_SESSION['type'] == "client") {
+          } else {
+            echo '<li class="collapsed">
+                <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
+                  <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                <!-- Menu: Sub menu ul -->
+                <ul class="sub-menu collapse" id="tikit-Components">
+                  <li>
+                    <a class="ms-link" href="comptes.php?tout">
+                      <span>Tout</span></a>
+                  </li>
+                  <li>
+                    <a class="ms-link" href="comptes.php?client">
+                      <span>Client</span></a>
+                  </li>
+                  <li>
+                    <a class="ms-link" href="comptes.php?employe">
+                      <span>Employees</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="collapsed">
+                <a class="m-link" data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
+                  <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+                <!-- Menu: Sub menu ul -->
+                <ul class="sub-menu collapse" id="client-Components">
+                  <li>
+                    <a class="ms-link" href="ajoutercompte.php">
+                      <span>Ajouter Comptes</span></a>
+                  </li>
+                  <li>
+                    <a class="ms-link" href="verifier.php">
+                      <span>Verifier Comptes</span></a>
+                  </li>
+                  <li>
+                    <a class="ms-link" href="supprimer.php">
+                      <span>Supprimer Comptes</span></a>
+                  </li>
+                </ul>
+              </li>';
+          }
+          ?>
 
-          <li class="collapsed">
-            <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
-              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
-            <!-- Menu: Sub menu ul -->
-            <ul class="sub-menu collapse" id="tikit-Components">
-              <li>
-                <a class="ms-link" href="comptes.php?tout">
-                  <span>Tout</span></a>
-              </li>
-              <li>
-                <a class="ms-link" href="comptes.php?client">
-                  <span>Client</span></a>
-              </li>
-              <li>
-                <a class="ms-link" href="comptes.php?employe">
-                  <span>Employees</span></a>
-              </li>
-            </ul>
-          </li>
-          <li class="collapsed">
-            <a class="m-link" data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
-              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
-            <!-- Menu: Sub menu ul -->
-            <ul class="sub-menu collapse" id="client-Components">
-              <li>
-                <a class="ms-link" href="ajoutercompte.php">
-                  <span>Ajouter Comptes</span></a>
-              </li>
-              <li>
-                <a class="ms-link" href="verifier.php">
-                  <span>Verifier Comptes</span></a>
-              </li>
-              <li>
-                <a class="ms-link" href="supprimer.php">
-                  <span>Supprimer Comptes</span></a>
-              </li>
-            </ul>
-          </li>
         </ul>
         <button type="button" class="btn btn-link sidebar-mini-btn text-light">
           <span class="ms-2"><i class="icofont-bubble-right"></i></span>
         </button>
       </div>
     </div>
-
     <!-- main body area -->
     <div class="main px-lg-4 px-md-4">
+      <!-- Body: Header -->
       <div class="header">
         <nav class="navbar py-4">
           <div class="container-xxl">
             <!-- header rightbar icon -->
             <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
               <!--Help-->
-              <div class="d-flex">
-                <div class="avatar-list avatar-list-stacked px-3">
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="">
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="">
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
-                  <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
+              <?php
+              if ($_SESSION["type"] == "supervisor") {
+              ?>
+                <div class="d-flex">
+                  <div class="avatar-list avatar-list-stacked px-3">
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
+                    <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
+                  </div>
                 </div>
-              </div>
+              <?php
+              } ?>
               <!--Notification-->
               <div class="dropdown notifications">
                 <a class="nav-link dropdown-toggle pulse" href="#" role="button" data-bs-toggle="dropdown">
@@ -143,7 +168,7 @@
                         <ul class="list-unstyled list mb-0">
                           <li class="py-2 mb-1 border-bottom">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="" />
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Dylan Hunter</span>
@@ -171,7 +196,7 @@
                           </li>
                           <li class="py-2 mb-1 border-bottom">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Andrea Gill</span>
@@ -183,7 +208,7 @@
                           </li>
                           <li class="py-2 mb-1 border-bottom">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar5.jpg" alt="">
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar5.jpg" alt="" />
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Diane Fisher</span>
@@ -195,7 +220,7 @@
                           </li>
                           <li class="py-2 mb-1 border-bottom">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar6.jpg" alt="">
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar6.jpg" alt="" />
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Andrea Gill</span>
@@ -207,7 +232,7 @@
                           </li>
                           <li class="py-2">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="">
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="" />
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Zoe Wright</span>
@@ -229,68 +254,73 @@
               <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                 <div class="u-info me-2">
                   <p class="mb-0 text-end line-height-sm">
-                    <span class="font-weight-bold">Dylan Hunter</span>
+                    <span class="font-weight-bold"><?php
+                                                    if ($_SESSION["type"] == "supervisor") {
+                                                      echo "Superviseur";
+                                                    } else {
+                                                      echo $_SESSION['nom'] . ' ' . $_SESSION['prenom'];
+                                                    }
+                                                    ?></span>
                   </p>
-                  <small>Admin Profile</small>
+                  <small><?php
+                          if ($_SESSION["type"] == "supervisor") {
+                            echo "Superviseur";
+                          } else {
+                            if ($_SESSION["type"] == "supervisor") {
+                              echo "Admin";
+                            } else {
+                              echo "Client";
+                            }
+                          }
+                          ?> Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
-                  <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile">
+                  <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile" />
                 </a>
 
                 <div class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
                   <div class="card border-0 w280">
                     <div class="card-body pb-0">
                       <div class="d-flex py-1">
-                        <img class="avatar rounded-circle" src="assets/images/profile_av.png" alt="profile">
+                        <img class="avatar rounded-circle" src="assets/images/profile_av.png" alt="profile" />
                         <div class="flex-fill ms-3">
                           <p class="mb-0">
-                            <span class="font-weight-bold">Dylan Hunter</span>
+                            <span class="font-weight-bold"><?php
+                                                            if ($_SESSION["type"] == "supervisor") {
+                                                              echo "Superviseur";
+                                                            } else {
+                                                              echo $_SESSION['nom'] . ' ' . $_SESSION['prenom'];
+                                                            }
+                                                            ?></span>
                           </p>
-                          <small class="">Dylan.hunter@gmail.com</small>
+                          <small class=""><?php echo $_SESSION["email"]; ?></small>
                         </div>
                       </div>
 
                       <div>
-                        <hr class="dropdown-divider border-dark">
+                        <hr class="dropdown-divider border-dark" />
                       </div>
                     </div>
                     <div class="list-group m-2">
                       <a href="deconnexion.php" class="list-group-item list-group-item-action border-0"><i class="icofont-logout fs-6 me-3"></i>Déconnexion</a>
-                      <div>
-                        <hr class="dropdown-divider border-dark">
-                      </div>
-                      <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
-                        un Compte</a>
+                      <?php
+                      if ($_SESSION["type"] == "supervisor") {
+                      ?>
+                        <div>
+                          <hr class="dropdown-divider border-dark" />
+                        </div>
+                        <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
+                          un Compte</a>
+                      <?php
+                      }
+                      ?>
+
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- menu toggler -->
-            <button class="navbar-toggler p-0 border-0 menu-toggle order-3" type="button" data-bs-toggle="collapse" data-bs-target="#mainHeader">
-              <span class="fa fa-bars"></span>
-            </button>
-
-            <!-- main menu Search-->
-            <div class="order-0 col-lg-4 col-md-4 col-sm-12 col-12 mb-3 mb-md-0">
-              <div class="input-group flex-nowrap input-group-lg">
-                <button type="button" class="input-group-text" id="addon-wrapping">
-                  <i class="fa fa-search"></i>
-                </button>
-                <input type="search" class="form-control" placeholder="Recherche" aria-label="search" aria-describedby="addon-wrapping">
-                <button type="button" class="input-group-text add-member-top" id="addon-wrappingone" data-bs-toggle="modal" data-bs-target="#addUser">
-                  <i class="fa fa-plus"></i>
-                </button>
-              </div>
-            </div>
-            <!-- Theme switcher -->
-            <div class="form-check form-switch theme-switch">
-              <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-switch">
-            </div>
-          </div>
-        </nav>
-      </div>
 
       <!-- Body: Body -->
       <div class="body d-flex py-lg-3 py-md-2">
@@ -313,25 +343,24 @@
                       <img src="assets/images/lg/avatar3.jpg" alt="" class="avatar xl rounded-circle img-thumbnail shadow-sm">
                     </a>
                     <div class="about-info d-flex align-items-center mt-3 justify-content-center flex-column">
-                      <h6 class="mb-0 fw-bold d-block fs-6">CEO</h6>
-                      <span class="text-muted small">CLIENT ID : PXL-0001</span>
+                      <h6 class="mb-0 fw-bold d-block fs-6"><?php  echo htmlspecialchars($_SESSION['nom']) ?> </h6>
                     </div>
                   </div>
                   <div class="teacher-info border-start ps-xl-4 ps-md-4 ps-sm-4 ps-4 w-100">
-                    <h6 class="mb-0 mt-2  fw-bold d-block fs-6">AgilSoft Tech</h6>
-                    <span class="py-1 fw-bold small-11 mb-0 mt-1 text-muted">Ryan Ogden</span>
-                    <p class="mt-2 small">The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy</p>
+                    <h6 class="mb-0 mt-2  fw-bold d-block fs-6"><?php  echo htmlspecialchars($_SESSION['nom']).' '. htmlspecialchars($_SESSION['nom']) ?></h6>
+                    <span class="py-1 fw-bold small-11 mb-0 mt-1 text-muted"><?php  echo htmlspecialchars($_SESSION['type']) ?></span>
+                    
                     <div class="row g-2 pt-2">
                       <div class="col-xl-5">
                         <div class="d-flex align-items-center">
                           <i class="icofont-ui-touch-phone"></i>
-                          <span class="ms-2 small">202-555-0174 </span>
+                          <span class="ms-2 small"></span>
                         </div>
                       </div>
                       <div class="col-xl-5">
                         <div class="d-flex align-items-center">
                           <i class="icofont-email"></i>
-                          <span class="ms-2 small">ryanogden@gmail.com</span>
+                          <span class="ms-2 small"><?php  echo htmlspecialchars($_SESSION['email']) ?> </span>
                         </div>
                       </div>
                       <div class="col-xl-5">
