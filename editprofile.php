@@ -1,5 +1,9 @@
 <?php
 session_start();
+if ($_SESSION["type"] == "client") {
+  header("location:ajouterticket.php");
+}
+
 ?>
 
 
@@ -344,6 +348,7 @@ session_start();
           </div>
         </nav>
       </div>
+
       <div class="card mb-3">
         <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
           <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
@@ -526,9 +531,7 @@ session_start();
       xhttp.onload = function() {
         document.getElementById("edit-form").innerHTML = this.responseText;
       }
-      xhttp.open("GET", "controller/compte/editprofile.php" + <?php if (isset($_GET['id'])) {
-                                                                echo '?id=' . $_GET['id'];
-                                                              } ?>, true);
+      xhttp.open("GET", "controller/compte/editprofile.php?id=<?php echo $_GET['id']; ?>", true);
       xhttp.send();
     }
   </script>
