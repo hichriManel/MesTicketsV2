@@ -354,7 +354,7 @@ display: none !important;
                                         <li><a class="dropdown-item" href="#">Design Tech</a></li>
                                         </ul>
                                     </div>
-                                    <button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button>
+                                    <a href="ajoutercompte.php"><button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button></a>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +382,7 @@ display: none !important;
                                     </div>
                                     <div class="d-flex flex-wrap align-items-center ct-btn-set">
                                         <a href="chat.html" class="btn btn-dark btn-sm mt-1 me-1"><i class="icofont-ui-text-chat me-2 fs-6"></i>Chat</a>
-                                        <a href="profile.html" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
+                                        <a href="profile.php" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
                                     </div>
                                 </div>
                             </div>
