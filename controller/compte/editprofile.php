@@ -4,7 +4,11 @@ if (isset($_SESSION['email'])) {
     if ($_SESSION['type'] == "client") {
         header("location:editprofile.php?id=" . $_SESSION['id']);
     } else {
-        $id = $_GET['id'];
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+        } else {
+            $id = $_SESSION['id'];
+        }
         require_once '../../crud/Crud_account.php';
         require_once '../../crud/Crud_societe.php';
         $crud = new CRUD();
