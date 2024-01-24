@@ -297,7 +297,7 @@ display: none !important;
                                               <div>
                           <hr class="dropdown-divider border-dark">
                         </div>
-                        <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
+                        <a href="ajoutercompte.php" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
                           un Compte</a>
                       
                     </div>
@@ -354,7 +354,7 @@ display: none !important;
                                         <li><a class="dropdown-item" href="#">Design Tech</a></li>
                                         </ul>
                                     </div>
-                                    <button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button>
+                                    <a href="ajoutercompte.php"><button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button></a>
                                 </div>
                             </div>
                         </div>
@@ -381,8 +381,7 @@ display: none !important;
                                         <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
                                     </div>
                                     <div class="d-flex flex-wrap align-items-center ct-btn-set">
-                                        <a href="chat.html" class="btn btn-dark btn-sm mt-1 me-1"><i class="icofont-ui-text-chat me-2 fs-6"></i>Chat</a>
-                                        <a href="profile.html" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
+                                        <a href="profile.php" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
                                     </div>
                                 </div>
                             </div>

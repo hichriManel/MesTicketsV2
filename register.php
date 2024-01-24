@@ -168,6 +168,6 @@ if (isset($_SESSION["email"])) {
 
 </body>
 
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ui-elements/auth-signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:06:05 GMT -->
+<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ajoutercompte.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:06:05 GMT -->
 
 </html>
