@@ -19,7 +19,7 @@ if ($_SESSION["type"] == "client") {
   <link rel="stylesheet" href="assets/css/my-task.style.min.css" />
 </head>
 
-<body data-mytask="theme-indigo">
+<body data-mytask="theme-indigo" onload="load()">
   <div id="mytask-layout">
     <!--header nav-->
     <div class="sidebar px-4 py-4 py-md-5 me-0">
@@ -32,7 +32,7 @@ if ($_SESSION["type"] == "client") {
               <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
             </svg>
           </span>
-          <span class="logo-text">My-Task</span>
+          <span class="logo-text">Edit profile</span>
         </a>
         <!-- Menu: main ul -->
 
@@ -263,17 +263,18 @@ if ($_SESSION["type"] == "client") {
                                                     }
                                                     ?></span>
                   </p>
-                  <small><?php
-                          if (isset($_SESSION['type'])) {
-                            if ($_SESSION['type'] == "supervisor") {
-                              echo "Superviseur";
-                            } else {
-                              echo "Admin";  // Corrected from "Supervisor"
-                            }
-                          } else {
-                            echo "Client";
-                          }
-                          ?> Profile</small>
+                  <small>
+                    <?php
+                    if (isset($_SESSION['type'])) {
+                      if ($_SESSION['type'] == "supervisor") {
+                        echo "Superviseur";
+                      } else {
+                        echo "Admin";  // Corrected from "Supervisor"
+                      }
+                    } else {
+                      echo "Client";
+                    }
+                    ?> Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
                   <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile" />
@@ -353,82 +354,7 @@ if ($_SESSION["type"] == "client") {
           <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
         </div>
         <div class="card-body">
-          <form>
-            <div class="col-md-6">
-              <label class="form-label">Type de Compte</label>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="typec" value="client">
-                    <label class="form-check-label">
-                      client
-                    </label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="typec" value="admin" checked="checked">
-                    <label class="form-check-label">
-                      Admin
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row g-3 align-items-center">
-              <div class="col-md-6">
-                <label for="firstname" class="form-label">Prénom</label>
-                <input type="text" class="form-control" name="Prénom" required value="<?php echo $_SESSION['prenom'] ?>">
-              </div>
-              <div class="col-md-6">
-                <label for="lastname" class="form-label">Nom</label>
-                <input type="text" class="form-control" name="nom" value="<?php echo $_SESSION['nom'] ?>" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" name="tel" required>
-              </div>
-              <div class="col-md-6">
-                <label for="emailaddress" class="form-label">Email Address</label>
-                <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'] ?>" required>
-              </div>
-              <div class="col-md-6">
-                <label for="admitdate" class="form-label">Votre Mot de Passe</label>
-                <input type="password" class="form-control" id="mdp" required>
-              </div>
-              <div class="col-md-6">
-                <label for="admitdate" class="form-label">Nouveau Mot de Passe</label>
-                <input type="password" class="form-control" name="cmdp" required>
-              </div>
-              <div class="col-md-6">
-                <label for="admitdate" class="form-label">Matricule</label>
-                <input type="text" class="form-control" id="admitdate" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Gender</label>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios11" value="option1" checked>
-                      <label class="form-check-label" for="exampleRadios11">
-                        Male
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios22" value="option2">
-                      <label class="form-check-label" for="exampleRadios22">
-                        Female
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+          <form id="edit-form">
           </form>
         </div>
       </div>
@@ -600,94 +526,15 @@ if ($_SESSION["type"] == "client") {
   <script src="../js/template.js"></script>
   <script src="../js/page/hr.js"></script>
   <script>
-    // Employees Analytics
-    $(document).ready(function() {
-      var options = {
-        series: [{
-          name: "Available",
-          data: [4, 19, 7, 35, 14, 27, 9, 12],
-        }, ],
-        chart: {
-          height: 140,
-          type: "line",
-          toolbar: {
-            show: false,
-          },
-        },
-        grid: {
-          show: false,
-          xaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-        },
-        stroke: {
-          width: 4,
-          curve: "smooth",
-          colors: ["var(--chart-color2)"],
-        },
-        xaxis: {
-          type: "datetime",
-          categories: [
-            "1/11/2021",
-            "2/11/2021",
-            "3/11/2021",
-            "4/11/2021",
-            "5/11/2021",
-            "6/11/2021",
-            "7/11/2021",
-            "8/11/2021",
-          ],
-          tickAmount: 10,
-          labels: {
-            formatter: function(value, timestamp, opts) {
-              return opts.dateFormatter(new Date(timestamp), "dd MMM");
-            },
-          },
-        },
-        fill: {
-          type: "gradient",
-          gradient: {
-            shade: "dark",
-            gradientToColors: ["var(--chart-color3)"],
-            shadeIntensity: 1,
-            type: "horizontal",
-            opacityFrom: 1,
-            opacityTo: 1,
-            stops: [0, 100, 100, 100],
-          },
-        },
-        markers: {
-          size: 3,
-          colors: ["#FFA41B"],
-          strokeColors: "#ffffff",
-          strokeWidth: 2,
-          hover: {
-            size: 7,
-          },
-        },
-        yaxis: {
-          show: false,
-          min: -10,
-          max: 50,
-        },
-      };
-
-      var chart = new ApexCharts(
-        document.querySelector("#apex-emplyoeeAnalytics"),
-        options
-      );
-      chart.render();
-    });
+    function load() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        document.getElementById("edit-form").innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "controller/compte/editprofile.php?id=<?php echo $_GET['id']; ?>", true);
+      xhttp.send();
+    }
   </script>
 </body>
-
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:05:23 GMT -->
 
 </html>
