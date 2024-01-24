@@ -236,7 +236,7 @@ session_start();
                                                     if ($_SESSION["type"] == "supervisor") {
                                                       echo "Superviseur";
                                                     } else {
-                                                      echo $_SESSION['nom'] . ' ' . $_session['prenom'];
+                                                      echo $_SESSION['nom'] . ' ' . $_SESSION['prenom'];
                                                     }
                                                     ?></span>
                   </p>
@@ -267,7 +267,7 @@ session_start();
                                                             if ($_SESSION["type"] == "supervisor") {
                                                               echo "Superviseur";
                                                             } else {
-                                                              echo $_SESSION['nom'] . ' ' . $_session['prenom'];
+                                                              echo $_SESSION['nom'] . ' ' . $_SESSION['prenom'];
                                                             }
                                                             ?></span>
                           </p>

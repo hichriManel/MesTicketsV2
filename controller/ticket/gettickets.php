@@ -10,7 +10,7 @@ if ($_SESSION['type'] == "supervisor") {
   if ($_SESSION['type'] == "admin") {
     $table = $crud->getTickets();
   } else {
-    $table = $crud->getTicketByClient($_SESSION['$email']);
+    $table = $crud->getTicketByClient($_SESSION['email']);
   }
 }
 $encour = $crud->getByStatutNum("enCours");
