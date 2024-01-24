@@ -48,6 +48,34 @@ WHERE
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_NUM);
     }
+    public function getAllTickets()
+    {
+        $req = "SELECT 
+    t.ticketId, 
+    t.demande, 
+    t.DateHeure, 
+    s.nom AS societe_nom, 
+    t.Diagnostic, 
+    a.nom AS account_nom, 
+    t.Categorie, 
+    t.Priorite, 
+    t.Status,
+    c.cloture_par,
+    c.dateheur AS cloture_dateheur
+FROM 
+    ticket t
+JOIN 
+    account a ON a.email = t.contact
+JOIN 
+    societe s ON s.id = a.centre
+LEFT JOIN
+    cloture c ON c.ticket_id = t.ticketId
+
+";
+        $stmt = $this->pdo->prepare($req);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_NUM);
+    }
     public function getTicketById($reference)
     {
         $req = "SELECT * FROM ticket WHERE reference={$reference}";
