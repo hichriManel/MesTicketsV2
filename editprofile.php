@@ -1,7 +1,7 @@
 <?php
 session_start();
-if ($_SESSION["type"] == "client") {
-  header("location:ajouterticket.php");
+if (!isset($_GET['id'])) {
+  header("location:editprofile.php?id=" . $_SESSION['id']);
 }
 
 ?>
