@@ -1,14 +1,4 @@
-<?php
-session_start();
-if (isset($_GET["status"])) {
-  $st = $_GET["status"];
-}
-?>
-
-<!doctype html>
-<html class="no-js" lang="en" dir="ltr">
-
-<head>
+<html class="no-js" lang="en" dir="ltr" data-theme="light"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +9,52 @@ if (isset($_GET["status"])) {
   <link rel="stylesheet" href="assets/plugin/datatables/dataTables.bootstrap5.min.css">
   <!-- project css file  -->
   <link rel="stylesheet" href="assets/css/my-task.style.min.css">
-</head>
+<script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2c776523.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-9294da6c.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b383d.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-48f3b594.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-4fe9d5dd.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b9454.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-24d8db78.js"></script><style type="text/css">#un3g1m7horv81706068354275 {outline:none !important;
+visibility:visible !important;
+resize:none !important;
+box-shadow:none !important;
+overflow:visible !important;
+background:none !important;
+opacity:1 !important;
+filter:alpha(opacity=100) !important;
+-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important;
+-mz-opacity:1 !important;
+-khtml-opacity:1 !important;
+top:auto !important;
+right:0px !important;
+bottom:0px !important;
+left:auto !important;
+position:fixed !important;
+border:0 !important;
+min-height:0px  !important;
+min-width:0px  !important;
+max-height:none  !important;
+max-width:none  !important;
+padding:0px !important;
+margin:0px !important;
+-moz-transition-property:none !important;
+-webkit-transition-property:none !important;
+-o-transition-property:none !important;
+transition-property:none !important;
+transform:none !important;
+-webkit-transform:none !important;
+-ms-transform:none !important;
+width:auto !important;
+height:auto  !important;
+display:none !important;
+z-index:2000000000 !important;
+background-color:transparent !important;
+cursor:none !important;
+float:none !important;
+border-radius:unset !important;
+pointer-events:auto !important;
+clip:auto !important;
+color-scheme:light !important;}#un3g1m7horv81706068354275.widget-hidden {display: none !important;}#un3g1m7horv81706068354275.widget-visible {display: block !important;}
+@media print{
+ #un3g1m7horv81706068354275.widget-visible { 
+display: none !important;
+ }
+}</style><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#xqdhu4eu1tp81706068354316.open{animation : tawkMaxOpen .25s ease!important;}@keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}#xqdhu4eu1tp81706068354316.closed{animation: tawkMaxClose .25s ease!important}</style></head>
 
 <body onload="table()" data-mytask="theme-indigo">
 
@@ -30,9 +65,9 @@ if (isset($_GET["status"])) {
         <a href="index.php" class="mb-0 brand-icon">
           <span class="logo-icon">
             <svg width="35" height="35" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-              <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-              <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+              <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
+              <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+              <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
             </svg>
           </span>
           <span class="logo-text">My-Task</span>
@@ -42,30 +77,14 @@ if (isset($_GET["status"])) {
         <ul class="menu-list flex-grow-1 mt-3">
 
 
-          <?php if ($_SESSION['type'] == "client") {
-            echo '<li class="collapsed">
-                <a class="m-link"  href="ajouterticket.php">
-                  <i class="icofont-home fs-5"></i> <span>Nouveau Ticket</span>
-                </a>
-              </li>';
-          } else {
-            echo '<li class="collapsed">
+          <li class="collapsed">
                 <a class="m-link" data-bs-target="#dashboard-Components" href="dashboard.php">
                   <i class="icofont-home fs-5"></i> <span>Dashboard</span>
                 </a>
                 <!-- Menu: Sub menu ul -->
-              </li>';
-          }
-          ?>
-          <li class="collapsed">
+              </li>          <li class="collapsed">
             <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
-              <i class="icofont-ticket"></i><?php if ($_SESSION['type'] == "client") {
-                                              echo "<span>Mes Tickets</span>";
-                                            } else {
-                                              echo "<span>Tickets</span>";
-                                            }
-                                            ?>
-              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+              <i class="icofont-ticket"></i><span>Tickets</span>              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="project-Components">
               <li>
@@ -79,9 +98,7 @@ if (isset($_GET["status"])) {
               </li>
             </ul>
           </li>
-          <?php if ($_SESSION['type'] == "client") {
-          } else {
-            echo '<li class="collapsed">
+          <li class="collapsed">
                 <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
                   <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
@@ -118,10 +135,7 @@ if (isset($_GET["status"])) {
                       <span>Supprimer Comptes</span></a>
                   </li>
                 </ul>
-              </li>';
-          }
-          ?>
-
+              </li>
         </ul>
         <button type="button" class="btn btn-link sidebar-mini-btn text-light">
           <span class="ms-2"><i class="icofont-bubble-right"></i></span>
@@ -137,23 +151,18 @@ if (isset($_GET["status"])) {
             <!-- header rightbar icon -->
             <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
               <!--Help-->
-              <?php
-              if ($_SESSION["type"] == "supervisor") {
-              ?>
-                <div class="d-flex">
+                              <div class="d-flex">
                   <div class="avatar-list avatar-list-stacked px-3">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="">
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="">
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
                     <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
                   </div>
                 </div>
-              <?php
-              } ?>
-              <!--Notification-->
+                            <!--Notification-->
               <div class="dropdown notifications">
                 <a class="nav-link dropdown-toggle pulse" href="#" role="button" data-bs-toggle="dropdown">
                   <i class="icofont-alarm fs-5"></i>
@@ -172,7 +181,7 @@ if (isset($_GET["status"])) {
                         <ul class="list-unstyled list mb-0">
                           <li class="py-2 mb-1 border-bottom">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="" />
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Dylan Hunter</span>
@@ -200,7 +209,7 @@ if (isset($_GET["status"])) {
                           </li>
                           <li class="py-2 mb-1 border-bottom">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Andrea Gill</span>
@@ -212,7 +221,7 @@ if (isset($_GET["status"])) {
                           </li>
                           <li class="py-2 mb-1 border-bottom">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar5.jpg" alt="" />
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar5.jpg" alt="">
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Diane Fisher</span>
@@ -224,7 +233,7 @@ if (isset($_GET["status"])) {
                           </li>
                           <li class="py-2 mb-1 border-bottom">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar6.jpg" alt="" />
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar6.jpg" alt="">
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Andrea Gill</span>
@@ -236,7 +245,7 @@ if (isset($_GET["status"])) {
                           </li>
                           <li class="py-2">
                             <a href="javascript:void(0);" class="d-flex">
-                              <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="" />
+                              <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="">
                               <div class="flex-fill ms-2">
                                 <p class="d-flex justify-content-between mb-0">
                                   <span class="font-weight-bold">Zoe Wright</span>
@@ -258,67 +267,39 @@ if (isset($_GET["status"])) {
               <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                 <div class="u-info me-2">
                   <p class="mb-0 text-end line-height-sm">
-                    <span class="font-weight-bold"><?php
-                                                    if ($_SESSION["type"] == "supervisor") {
-                                                      echo "Superviseur";
-                                                    } else {
-                                                      echo $_SESSION['nom'] . ' ' . $_SESSION['prenom'];
-                                                    }
-                                                    ?></span>
+                    <span class="font-weight-bold">Superviseur</span>
                   </p>
-                  <small><?php
-                          if ($_SESSION["type"] == "supervisor") {
-                            echo "Superviseur";
-                          } else {
-                            if ($_SESSION["type"] == "supervisor") {
-                              echo "Admin";
-                            } else {
-                              echo "Client";
-                            }
-                          }
-                          ?> Profile</small>
+                  <small>Superviseur Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
-                  <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile" />
+                  <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile">
                 </a>
 
                 <div class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0 m-0">
                   <div class="card border-0 w280">
                     <div class="card-body pb-0">
                       <div class="d-flex py-1">
-                        <img class="avatar rounded-circle" src="assets/images/profile_av.png" alt="profile" />
+                        <img class="avatar rounded-circle" src="assets/images/profile_av.png" alt="profile">
                         <div class="flex-fill ms-3">
                           <p class="mb-0">
-                            <span class="font-weight-bold"><?php
-                                                            if ($_SESSION["type"] == "supervisor") {
-                                                              echo "Superviseur";
-                                                            } else {
-                                                              echo $_SESSION['nom'] . ' ' . $_SESSION['prenom'];
-                                                            }
-                                                            ?></span>
+                            <span class="font-weight-bold">Superviseur</span>
                           </p>
-                          <small class=""><?php echo $_SESSION["email"]; ?></small>
+                          <small class="">zimys@gmail.com</small>
                         </div>
                       </div>
-                     <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php"><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
+                     <div class="text-center"> <a href="editprofile.php"><button class="btn btn-primary"><i class="icofont-ui-edit"></i></button></a> <a href="profile.php"><button class="btn btn-primary"><i class="icofont-eye-open"></i></button> </a></div>
                       <div>
-                        <hr class="dropdown-divider border-dark" />
+                        <hr class="dropdown-divider border-dark">
                       </div>
                     </div>
                     <div class="list-group m-2">
                       <a href="deconnexion.php" class="list-group-item list-group-item-action border-0"><i class="icofont-logout fs-6 me-3"></i>Déconnexion</a>
-                      <?php
-                      if ($_SESSION["type"] == "supervisor") {
-                      ?>
-                        <div>
-                          <hr class="dropdown-divider border-dark" />
+                                              <div>
+                          <hr class="dropdown-divider border-dark">
                         </div>
                         <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
                           un Compte</a>
-                      <?php
-                      }
-                      ?>
-
+                      
                     </div>
                   </div>
                 </div>
@@ -336,7 +317,7 @@ if (isset($_GET["status"])) {
                 <button type="button" class="input-group-text" id="addon-wrapping">
                   <i class="fa fa-search"></i>
                 </button>
-                <input type="search" class="form-control" placeholder="Recherche" aria-label="search" aria-describedby="addon-wrapping" />
+                <input type="search" class="form-control" placeholder="Recherche" aria-label="search" aria-describedby="addon-wrapping">
                 <button type="button" class="input-group-text add-member-top" id="addon-wrappingone" data-bs-toggle="modal" data-bs-target="#addUser">
                   <i class="fa fa-plus"></i>
                 </button>
@@ -344,7 +325,7 @@ if (isset($_GET["status"])) {
             </div>
             <!-- Theme switcher -->
             <div class="form-check form-switch theme-switch">
-              <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-switch" />
+              <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-switch">
             </div>
           </div>
         </nav>
@@ -352,30 +333,64 @@ if (isset($_GET["status"])) {
 
       <!-- Body: Body -->
       <div class="body d-flex py-lg-3 py-md-2">
-        <div class="container-xxl">
-          <div class="row align-items-center">
-            <div class="border-0 mb-4">
-              <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
-                <h3 class="fw-bold mb-0">Tickets</h3>
-                <div class="col-auto d-flex w-sm-100">
-                  <a href="ajouterticket.php"><button type="button" class="btn btn-dark btn-set-task w-sm-100" data-bs-toggle="modal"><i class="icofont-plus-circle me-2 fs-6"></i>Add Tickets</button></a>
+            <div class="container-xxl">
+                <div class="row clearfix">
+                    <div class="col-md-12">
+                        <div class="card border-0 mb-4 no-bg">
+                            <div class="card-header py-3 px-0 d-flex align-items-center  justify-content-between border-bottom">
+                                <h3 class=" fw-bold flex-fill mb-0">Clients</h3>
+                                <div class="col-auto d-flex">
+                                    <div class="dropdown ">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Status
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2" style="">
+                                        <li><a class="dropdown-item" href="#">Company</a></li>
+                                        <li><a class="dropdown-item" href="#">AgilSoft Tech</a></li>
+                                        <li><a class="dropdown-item" href="#">Macrosoft</a></li>
+                                        <li><a class="dropdown-item" href="#">Google</a></li>
+                                        <li><a class="dropdown-item" href="#">Pixelwibes</a></li>
+                                        <li><a class="dropdown-item" href="#">Deltasoft Tech</a></li>
+                                        <li><a class="dropdown-item" href="#">Design Tech</a></li>
+                                        </ul>
+                                    </div>
+                                    <button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Row End -->
+                <div class="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-deck py-1 pb-4">
+                <div class="col">
+                        <div class="card teacher-card">
+                            <div class="card-body  d-flex">
+                                <div class="profile-av pe-xl-4 pe-md-2 pe-sm-4 pe-4 text-center w220">
+                                    <img src="assets/images/lg/avatar5.jpg" alt="" class="avatar xl rounded-circle img-thumbnail shadow-sm">
+                                    <div class="about-info d-flex align-items-center mt-1 justify-content-center flex-column">
+                                       <h6 class="mb-0 fw-bold d-block fs-6 mt-2">Manager</h6>
+                                        <div class="btn-group mt-2" role="group" aria-label="Basic outlined example">
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editproject"><i class="icofont-edit text-success"></i></button>
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#deleteproject"><i class="icofont-ui-delete text-danger"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="teacher-info border-start ps-xl-4 ps-md-3 ps-sm-4 ps-4 w-100">
+                                    <h6 class="mb-0 mt-2  fw-bold d-block fs-6">Rocobend</h6>
+                                    <span class="py-1 fw-bold small-11 mb-0 mt-1 text-muted">Piers Churchill</span>
+                                    <div class="video-setting-icon mt-3 pt-3 border-top">
+                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
+                                    </div>
+                                    <div class="d-flex flex-wrap align-items-center ct-btn-set">
+                                        <a href="chat.html" class="btn btn-dark btn-sm mt-1 me-1"><i class="icofont-ui-text-chat me-2 fs-6"></i>Chat</a>
+                                        <a href="profile.html" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div> <!-- Row end  -->
-          <div class="row clearfix g-3">
-            <div class="col-sm-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <table id="exemple" class="table table-hover align-middle mb-0" style="width:100%">
-
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div><!-- Row End -->
         </div>
-      </div>
 
       <!-- Modal Members-->
       <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
@@ -444,7 +459,7 @@ if (isset($_GET["status"])) {
                             <li>
                               <a class="dropdown-item" href="#">
                                 <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
+                                <span>Only Invite &amp; manage team</span>
                               </a>
                             </li>
                           </ul>
@@ -485,7 +500,7 @@ if (isset($_GET["status"])) {
                             <li>
                               <a class="dropdown-item" href="#">
                                 <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
+                                <span>Only Invite &amp; manage team</span>
                               </a>
                             </li>
                           </ul>
@@ -543,7 +558,7 @@ if (isset($_GET["status"])) {
               <div class="mb-3">
                 <label class="form-label">Status</label>
                 <select class="form-select">
-                  <option selected>In Progress</option>
+                  <option selected="">In Progress</option>
                   <option value="1">Completed</option>
                   <option value="2">Wating</option>
                   <option value="3">Decline</option>
@@ -588,7 +603,7 @@ if (isset($_GET["status"])) {
               <div class="mb-3">
                 <label class="form-label">Status</label>
                 <select class="form-select">
-                  <option selected>Completed</option>
+                  <option selected="">Completed</option>
                   <option value="1">In Progress</option>
                   <option value="2">Wating</option>
                   <option value="3">Decline</option>
@@ -608,7 +623,7 @@ if (isset($_GET["status"])) {
   </div>
 
   <!-- Jquery Core Js -->
-  <script src="assets/bundles/libscripts.bundle.js"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-main.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-vendor.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-vendors.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-common.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-runtime.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-app.js" charset="UTF-8" crossorigin="*"></script><script async="" src="https://embed.tawk.to/6051a040f7ce18270930e55a/1f3d4os21" charset="UTF-8" crossorigin="*"></script><script src="assets/bundles/libscripts.bundle.js"></script>
 
   <!-- Plugin Js-->
   <script src="assets/bundles/dataTables.bundle.js"></script>
@@ -621,22 +636,17 @@ if (isset($_GET["status"])) {
       xhttp.onload = function() {
         document.getElementById("exemple").innerHTML = this.responseText;
       }
-      <?php
-      if (isset($_GET["status"])) {
-      ?>xhttp.open("GET", "controller/ticket/gettickets.php?status=<?php echo $st ?>");
-    <?php
-      } else {
-    ?>
-      xhttp.open("GET", "controller/ticket/gettickets.php");
-    <?php
-      } ?>
-    xhttp.send();
+            xhttp.open("GET", "controller/ticket/gettickets.php");
+        xhttp.send();
 
     }
     setInterval(table, 6000);
   </script>
-</body>
 
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/tickets.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:05:44 GMT -->
 
-</html>
+
+
+<script async="" charset="UTF-8" src="https://embed.tawk.to/_s/v4/app/65839862293/languages/en.js">
+
+</script>
+</body></html>

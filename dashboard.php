@@ -293,6 +293,7 @@ session_start();
                           <small class=""><?php echo $_SESSION["email"]; ?></small>
                         </div>
                       </div>
+                     <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php"><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
 
                       <div>
                         <hr class="dropdown-divider border-dark" />
@@ -306,7 +307,7 @@ session_start();
                         <div>
                           <hr class="dropdown-divider border-dark" />
                         </div>
-                        <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
+                        <a href="ajoutercompte.php" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
                           un Compte</a>
                       <?php
                       }
