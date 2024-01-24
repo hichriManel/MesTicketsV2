@@ -17,7 +17,7 @@ session_start();
   <link rel="stylesheet" href="assets/css/my-task.style.min.css" />
 </head>
 
-<body data-mytask="theme-indigo">
+<body data-mytask="theme-indigo" onload="hidenotification()">
   <div id="mytask-layout">
     <!-- main body area -->
     <div class="main p-2 py-3 p-xl-5">
@@ -52,7 +52,7 @@ session_start();
                   </div>
                   <?php
                   if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
-                    echo '<div role="alert" class="alert ' . $_SESSION["error-type"] . '">
+                    echo '<div id="notif" role="alert" class="alert ' . $_SESSION["error-type"] . '">
                                     <div class="card-body ' . $_SESSION["error-type"] . '" id="card">
                                         ' . $_SESSION["error"] . '
                                     </div>
@@ -107,6 +107,7 @@ session_start();
 
   <!-- Jquery Core Js -->
   <script src="../assets/bundles/libscripts.bundle.js"></script>
+  <script src="js/notification.js"></script>
 </body>
 
 <!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ui-elements/auth-signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:06:05 GMT -->

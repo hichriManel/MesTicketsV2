@@ -3,6 +3,11 @@ session_start();
 if (isset($_SESSION["email"])) {
     header("location:dashboard.php");
 }
+if (isset($_GET['token'])) {
+    $token = $_GET['token'];
+} else {
+    header("Location: ../../index.php");
+}
 ?>
 
 
@@ -54,12 +59,12 @@ if (isset($_SESSION["email"])) {
                         <div class="col-lg-6 d-flex justify-content-center align-items-center border-0 rounded-lg auth-h100">
                             <div class="w-100 p-3 p-md-5 card border-0 bg-dark text-light" style="max-width: 32rem;">
                                 <!-- Form -->
-                                <form class="row g-1 p-3 p-md-4" method="post" action="controller/compte/forgot-password.php">
+                                <form class="row g-1 p-3 p-md-4" method="post" action="controller/compte/reset-password.php?token=<?php echo $token; ?>">
 
                                     <div class="col-12 text-center mb-1 mb-lg-5">
                                         <img src="../assets/images/forgot-password.svg" class="w240 mb-4" alt="" />
-                                        <h1>Mot de passe oublié?</h1>
-                                        <span>Entrez l’adresse e-mail que vous avez utilisée lors de votre inscription et nous vous enverrons des instructions pour réinitialiser votre mot de passe.</span>
+                                        <h1>Changer le mot de passe</h1>
+
                                     </div>
                                     <?php
                                     if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
@@ -74,12 +79,16 @@ if (isset($_SESSION["email"])) {
                                     ?>
                                     <div class="col-12">
                                         <div class="mb-2">
-                                            <label class="form-label">Email address</label>
-                                            <input type="email" name="email" class="form-control form-control-lg" placeholder="name@example.com">
+                                            <label class="form-label">Mot de passe</label>
+                                            <input type="password" name="email" class="form-control form-control-lg" placeholder="***********">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="form-label">Confirmer le mot de passe</label>
+                                            <input type="password" name="email" class="form-control form-control-lg" placeholder="***********">
                                         </div>
                                     </div>
                                     <div class="col-12 text-center mt-4">
-                                        <button name="btn" type="submit" title="" class="btn btn-lg btn-block btn-light lift text-uppercase" onclick="timeout()" id="btn">Envoyer</button>
+                                        <button name="btn" type="submit" title="" class="btn btn-lg btn-block btn-light lift text-uppercase" onclick="timeout()" id="btn">Changer</button>
                                     </div>
                                     <div class="col-12 text-center mt-4">
                                         <span class="text-muted"><a href="login.php" class="text-secondary">Retour à la Connexion</a></span>
@@ -110,7 +119,5 @@ if (isset($_SESSION["email"])) {
         }
     </script>
 </body>
-
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ui-elements/auth-password-reset.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:06:07 GMT -->
 
 </html>
