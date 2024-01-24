@@ -3,8 +3,8 @@ session_start();
 
 
 
-if ($_SESSION['type']=="client") {
+if ($_SESSION['type'] == "client") {
     header("location:ajouterticket.php");
-}else{
+} else {
     header("location:dashboard.php");
 }

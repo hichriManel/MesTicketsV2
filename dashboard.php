@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 
@@ -36,29 +35,29 @@ session_start();
         <ul class="menu-list flex-grow-1 mt-3">
 
 
-          <?php if ($_SESSION['type']="client") {
-                echo ' <li class="collapsed">
+          <?php if ($_SESSION['type'] = "client") {
+            echo '<li class="collapsed">
                 <a class="m-link active" data-bs-toggle="collapse"  href="ajouterticket.php">
                   <i class="icofont-home fs-5"></i> <span>Nouveau Ticket</span>
                 </a>
               </li>';
-              }else {
-                echo '          <li class="collapsed">
+          } else {
+            echo '<li class="collapsed">
                 <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="index.php">
                   <i class="icofont-home fs-5"></i> <span>Dashboard</span>
                 </a>
                 <!-- Menu: Sub menu ul -->
               </li>';
-              }
-              ?>
+          }
+          ?>
           <li class="collapsed">
             <a class="m-link" data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
-              <i class="icofont-ticket"></i><?php if ($_SESSION['type']="client") {
-                echo "<span>Mes Tickets</span>";
-              }else {
-                echo "<span>Tickets</span>";
-              }
-              ?>
+              <i class="icofont-ticket"></i><?php if ($_SESSION['type'] = "client") {
+                                              echo "<span>Mes Tickets</span>";
+                                            } else {
+                                              echo "<span>Tickets</span>";
+                                            }
+                                            ?>
               <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="project-Components">
@@ -73,10 +72,9 @@ session_start();
               </li>
             </ul>
           </li>
-          <?php if ($_SESSION['type']="client") {
-                
-              }else {
-                echo '<li class="collapsed">
+          <?php if ($_SESSION['type'] = "client") {
+          } else {
+            echo '<li class="collapsed">
                 <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
                   <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
@@ -114,9 +112,9 @@ session_start();
                   </li>
                 </ul>
               </li>';
-              }
-              ?>
-          
+          }
+          ?>
+
         </ul>
         <button type="button" class="btn btn-link sidebar-mini-btn text-light">
           <span class="ms-2"><i class="icofont-bubble-right"></i></span>
