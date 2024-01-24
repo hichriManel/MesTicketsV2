@@ -350,7 +350,15 @@ if ($_SESSION["type"] == "client") {
       </div>
 
       <div class="card mb-3">
+<<<<<<< HEAD
         <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+=======
+<<<<<<< HEAD
+        <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+=======
+        <<<<<<< HEAD <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+>>>>>>> 3c6d198e81676efe810f1f21ab3b8c8bb4f4974a
+>>>>>>> 60f4c0fb483a889bf5090204dadd3d93e2d8ef7f
           <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
         </div>
         <div class="card-body">
@@ -390,6 +398,7 @@ if ($_SESSION["type"] == "client") {
                         <h6 class="mb-0 fw-bold">Rachel Carr(you)</h6>
                         <span class="text-muted">rachel.carr@gmail.com</span>
                       </div>
+<<<<<<< HEAD
                       <div class="members-action">
                         <span class="members-role">Admin</span>
                         <div class="btn-group">
@@ -428,6 +437,65 @@ if ($_SESSION["type"] == "client") {
                             <li>
                               <a class="dropdown-item" href="#">
                                 <i class="icofont-check-circled"></i>
+=======
+                    </div>
+                  </div>
+                </div>
+<<<<<<< HEAD
+              </div>
+=======
+                <div class="row g-3 align-items-center">
+                  <div class="col-md-6">
+                    <label for="firstname" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" name="Prénom" required value="<?php echo $_SESSION['prenom'] ?>">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="lastname" class="form-label">Nom</label>
+                    <input type="text" class="form-control" name="nom" value="<?php echo $_SESSION['nom'] ?>" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" name="tel" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="emailaddress" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email'] ?>" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="admitdate" class="form-label">Votre Mot de Passe</label>
+                    <input type="password" class="form-control" id="mdp" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="admitdate" class="form-label">Nouveau Mot de Passe</label>
+                    <input type="password" class="form-control" name="cmdp" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="admitdate" class="form-label">Matricule</label>
+                    <input type="text" class="form-control" id="admitdate" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Gender</label>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios11" value="option1" checked>
+                          <label class="form-check-label" for="exampleRadios11">
+                            Male
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios22" value="option2">
+                          <label class="form-check-label" for="exampleRadios22">
+                            Female
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+>>>>>>> 3c6d198e81676efe810f1f21ab3b8c8bb4f4974a
+>>>>>>> 60f4c0fb483a889bf5090204dadd3d93e2d8ef7f
 
                                 <span>All operations permission</span>
                               </a>
