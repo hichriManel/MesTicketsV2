@@ -9,52 +9,7 @@
   <link rel="stylesheet" href="assets/plugin/datatables/dataTables.bootstrap5.min.css">
   <!-- project css file  -->
   <link rel="stylesheet" href="assets/css/my-task.style.min.css">
-<script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2c776523.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-9294da6c.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b383d.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-48f3b594.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-4fe9d5dd.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b9454.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-24d8db78.js"></script><style type="text/css">#un3g1m7horv81706068354275 {outline:none !important;
-visibility:visible !important;
-resize:none !important;
-box-shadow:none !important;
-overflow:visible !important;
-background:none !important;
-opacity:1 !important;
-filter:alpha(opacity=100) !important;
--ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important;
--mz-opacity:1 !important;
--khtml-opacity:1 !important;
-top:auto !important;
-right:0px !important;
-bottom:0px !important;
-left:auto !important;
-position:fixed !important;
-border:0 !important;
-min-height:0px  !important;
-min-width:0px  !important;
-max-height:none  !important;
-max-width:none  !important;
-padding:0px !important;
-margin:0px !important;
--moz-transition-property:none !important;
--webkit-transition-property:none !important;
--o-transition-property:none !important;
-transition-property:none !important;
-transform:none !important;
--webkit-transform:none !important;
--ms-transform:none !important;
-width:auto !important;
-height:auto  !important;
-display:none !important;
-z-index:2000000000 !important;
-background-color:transparent !important;
-cursor:none !important;
-float:none !important;
-border-radius:unset !important;
-pointer-events:auto !important;
-clip:auto !important;
-color-scheme:light !important;}#un3g1m7horv81706068354275.widget-hidden {display: none !important;}#un3g1m7horv81706068354275.widget-visible {display: block !important;}
-@media print{
- #un3g1m7horv81706068354275.widget-visible { 
-display: none !important;
- }
-}</style><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#xqdhu4eu1tp81706068354316.open{animation : tawkMaxOpen .25s ease!important;}@keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}#xqdhu4eu1tp81706068354316.closed{animation: tawkMaxClose .25s ease!important}</style></head>
+<script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2c776523.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-9294da6c.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b383d.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-48f3b594.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-4fe9d5dd.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b9454.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-24d8db78.js"></script><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#xqdhu4eu1tp81706068354316.open{animation : tawkMaxOpen .25s ease!important;}@keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}#xqdhu4eu1tp81706068354316.closed{animation: tawkMaxClose .25s ease!important}</style></head>
 
 <body onload="table()" data-mytask="theme-indigo">
 
@@ -83,7 +38,7 @@ display: none !important;
                 </a>
                 <!-- Menu: Sub menu ul -->
               </li>          <li class="collapsed">
-            <a class="m-link" data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
+            <a class="m-link " data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
               <i class="icofont-ticket"></i><span>Tickets</span>              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="project-Components">
@@ -99,7 +54,7 @@ display: none !important;
             </ul>
           </li>
           <li class="collapsed">
-                <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
+                <a class="m-link " data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
                   <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
                 <ul class="sub-menu collapse" id="tikit-Components">
@@ -118,7 +73,7 @@ display: none !important;
                 </ul>
               </li>
               <li class="collapsed">
-                <a class="m-link " data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
+                <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
                   <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
                 <ul class="sub-menu collapse" id="client-Components">
@@ -390,43 +345,50 @@ display: none !important;
                 </div>
             </div>
         </div>
-
-      <!-- Modal Members-->
-      <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
+<!-- Modal Members-->
+<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title  fw-bold" id="addUserLabel">Employee Invitation</h5>
+              <h5 class="modal-title fw-bold" id="addUserLabel">
+                Employee Invitation
+              </h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="inviteby_email">
                 <div class="input-group mb-3">
-                  <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1">
-                  <button class="btn btn-dark" type="button" id="button-addon2">Sent</button>
+                  <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1" />
+                  <button class="btn btn-dark" type="button" id="button-addon2">
+                    Sent
+                  </button>
                 </div>
               </div>
               <div class="members_list">
-                <h6 class="fw-bold ">Employee </h6>
+                <h6 class="fw-bold">Employee</h6>
                 <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
                   <li class="list-group-item py-3 text-center text-md-start">
                     <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
                       <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
+                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
                       </div>
                       <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0  fw-bold">Rachel Carr(you)</h6>
+                        <h6 class="mb-0 fw-bold">Rachel Carr(you)</h6>
                         <span class="text-muted">rachel.carr@gmail.com</span>
                       </div>
                       <div class="members-action">
-                        <span class="members-role ">Admin</span>
+                        <span class="members-role">Admin</span>
                         <div class="btn-group">
                           <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icofont-ui-settings  fs-6"></i>
+                            <i class="icofont-ui-settings fs-6"></i>
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a></li>
+                            <li>
+                              <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -435,10 +397,12 @@ display: none !important;
                   <li class="list-group-item py-3 text-center text-md-start">
                     <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
                       <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
+                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
                       </div>
                       <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0  fw-bold">Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a></h6>
+                        <h6 class="mb-0 fw-bold">
+                          Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a>
+                        </h6>
                         <span class="text-muted">lucas.baker@gmail.com</span>
                       </div>
                       <div class="members-action">
@@ -453,22 +417,23 @@ display: none !important;
 
                                 <span>All operations permission</span>
                               </a>
-
                             </li>
                             <li>
                               <a class="dropdown-item" href="#">
                                 <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite &amp; manage team</span>
+                                <span>Only Invite & manage team</span>
                               </a>
                             </li>
                           </ul>
                         </div>
                         <div class="btn-group">
                           <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icofont-ui-settings  fs-6"></i>
+                            <i class="icofont-ui-settings fs-6"></i>
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a></li>
+                            <li>
+                              <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -477,10 +442,10 @@ display: none !important;
                   <li class="list-group-item py-3 text-center text-md-start">
                     <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
                       <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
+                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
                       </div>
                       <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0  fw-bold">Una Coleman</h6>
+                        <h6 class="mb-0 fw-bold">Una Coleman</h6>
                         <span class="text-muted">una.coleman@gmail.com</span>
                       </div>
                       <div class="members-action">
@@ -499,7 +464,7 @@ display: none !important;
                             <li>
                               <a class="dropdown-item" href="#">
                                 <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite &amp; manage team</span>
+                                <span>Only Invite & manage team</span>
                               </a>
                             </li>
                           </ul>
@@ -507,13 +472,21 @@ display: none !important;
                         <div class="btn-group">
                           <div class="btn-group">
                             <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="icofont-ui-settings  fs-6"></i>
+                              <i class="icofont-ui-settings fs-6"></i>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a></li>
+                              <li>
+                                <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a>
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -526,6 +499,8 @@ display: none !important;
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
       <!-- Add Tickit-->
       <div class="modal fade" id="tickadd" tabindex="-1" aria-hidden="true">

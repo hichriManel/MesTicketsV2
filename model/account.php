@@ -9,6 +9,8 @@ class Compte {
     private $type;
     private $centre;
     private $status;
+    private $gender;
+    private $id;
     public function getEmail(){
         return $this->email;
     }
@@ -62,6 +64,26 @@ class Compte {
     }
     public function setStatus($status){
         $this->status = $status;
+    }
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+    public function getGender()
+    {
+        return $this->gender;
+    }
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
     }
 }
 ?>

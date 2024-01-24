@@ -252,7 +252,7 @@ session_start();
                 <div class="u-info me-2">
                   <p class="mb-0 text-end line-height-sm">
                     <span class="font-weight-bold"><?php
-                                                    if ($_SESSION["type"] == "supervisor") {
+                                                    if ($_SESSION['type'] == "supervisor") {
                                                       echo "Superviseur";
                                                     } else {
                                                       echo $_SESSION['nom'] . ' ' . $_SESSION['prenom'];
@@ -260,15 +260,15 @@ session_start();
                                                     ?></span>
                   </p>
                   <small><?php
-                          if ($_SESSION["type"] == "supervisor") {
-                            echo "Superviseur";
-                          } else {
-                            if ($_SESSION["type"] == "supervisor") {
-                              echo "Admin";
-                            } else {
-                              echo "Client";
-                            }
-                          }
+                  if (isset($_SESSION['type'])) {
+                    if ($_SESSION['type'] == "supervisor") {
+                        echo "Superviseur";
+                    } else {
+                        echo "Admin";  // Corrected from "Supervisor"
+                    }
+                } else {
+                    echo "Client";
+                }
                           ?> Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
@@ -293,7 +293,7 @@ session_start();
                           <small class=""><?php echo $_SESSION["email"]; ?></small>
                         </div>
                       </div>
-                     <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php"><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
+                     <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php?id="><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
 
                       <div>
                         <hr class="dropdown-divider border-dark" />
