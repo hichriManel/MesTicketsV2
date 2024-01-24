@@ -4,14 +4,18 @@ require_once "../../model/ticket.php";
 $ticket = new Ticket();
 require_once "../../crud/crudTickets.php";
 $crud = new CrudTicket();
-if ($_SESSION['type'] == "supervisor") {
-  $table = $crud->getAllTickets();
-} else {
-  if ($_SESSION['type'] == "admin") {
-    $table = $crud->getTickets();
+if (isset($_SESSION["email"])) {
+  if ($_SESSION['type'] == "supervisor") {
+    $table = $crud->getAllTickets();
   } else {
-    $table = $crud->getTicketByClient($_SESSION['$email']);
+    if ($_SESSION['type'] == "admin") {
+      $table = $crud->getTickets();
+    } else {
+      $table = $crud->getTicketByClient($_SESSION['$email']);
+    }
   }
+} else {
+  header('location:../../login.php');
 }
 $encour = $crud->getByStatutNum("enCours");
 $fait = $crud->getByStatutNum("Cloture");
