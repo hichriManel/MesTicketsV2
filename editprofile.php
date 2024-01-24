@@ -345,22 +345,6 @@ session_start();
         </nav>
       </div>
       <div class="card mb-3">
-<<<<<<< HEAD
-            <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-              <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
-            </div>
-            <div class="card-body">
-              <form>
-                <div class="col-md-6">
-                  <label class="form-label">Type de Compte</label>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="typec" value="client">
-                        <label class="form-check-label">
-                          client
-                        </label>
-=======
         <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
           <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
         </div>
@@ -396,7 +380,6 @@ session_start();
                     <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
                       <div class="no-thumbnail mb-2 mb-md-0">
                         <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
->>>>>>> 67e764cc0dcfd46f9e32dfa22ea735262f80b60f
                       </div>
                       <div class="flex-fill ms-3 text-truncate">
                         <h6 class="mb-0 fw-bold">Rachel Carr(you)</h6>
