@@ -122,17 +122,22 @@ if (isset($_GET["status"])) {
               <!-- header rightbar icon -->
               <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
                 <!--Help-->
-                <div class="d-flex">
-                  <div class="avatar-list avatar-list-stacked px-3">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="" />
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
-                    <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
+                <?php
+                if ($_SESSION["type"] == "supervisor") {
+                ?>
+                  <div class="d-flex">
+                    <div class="avatar-list avatar-list-stacked px-3">
+                      <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
+                      <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="" />
+                      <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
+                      <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="" />
+                      <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="" />
+                      <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
+                      <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
+                    </div>
                   </div>
-                </div>
+                <?php
+                } ?>
                 <!--Notification-->
                 <div class="dropdown notifications">
                   <a class="nav-link dropdown-toggle pulse" href="#" role="button" data-bs-toggle="dropdown">
@@ -238,9 +243,25 @@ if (isset($_GET["status"])) {
                 <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                   <div class="u-info me-2">
                     <p class="mb-0 text-end line-height-sm">
-                      <span class="font-weight-bold">Dylan Hunter</span>
+                      <span class="font-weight-bold"><?php
+                                                      if ($_SESSION["type"] == "supervisor") {
+                                                        echo "Superviseur";
+                                                      } else {
+                                                        echo $_SESSION['nom'] . ' ' . $_SESSION['prenom'];
+                                                      }
+                                                      ?></span>
                     </p>
-                    <small>Admin Profile</small>
+                    <small><?php
+                            if ($_SESSION["type"] == "supervisor") {
+                              echo "Superviseur";
+                            } else {
+                              if ($_SESSION["type"] == "supervisor") {
+                                echo "Admin";
+                              } else {
+                                echo "Client";
+                              }
+                            }
+                            ?> Profile</small>
                   </div>
                   <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
                     <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile" />
@@ -253,9 +274,15 @@ if (isset($_GET["status"])) {
                           <img class="avatar rounded-circle" src="assets/images/profile_av.png" alt="profile" />
                           <div class="flex-fill ms-3">
                             <p class="mb-0">
-                              <span class="font-weight-bold">Dylan Hunter</span>
+                              <span class="font-weight-bold"><?php
+                                                              if ($_SESSION["type"] == "supervisor") {
+                                                                echo "Superviseur";
+                                                              } else {
+                                                                echo $_SESSION['nom'] . ' ' . $_SESSION['prenom'];
+                                                              }
+                                                              ?></span>
                             </p>
-                            <small class="">Dylan.hunter@gmail.com</small>
+                            <small class=""><?php echo $_SESSION["email"]; ?></small>
                           </div>
                         </div>
 
@@ -265,11 +292,18 @@ if (isset($_GET["status"])) {
                       </div>
                       <div class="list-group m-2">
                         <a href="deconnexion.php" class="list-group-item list-group-item-action border-0"><i class="icofont-logout fs-6 me-3"></i>Déconnexion</a>
-                        <div>
-                          <hr class="dropdown-divider border-dark" />
-                        </div>
-                        <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
-                          un Compte</a>
+                        <?php
+                        if ($_SESSION["type"] == "supervisor") {
+                        ?>
+                          <div>
+                            <hr class="dropdown-divider border-dark" />
+                          </div>
+                          <a href="ui-elements/auth-signup.html" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
+                            un Compte</a>
+                        <?php
+                        }
+                        ?>
+
                       </div>
                     </div>
                   </div>
