@@ -128,28 +128,18 @@ LEFT JOIN
     public function getTicketByContact($contact)
     {
 
-        $req = "SELECT 
+        $req = "SELECT
     t.ticketId, 
     t.demande, 
     t.DateHeure, 
-    s.nom AS societe_nom, 
     t.Diagnostic, 
-    a.nom AS account_nom, 
     t.Categorie, 
     t.Priorite, 
-    t.Status,
-    c.cloture_par,
-    c.dateheur AS cloture_dateheur
+    t.Status
 FROM 
     ticket t
-JOIN 
-    account a ON a.email = t.contact
-JOIN 
-    societe s ON s.id = a.centre
-LEFT JOIN
-    cloture c ON c.ticket_id = t.ticketId
 WHERE 
-    (c.cloture_par = '$contact' );
+    (t.contact  = '$contact' );
 ";
 
         $stmt = $this->pdo->prepare($req);
