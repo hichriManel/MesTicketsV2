@@ -19,7 +19,11 @@ $fait = $crud->getByStatutNum("Cloture");
     <th>Categorie</th>
     <th>Priorité</th>
     <th>Statut</th>
-    <th>Action</th>
+    <?php
+    if ($_SESSION['type']!="client") {
+      echo"<th>Action</th>";
+    }
+    ?>
   </tr>
 </thead>
 <tbody>
@@ -68,13 +72,15 @@ $fait = $crud->getByStatutNum("Cloture");
       } else {
         echo "<td><span class='badge bg-success'>" . $row[8] . "</span></td>";
       }
-      if ($row[8] == "enCours") {
-        echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Cloturer</button></a></td>";
-      } else {
-        if ($row[4] == '') {
-          echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Ajouter Diag</button></a></td>";
+      if ($_SESSION['type']!="client") {
+        if ($row[8] == "enCours") {
+          echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Cloturer</button></a></td>";
         } else {
-          echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Modifier</button></a></td>";
+          if ($row[4] == '') {
+            echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Ajouter Diag</button></a></td>";
+          } else {
+            echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Modifier</button></a></td>";
+          }
         }
       }
       echo "</tr>";
