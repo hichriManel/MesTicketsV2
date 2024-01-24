@@ -13,11 +13,25 @@ class CrudTicket
     }
     public function CreerTicket($ticket)
     {
-        $datenow = date("Y-m-d H:i:s");
-        $req = "INSERT INTO ticket VALUES({$datenow},{$ticket->getContact()},{$ticket->getDemande()},{$ticket->getDiagnostique()},{$ticket->getCategorie()},{$ticket->getPreorite()},'encour',{null},{null},{null});";
-        $stmt = $this->pdo->exec($req);
+        $demande = $ticket->getDemande();
+        $diagnostic = $ticket->getDiagnostique();
+        $categorie = $ticket->getCategorie();
+        $contact = $ticket->getContact();
+    
+        $req = "INSERT INTO ticket (DateHeure, demande, Diagnostic, Categorie, Priorite, Status, contact) VALUES (NOW(), :demande, :diagnostic, :categorie, 'urgent', 'enCours', :contact)";
+        
+        $stmt = $this->pdo->prepare($req);
+    
+        $stmt->bindParam(':demande', $demande);
+        $stmt->bindParam(':diagnostic', $diagnostic);
+        $stmt->bindParam(':categorie', $categorie);
+        $stmt->bindParam(':contact', $contact);
+    
+        $stmt->execute();
+    
         return $stmt;
     }
+    
 
     public function getTickets()
     {
@@ -76,7 +90,8 @@ LEFT JOIN
     {
         $req = "SELECT * FROM ticket WHERE reference={$reference}";
         $stmt = $this->pdo->query($req);
-        return $stmt->fetch();
+        $result = $stmt->fetch();
+        return $result;
     }
     public function getTicketByCat($cat)
     {
@@ -102,13 +117,15 @@ LEFT JOIN
     {
         $req = "SELECT Diagnostic FROM ticket WHERE ticketId={$id}";
         $stmt = $this->pdo->query($req);
-        return $stmt->fetch()[0];
+        $result = $stmt->fetch();
+        return $result[0];
     }
     public function clotureExist($id)
     {
         $req = "SELECT count(ticket_id) FROM cloture WHERE ticket_id={$id}";
         $stmt = $this->pdo->query($req);
-        return $stmt->fetch()[0];
+        $result = $stmt->fetch();
+        return $result[0];
     }
     public function cloture($id, $diag)
     {

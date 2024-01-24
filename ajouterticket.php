@@ -350,7 +350,7 @@ session_start();
           <h6 class="mb-0 fw-bold ">Avez-vous un problème ? Nous sommes là pour vous aider !</h6>
         </div>
         <div class="card-body">
-          <form id="basic-form" method="post" novalidate="">
+          <form id="basic-form" method="post" novalidate="" action="controller/ticket/addticket.php">
             <div class="row g-3 align-items-center">
               <div class="col-md-12">
                 <div class="form-group">
@@ -374,7 +374,7 @@ session_start();
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Validate</button>
+            <button type="submit" class="btn btn-primary" name='envoyer' >Envoyer</button>
           </form>
         </div>
       </div>
