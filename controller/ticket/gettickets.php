@@ -1,27 +1,12 @@
 <?php
 require_once "../../model/ticket.php";
-
 $ticket = new Ticket();
 require_once "../../crud/crudTickets.php";
 $crud = new CrudTicket();
-if (isset($_SESSION["email"])) {
-  if ($_SESSION['type'] == "supervisor") {
-    $table = $crud->getAllTickets();
-  } else {
-    if ($_SESSION['type'] == "admin") {
-      $table = $crud->getTickets();
-    } else {
-      $table = $crud->getTicketByClient($_SESSION['email']);
-    }
-  }
-} else {
-  header('location:../../login.php');
-}
+$table = $crud->getTickets();
 $encour = $crud->getByStatutNum("enCours");
 $fait = $crud->getByStatutNum("Cloture");
-if($table){
 ?>
-
 <thead>
   <tr>
     <th>Numéro de ticket</th>
@@ -49,13 +34,20 @@ if($table){
     echo "<td>" . $row[6] . "</td>";
     echo "<td>" . $row[7] . "</td>";
     if ($row[8] == "enCours") {
-      echo "<td><span class='badge bg-warning'>" . $row[8] . "</span></td>";
+      echo "<td><span class='badge bg-danger'>" . $row[8] . "</span></td>";
     } else {
       echo "<td><span class='badge bg-success'>" . $row[8] . "</span></td>";
     }
     if ($row[8] == "enCours") {
-      echo "<td><a href='cloture.php?id=" . $row[0] . "'><button>Cloturer</button></a></td>";
+      echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Cloturer</button></a></td>";
+    } else {
+      if ($row[4] == '') {
+        echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Ajouter Diag</button></a></td>";
+      } else {
+        echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Modifier</button></a></td>";
+      }
     }
     echo "</tr>";
-  }}
+  }
   ?>
+</tbody>
