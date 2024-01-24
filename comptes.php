@@ -1,60 +1,173 @@
-<html class="no-js" lang="en" dir="ltr" data-theme="light"><head>
+<html class="no-js" lang="en" dir="ltr" data-theme="light">
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Tickets</title>
+  <title>Comptes</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
-  <!-- plugin css file  -->
   <link rel="stylesheet" href="assets/plugin/datatables/responsive.dataTables.min.css">
   <link rel="stylesheet" href="assets/plugin/datatables/dataTables.bootstrap5.min.css">
-  <!-- project css file  -->
   <link rel="stylesheet" href="assets/css/my-task.style.min.css">
-<script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2c776523.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-9294da6c.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b383d.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-48f3b594.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-4fe9d5dd.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b9454.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-24d8db78.js"></script><style type="text/css">#un3g1m7horv81706068354275 {outline:none !important;
-visibility:visible !important;
-resize:none !important;
-box-shadow:none !important;
-overflow:visible !important;
-background:none !important;
-opacity:1 !important;
-filter:alpha(opacity=100) !important;
--ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important;
--mz-opacity:1 !important;
--khtml-opacity:1 !important;
-top:auto !important;
-right:0px !important;
-bottom:0px !important;
-left:auto !important;
-position:fixed !important;
-border:0 !important;
-min-height:0px  !important;
-min-width:0px  !important;
-max-height:none  !important;
-max-width:none  !important;
-padding:0px !important;
-margin:0px !important;
--moz-transition-property:none !important;
--webkit-transition-property:none !important;
--o-transition-property:none !important;
-transition-property:none !important;
-transform:none !important;
--webkit-transform:none !important;
--ms-transform:none !important;
-width:auto !important;
-height:auto  !important;
-display:none !important;
-z-index:2000000000 !important;
-background-color:transparent !important;
-cursor:none !important;
-float:none !important;
-border-radius:unset !important;
-pointer-events:auto !important;
-clip:auto !important;
-color-scheme:light !important;}#un3g1m7horv81706068354275.widget-hidden {display: none !important;}#un3g1m7horv81706068354275.widget-visible {display: block !important;}
-@media print{
- #un3g1m7horv81706068354275.widget-visible { 
-display: none !important;
- }
-}</style><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#xqdhu4eu1tp81706068354316.open{animation : tawkMaxOpen .25s ease!important;}@keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}#xqdhu4eu1tp81706068354316.closed{animation: tawkMaxClose .25s ease!important}</style></head>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2c776523.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-9294da6c.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b383d.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-48f3b594.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-4fe9d5dd.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b9454.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-24d8db78.js"></script>
+  <style type="text/css">
+    #un3g1m7horv81706068354275 {
+      outline: none !important;
+      visibility: visible !important;
+      resize: none !important;
+      box-shadow: none !important;
+      overflow: visible !important;
+      background: none !important;
+      opacity: 1 !important;
+      filter: alpha(opacity=100) !important;
+      -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity 1) !important;
+      -mz-opacity: 1 !important;
+      -khtml-opacity: 1 !important;
+      top: auto !important;
+      right: 0px !important;
+      bottom: 0px !important;
+      left: auto !important;
+      position: fixed !important;
+      border: 0 !important;
+      min-height: 0px !important;
+      min-width: 0px !important;
+      max-height: none !important;
+      max-width: none !important;
+      padding: 0px !important;
+      margin: 0px !important;
+      -moz-transition-property: none !important;
+      -webkit-transition-property: none !important;
+      -o-transition-property: none !important;
+      transition-property: none !important;
+      transform: none !important;
+      -webkit-transform: none !important;
+      -ms-transform: none !important;
+      width: auto !important;
+      height: auto !important;
+      display: none !important;
+      z-index: 2000000000 !important;
+      background-color: transparent !important;
+      cursor: none !important;
+      float: none !important;
+      border-radius: unset !important;
+      pointer-events: auto !important;
+      clip: auto !important;
+      color-scheme: light !important;
+    }
+
+    #un3g1m7horv81706068354275.widget-hidden {
+      display: none !important;
+    }
+
+    #un3g1m7horv81706068354275.widget-visible {
+      display: block !important;
+    }
+
+    @media print {
+      #un3g1m7horv81706068354275.widget-visible {
+        display: none !important;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script>
+  <script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script>
+  <style type="text/css">
+    @keyframes tawkMaxOpen {
+      0% {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(0, 0px);
+      }
+    }
+
+    @-moz-keyframes tawkMaxOpen {
+      0% {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(0, 0px);
+      }
+    }
+
+    @-webkit-keyframes tawkMaxOpen {
+      0% {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(0, 0px);
+      }
+    }
+
+    #xqdhu4eu1tp81706068354316.open {
+      animation: tawkMaxOpen .25s ease !important;
+    }
+
+    @keyframes tawkMaxClose {
+      from {
+        opacity: 1;
+        transform: translate(0, 0px);
+        ;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+    }
+
+    @-moz-keyframes tawkMaxClose {
+      from {
+        opacity: 1;
+        transform: translate(0, 0px);
+        ;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+    }
+
+    @-webkit-keyframes tawkMaxClose {
+      from {
+        opacity: 1;
+        transform: translate(0, 0px);
+        ;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+    }
+
+    #xqdhu4eu1tp81706068354316.closed {
+      animation: tawkMaxClose .25s ease !important
+    }
+  </style>
+</head>
 
 <body onload="table()" data-mytask="theme-indigo">
 
@@ -78,13 +191,14 @@ display: none !important;
 
 
           <li class="collapsed">
-                <a class="m-link" data-bs-target="#dashboard-Components" href="dashboard.php">
-                  <i class="icofont-home fs-5"></i> <span>Dashboard</span>
-                </a>
-                <!-- Menu: Sub menu ul -->
-              </li>          <li class="collapsed">
+            <a class="m-link" data-bs-target="#dashboard-Components" href="dashboard.php">
+              <i class="icofont-home fs-5"></i> <span>Dashboard</span>
+            </a>
+            <!-- Menu: Sub menu ul -->
+          </li>
+          <li class="collapsed">
             <a class="m-link" data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
-              <i class="icofont-ticket"></i><span>Tickets</span>              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+              <i class="icofont-ticket"></i><span>Tickets</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="project-Components">
               <li>
@@ -99,43 +213,43 @@ display: none !important;
             </ul>
           </li>
           <li class="collapsed">
-                <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
-                  <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
-                <!-- Menu: Sub menu ul -->
-                <ul class="sub-menu collapse" id="tikit-Components">
-                  <li>
-                    <a class="ms-link" href="comptes.php?tout">
-                      <span>Tout</span></a>
-                  </li>
-                  <li>
-                    <a class="ms-link" href="comptes.php?client">
-                      <span>Client</span></a>
-                  </li>
-                  <li>
-                    <a class="ms-link" href="comptes.php?employe">
-                      <span>Employees</span></a>
-                  </li>
-                </ul>
+            <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
+              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+            <!-- Menu: Sub menu ul -->
+            <ul class="sub-menu collapse" id="tikit-Components">
+              <li>
+                <a class="ms-link" href="comptes.php?type=tout">
+                  <span>Tout</span></a>
               </li>
-              <li class="collapsed">
-                <a class="m-link " data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
-                  <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
-                <!-- Menu: Sub menu ul -->
-                <ul class="sub-menu collapse" id="client-Components">
-                  <li>
-                    <a class="ms-link" href="ajoutercompte.php">
-                      <span>Ajouter Comptes</span></a>
-                  </li>
-                  <li>
-                    <a class="ms-link" href="verifier.php">
-                      <span>Verifier Comptes</span></a>
-                  </li>
-                  <li>
-                    <a class="ms-link" href="supprimer.php">
-                      <span>Supprimer Comptes</span></a>
-                  </li>
-                </ul>
+              <li>
+                <a class="ms-link" href="comptes.php?type=Client">
+                  <span>Client</span></a>
               </li>
+              <li>
+                <a class="ms-link" href="comptes.php?type=Employee">
+                  <span>Employees</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="collapsed">
+            <a class="m-link " data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
+              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+            <!-- Menu: Sub menu ul -->
+            <ul class="sub-menu collapse" id="client-Components">
+              <li>
+                <a class="ms-link" href="ajoutercompte.php">
+                  <span>Ajouter Comptes</span></a>
+              </li>
+              <li>
+                <a class="ms-link" href="verifier.php">
+                  <span>Verifier Comptes</span></a>
+              </li>
+              <li>
+                <a class="ms-link" href="supprimer.php">
+                  <span>Supprimer Comptes</span></a>
+              </li>
+            </ul>
+          </li>
         </ul>
         <button type="button" class="btn btn-link sidebar-mini-btn text-light">
           <span class="ms-2"><i class="icofont-bubble-right"></i></span>
@@ -151,18 +265,18 @@ display: none !important;
             <!-- header rightbar icon -->
             <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
               <!--Help-->
-                              <div class="d-flex">
-                  <div class="avatar-list avatar-list-stacked px-3">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
-                    <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
-                  </div>
+              <div class="d-flex">
+                <div class="avatar-list avatar-list-stacked px-3">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
+                  <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
                 </div>
-                            <!--Notification-->
+              </div>
+              <!--Notification-->
               <div class="dropdown notifications">
                 <a class="nav-link dropdown-toggle pulse" href="#" role="button" data-bs-toggle="dropdown">
                   <i class="icofont-alarm fs-5"></i>
@@ -287,19 +401,19 @@ display: none !important;
                           <small class="">zimys@gmail.com</small>
                         </div>
                       </div>
-                     <div class="text-center"> <a href="editprofile.php"><button class="btn btn-primary"><i class="icofont-ui-edit"></i></button></a> <a href="profile.php"><button class="btn btn-primary"><i class="icofont-eye-open"></i></button> </a></div>
+                      <div class="text-center"> <a href="editprofile.php"><button class="btn btn-primary"><i class="icofont-ui-edit"></i></button></a> <a href="profile.php"><button class="btn btn-primary"><i class="icofont-eye-open"></i></button> </a></div>
                       <div>
                         <hr class="dropdown-divider border-dark">
                       </div>
                     </div>
                     <div class="list-group m-2">
                       <a href="deconnexion.php" class="list-group-item list-group-item-action border-0"><i class="icofont-logout fs-6 me-3"></i>Déconnexion</a>
-                                              <div>
-                          <hr class="dropdown-divider border-dark">
-                        </div>
-                        <a href="ajoutercompte.php" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
-                          un Compte</a>
-                      
+                      <div>
+                        <hr class="dropdown-divider border-dark">
+                      </div>
+                      <a href="ajoutercompte.php" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
+                        un Compte</a>
+
                     </div>
                   </div>
                 </div>
@@ -333,63 +447,44 @@ display: none !important;
 
       <!-- Body: Body -->
       <div class="body d-flex py-lg-3 py-md-2">
-            <div class="container-xxl">
-                <div class="row clearfix">
-                    <div class="col-md-12">
-                        <div class="card border-0 mb-4 no-bg">
-                            <div class="card-header py-3 px-0 d-flex align-items-center  justify-content-between border-bottom">
-                                <h3 class=" fw-bold flex-fill mb-0">Clients</h3>
-                                <div class="col-auto d-flex">
-                                    <div class="dropdown ">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Status
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2" style="">
-                                        <li><a class="dropdown-item" href="#">Company</a></li>
-                                        <li><a class="dropdown-item" href="#">AgilSoft Tech</a></li>
-                                        <li><a class="dropdown-item" href="#">Macrosoft</a></li>
-                                        <li><a class="dropdown-item" href="#">Google</a></li>
-                                        <li><a class="dropdown-item" href="#">Pixelwibes</a></li>
-                                        <li><a class="dropdown-item" href="#">Deltasoft Tech</a></li>
-                                        <li><a class="dropdown-item" href="#">Design Tech</a></li>
-                                        </ul>
-                                    </div>
-                                    <a href="ajoutercompte.php"><button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button></a>
-                                </div>
-                            </div>
-                        </div>
+        <div class="container-xxl">
+          <div class="row clearfix">
+            <div class="col-md-12">
+              <div class="card border-0 mb-4 no-bg">
+                <div class="card-header py-3 px-0 d-flex align-items-center  justify-content-between border-bottom">
+                  <?php
+                  if (isset($_GET['type'])) {
+                    echo '<h6 class="mb-0 fw-bold">' . $_GET['type'] . 's</h6>';
+                  } else {
+                    echo '<h6 class="mb-0 fw-bold">Tout les Comptes</h6>';
+                  }
+                  ?>
+                  <div class="col-auto d-flex">
+                    <div class="dropdown ">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        Status
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
+                        <li><a class="dropdown-item" href="#">Company</a></li>
+                        <li><a class="dropdown-item" href="#">AgilSoft Tech</a></li>
+                        <li><a class="dropdown-item" href="#">Macrosoft</a></li>
+                        <li><a class="dropdown-item" href="#">Google</a></li>
+                        <li><a class="dropdown-item" href="#">Pixelwibes</a></li>
+                        <li><a class="dropdown-item" href="#">Deltasoft Tech</a></li>
+                        <li><a class="dropdown-item" href="#">Design Tech</a></li>
+                      </ul>
                     </div>
-                </div><!-- Row End -->
-                <div class="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-deck py-1 pb-4">
-                <div class="col">
-                        <div class="card teacher-card">
-                            <div class="card-body  d-flex">
-                                <div class="profile-av pe-xl-4 pe-md-2 pe-sm-4 pe-4 text-center w220">
-                                    <img src="assets/images/lg/avatar5.jpg" alt="" class="avatar xl rounded-circle img-thumbnail shadow-sm">
-                                    <div class="about-info d-flex align-items-center mt-1 justify-content-center flex-column">
-                                       <h6 class="mb-0 fw-bold d-block fs-6 mt-2">Manager</h6>
-                                        <div class="btn-group mt-2" role="group" aria-label="Basic outlined example">
-                                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editproject"><i class="icofont-edit text-success"></i></button>
-                                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#deleteproject"><i class="icofont-ui-delete text-danger"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="teacher-info border-start ps-xl-4 ps-md-3 ps-sm-4 ps-4 w-100">
-                                    <h6 class="mb-0 mt-2  fw-bold d-block fs-6">Rocobend</h6>
-                                    <span class="py-1 fw-bold small-11 mb-0 mt-1 text-muted">Piers Churchill</span>
-                                    <div class="video-setting-icon mt-3 pt-3 border-top">
-                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-                                    </div>
-                                    <div class="d-flex flex-wrap align-items-center ct-btn-set">
-                                        <a href="profile.php" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="ajoutercompte.php"><button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button></a>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div><!-- Row End -->
+          <div class="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-deck py-1 pb-4" id="table">
+
+          </div>
         </div>
+      </div>
 
       <!-- Modal Members-->
       <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
@@ -622,7 +717,14 @@ display: none !important;
   </div>
 
   <!-- Jquery Core Js -->
-  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-main.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-vendor.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-vendors.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-common.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-runtime.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-app.js" charset="UTF-8" crossorigin="*"></script><script async="" src="https://embed.tawk.to/6051a040f7ce18270930e55a/1f3d4os21" charset="UTF-8" crossorigin="*"></script><script src="assets/bundles/libscripts.bundle.js"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-main.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-vendor.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-vendors.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-common.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-runtime.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-app.js" charset="UTF-8" crossorigin="*"></script>
+  <script async="" src="https://embed.tawk.to/6051a040f7ce18270930e55a/1f3d4os21" charset="UTF-8" crossorigin="*"></script>
+  <script src="assets/bundles/libscripts.bundle.js"></script>
 
   <!-- Plugin Js-->
   <script src="assets/bundles/dataTables.bundle.js"></script>
@@ -633,10 +735,14 @@ display: none !important;
     function table() {
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function() {
-        document.getElementById("exemple").innerHTML = this.responseText;
+        document.getElementById("table").innerHTML = this.responseText;
       }
-            xhttp.open("GET", "controller/ticket/gettickets.php");
-        xhttp.send();
+      if (<?php echo isset($_GET['type']) ?>) {
+        xhttp.open("GET", "controller/compte/getComptes.php?type=<?php echo $_GET['type'] ?>");
+      } else {
+        xhttp.open("GET", "controller/compte/getComptes.php?type=tout");
+      }
+      xhttp.send();
 
     }
     setInterval(table, 6000);
@@ -645,7 +751,9 @@ display: none !important;
 
 
 
-<script async="" charset="UTF-8" src="https://embed.tawk.to/_s/v4/app/65839862293/languages/en.js">
+  <script async="" charset="UTF-8" src="https://embed.tawk.to/_s/v4/app/65839862293/languages/en.js">
 
-</script>
-</body></html>
+  </script>
+</body>
+
+</html>

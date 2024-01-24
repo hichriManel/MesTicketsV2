@@ -36,6 +36,17 @@ class CRUD
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM) == null ? false : true;
     }
+    function listerParType($type)
+    {
+        if ($type == "Client") {
+            $type = "client";
+        } else {
+            $type = "admin";
+        }
+        $sql = "select * from account where type='$type';";
+        $res = $this->pdo->query($sql);
+        return $res->fetchAll(PDO::FETCH_NUM);
+    }
     function getId($email)
     {
         $sql = "select id from account where email='$email';";

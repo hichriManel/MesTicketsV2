@@ -2,7 +2,7 @@
 session_start();
 if (isset($_GET['id'])) {
 } else {
-  header("location:comptes.php");
+  header("location:comptes.php?type=tout");
 }
 ?>
 <!doctype html>
@@ -87,15 +87,15 @@ if (isset($_GET['id'])) {
                 <!-- Menu: Sub menu ul -->
                 <ul class="sub-menu collapse" id="tikit-Components">
                   <li>
-                    <a class="ms-link" href="comptes.php?tout">
+                    <a class="ms-link" href="comptes.php?type=tout">
                       <span>Tout</span></a>
                   </li>
                   <li>
-                    <a class="ms-link" href="comptes.php?client">
+                    <a class="ms-link" href="comptes.php?type=Client">
                       <span>Client</span></a>
                   </li>
                   <li>
-                    <a class="ms-link" href="comptes.php?employe">
+                    <a class="ms-link" href="comptes.php?type=Employee">
                       <span>Employees</span></a>
                   </li>
                 </ul>

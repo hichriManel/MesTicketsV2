@@ -1,7 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["email"])){
-  
+if (isset($_SESSION["email"])) {
 }
 ?>
 
@@ -83,15 +82,15 @@ if(isset($_SESSION["email"])){
                 <!-- Menu: Sub menu ul -->
                 <ul class="sub-menu collapse" id="tikit-Components">
                   <li>
-                    <a class="ms-link" href="comptes.php?tout">
+                    <a class="ms-link" href="comptes.php?type=tout">
                       <span>Tout</span></a>
                   </li>
                   <li>
-                    <a class="ms-link" href="comptes.php?client">
+                    <a class="ms-link" href="comptes.php?type=Client">
                       <span>Client</span></a>
                   </li>
                   <li>
-                    <a class="ms-link" href="comptes.php?employe">
+                    <a class="ms-link" href="comptes.php?type=Employee">
                       <span>Employees</span></a>
                   </li>
                 </ul>
@@ -263,15 +262,15 @@ if(isset($_SESSION["email"])){
                                                     ?></span>
                   </p>
                   <small><?php
-                  if (isset($_SESSION['type'])) {
-                    if ($_SESSION['type'] == "supervisor") {
-                        echo "Superviseur";
-                    } else {
-                        echo "Admin";  // Corrected from "Supervisor"
-                    }
-                } else {
-                    echo "Client";
-                }
+                          if (isset($_SESSION['type'])) {
+                            if ($_SESSION['type'] == "supervisor") {
+                              echo "Superviseur";
+                            } else {
+                              echo "Admin";  // Corrected from "Supervisor"
+                            }
+                          } else {
+                            echo "Client";
+                          }
                           ?> Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
@@ -296,7 +295,7 @@ if(isset($_SESSION["email"])){
                           <small class=""><?php echo $_SESSION["email"]; ?></small>
                         </div>
                       </div>
-                     <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php?id="><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
+                      <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php?id="><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
 
                       <div>
                         <hr class="dropdown-divider border-dark" />
