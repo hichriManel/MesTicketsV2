@@ -36,29 +36,29 @@ session_start();
         <ul class="menu-list flex-grow-1 mt-3">
 
 
-          <?php if ($_SESSION['type']="client") {
-                echo ' <li class="collapsed">
+          <?php if ($_SESSION['type'] == "client") {
+            echo '<li class="collapsed">
                 <a class="m-link active" data-bs-toggle="collapse"  href="ajouterticket.php">
                   <i class="icofont-home fs-5"></i> <span>Nouveau Ticket</span>
                 </a>
               </li>';
-              }else {
-                echo '          <li class="collapsed">
+          } else {
+            echo '<li class="collapsed">
                 <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="index.php">
                   <i class="icofont-home fs-5"></i> <span>Dashboard</span>
                 </a>
                 <!-- Menu: Sub menu ul -->
               </li>';
-              }
-              ?>
+          }
+          ?>
           <li class="collapsed">
             <a class="m-link" data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
-              <i class="icofont-ticket"></i><?php if ($_SESSION['type']="client") {
-                echo "<span>Mes Tickets</span>";
-              }else {
-                echo "<span>Tickets</span>";
-              }
-              ?>
+              <i class="icofont-ticket"></i><?php if ($_SESSION['type'] == "client") {
+                                              echo "<span>Mes Tickets</span>";
+                                            } else {
+                                              echo "<span>Tickets</span>";
+                                            }
+                                            ?>
               <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="project-Components">
@@ -66,17 +66,16 @@ session_start();
                 <a class="ms-link" href="tickets.php"><span>Tout</span></a>
               </li>
               <li>
-                <a class="ms-link" href="tickets.php?status=En Cours"><span>En Cours</span></a>
+                <a class="ms-link" href="tickets.php?status=enCours"><span>En Cours</span></a>
               </li>
               <li>
-                <a class="ms-link" href="tickets.php?status=Complété"><span>Complété</span></a>
+                <a class="ms-link" href="tickets.php?status=Cloture"><span>Complété</span></a>
               </li>
             </ul>
           </li>
-          <?php if ($_SESSION['type']="client") {
-                
-              }else {
-                echo '<li class="collapsed">
+          <?php if ($_SESSION['type'] == "client") {
+          } else {
+            echo '<li class="collapsed">
                 <a class="m-link" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
                   <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
@@ -114,9 +113,9 @@ session_start();
                   </li>
                 </ul>
               </li>';
-              }
-              ?>
-          
+          }
+          ?>
+
         </ul>
         <button type="button" class="btn btn-link sidebar-mini-btn text-light">
           <span class="ms-2"><i class="icofont-bubble-right"></i></span>
@@ -346,73 +345,165 @@ session_start();
       </div>
 
       <div class="card mb-3">
-                            <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                <h6 class="mb-0 fw-bold ">Avez-vous un problème ? Nous sommes là pour vous aider !</h6> 
-                            </div>
-                            <div class="card-body">
-                                <form id="basic-form" method="post" novalidate="">
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="form-label">Demande</label>
-                                                <textarea class="form-control" rows="5" cols="30" required="required" name="demande"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="form-label">Choisir la Catégorie</label>
-                                                <br>
-                                                <label class="fancy-radio">
-                                                    <input type="radio" name="categorie" value="Hardware" required="required" data-parsley-errors-container="#error-radio" data-parsley-multiple="categorie">
-                                                    <span><i></i>Hardware</span>
-                                                </label>
-                                                <label class="fancy-radio">
-                                                    <input type="radio" name="categorie" value="Software" data-parsley-multiple="categorie">
-                                                    <span><i></i>Software</span>
-                                                </label>
-                                                <p id="error-radio"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Validate</button>
-                                </form>
-                            </div>
-                        </div>
-      </div>
-
-      <!-- Modal Members-->
-      <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title fw-bold" id="addUserLabel">
-                Employee Invitation
-              </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="inviteby_email">
-                <div class="input-group mb-3">
-                  <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1" />
-                  <button class="btn btn-dark" type="button" id="button-addon2">
-                    Sent
-                  </button>
+        <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+          <h6 class="mb-0 fw-bold ">Avez-vous un problème ? Nous sommes là pour vous aider !</h6>
+        </div>
+        <div class="card-body">
+          <form id="basic-form" method="post" novalidate="">
+            <div class="row g-3 align-items-center">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="form-label">Demande</label>
+                  <textarea class="form-control" rows="5" cols="30" required="required" name="demande"></textarea>
                 </div>
               </div>
-              <div class="members_list">
-                <h6 class="fw-bold">Employee</h6>
-                <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
-                  <li class="list-group-item py-3 text-center text-md-start">
-                    <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
-                      <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="form-label">Choisir la Catégorie</label>
+                  <br>
+                  <label class="fancy-radio">
+                    <input type="radio" name="categorie" value="Hardware" required="required" data-parsley-errors-container="#error-radio" data-parsley-multiple="categorie">
+                    <span><i></i>Hardware</span>
+                  </label>
+                  <label class="fancy-radio">
+                    <input type="radio" name="categorie" value="Software" data-parsley-multiple="categorie">
+                    <span><i></i>Software</span>
+                  </label>
+                  <p id="error-radio"></p>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Validate</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Members-->
+    <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="addUserLabel">
+              Employee Invitation
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="inviteby_email">
+              <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1" />
+                <button class="btn btn-dark" type="button" id="button-addon2">
+                  Sent
+                </button>
+              </div>
+            </div>
+            <div class="members_list">
+              <h6 class="fw-bold">Employee</h6>
+              <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
+                <li class="list-group-item py-3 text-center text-md-start">
+                  <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
+                    <div class="no-thumbnail mb-2 mb-md-0">
+                      <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
+                    </div>
+                    <div class="flex-fill ms-3 text-truncate">
+                      <h6 class="mb-0 fw-bold">Rachel Carr(you)</h6>
+                      <span class="text-muted">rachel.carr@gmail.com</span>
+                    </div>
+                    <div class="members-action">
+                      <span class="members-role">Admin</span>
+                      <div class="btn-group">
+                        <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="icofont-ui-settings fs-6"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li>
+                            <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
+                          </li>
+                        </ul>
                       </div>
-                      <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0 fw-bold">Rachel Carr(you)</h6>
-                        <span class="text-muted">rachel.carr@gmail.com</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item py-3 text-center text-md-start">
+                  <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
+                    <div class="no-thumbnail mb-2 mb-md-0">
+                      <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
+                    </div>
+                    <div class="flex-fill ms-3 text-truncate">
+                      <h6 class="mb-0 fw-bold">
+                        Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a>
+                      </h6>
+                      <span class="text-muted">lucas.baker@gmail.com</span>
+                    </div>
+                    <div class="members-action">
+                      <div class="btn-group">
+                        <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          Members
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              <i class="icofont-check-circled"></i>
+
+                              <span>All operations permission</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              <i class="fs-6 p-2 me-1"></i>
+                              <span>Only Invite & manage team</span>
+                            </a>
+                          </li>
+                        </ul>
                       </div>
-                      <div class="members-action">
-                        <span class="members-role">Admin</span>
+                      <div class="btn-group">
+                        <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="icofont-ui-settings fs-6"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li>
+                            <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item py-3 text-center text-md-start">
+                  <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
+                    <div class="no-thumbnail mb-2 mb-md-0">
+                      <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
+                    </div>
+                    <div class="flex-fill ms-3 text-truncate">
+                      <h6 class="mb-0 fw-bold">Una Coleman</h6>
+                      <span class="text-muted">una.coleman@gmail.com</span>
+                    </div>
+                    <div class="members-action">
+                      <div class="btn-group">
+                        <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          Members
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              <i class="icofont-check-circled"></i>
+
+                              <span>All operations permission</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              <i class="fs-6 p-2 me-1"></i>
+                              <span>Only Invite & manage team</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="btn-group">
                         <div class="btn-group">
                           <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="icofont-ui-settings fs-6"></i>
@@ -424,117 +515,25 @@ session_start();
                             <li>
                               <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
                             </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item py-3 text-center text-md-start">
-                    <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
-                      <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
-                      </div>
-                      <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0 fw-bold">
-                          Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a>
-                        </h6>
-                        <span class="text-muted">lucas.baker@gmail.com</span>
-                      </div>
-                      <div class="members-action">
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Members
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
                             <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="icofont-check-circled"></i>
-
-                                <span>All operations permission</span>
-                              </a>
+                              <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a>
                             </li>
                             <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icofont-ui-settings fs-6"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a>
+                              <a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a>
                             </li>
                           </ul>
                         </div>
                       </div>
                     </div>
-                  </li>
-                  <li class="list-group-item py-3 text-center text-md-start">
-                    <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
-                      <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
-                      </div>
-                      <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0 fw-bold">Una Coleman</h6>
-                        <span class="text-muted">una.coleman@gmail.com</span>
-                      </div>
-                      <div class="members-action">
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Members
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="icofont-check-circled"></i>
-
-                                <span>All operations permission</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="btn-group">
-                          <div class="btn-group">
-                            <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="icofont-ui-settings fs-6"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <!-- Jquery Core Js -->
@@ -546,93 +545,7 @@ session_start();
   <!-- Jquery Page Js -->
   <script src="../js/template.js"></script>
   <script src="../js/page/hr.js"></script>
-  <script>
-    // Employees Analytics
-    $(document).ready(function() {
-      var options = {
-        series: [{
-          name: "Available",
-          data: [4, 19, 7, 35, 14, 27, 9, 12],
-        }, ],
-        chart: {
-          height: 140,
-          type: "line",
-          toolbar: {
-            show: false,
-          },
-        },
-        grid: {
-          show: false,
-          xaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-        },
-        stroke: {
-          width: 4,
-          curve: "smooth",
-          colors: ["var(--chart-color2)"],
-        },
-        xaxis: {
-          type: "datetime",
-          categories: [
-            "1/11/2021",
-            "2/11/2021",
-            "3/11/2021",
-            "4/11/2021",
-            "5/11/2021",
-            "6/11/2021",
-            "7/11/2021",
-            "8/11/2021",
-          ],
-          tickAmount: 10,
-          labels: {
-            formatter: function(value, timestamp, opts) {
-              return opts.dateFormatter(new Date(timestamp), "dd MMM");
-            },
-          },
-        },
-        fill: {
-          type: "gradient",
-          gradient: {
-            shade: "dark",
-            gradientToColors: ["var(--chart-color3)"],
-            shadeIntensity: 1,
-            type: "horizontal",
-            opacityFrom: 1,
-            opacityTo: 1,
-            stops: [0, 100, 100, 100],
-          },
-        },
-        markers: {
-          size: 3,
-          colors: ["#FFA41B"],
-          strokeColors: "#ffffff",
-          strokeWidth: 2,
-          hover: {
-            size: 7,
-          },
-        },
-        yaxis: {
-          show: false,
-          min: -10,
-          max: 50,
-        },
-      };
 
-      var chart = new ApexCharts(
-        document.querySelector("#apex-emplyoeeAnalytics"),
-        options
-      );
-      chart.render();
-    });
-  </script>
 </body>
 
 <!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jan 2024 19:05:23 GMT -->
