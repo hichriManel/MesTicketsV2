@@ -111,17 +111,23 @@ session_start();
             <!-- header rightbar icon -->
             <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
               <!--Help-->
-              <div class="d-flex">
-                <div class="avatar-list avatar-list-stacked px-3">
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="" />
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="" />
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="" />
-                  <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
-                  <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
+              <?php
+              if ($_SESSION["type"] == "supervisor") {
+
+              ?>
+                <div class="d-flex">
+                  <div class="avatar-list avatar-list-stacked px-3">
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="" />
+                    <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
+                    <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
+                  </div>
                 </div>
-              </div>
+              <?php
+              } ?>
               <!--Notification-->
               <div class="dropdown notifications">
                 <a class="nav-link dropdown-toggle pulse" href="#" role="button" data-bs-toggle="dropdown">
