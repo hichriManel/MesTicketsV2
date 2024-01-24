@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['email'])) {
-    if ($_SESSION['type'] == "client") {
+    if (!isset($_GET['id'])) {
         header("location:editprofile.php?id=" . $_SESSION['id']);
     } else {
         if (isset($_GET['id'])) {
