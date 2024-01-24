@@ -11,7 +11,7 @@ if (isset($_SESSION["email"])) {
     if ($_SESSION['type'] == "admin") {
       $table = $crud->getTickets();
     } else {
-      $table = $crud->getTicketByClient($_SESSION['$email']);
+      $table = $crud->getTicketByClient($_SESSION['email']);
     }
   }
 } else {
@@ -19,6 +19,7 @@ if (isset($_SESSION["email"])) {
 }
 $encour = $crud->getByStatutNum("enCours");
 $fait = $crud->getByStatutNum("Cloture");
+if($table){
 ?>
 
 <thead>
@@ -56,5 +57,5 @@ $fait = $crud->getByStatutNum("Cloture");
       echo "<td><a href='cloture.php?id=" . $row[0] . "'><button>Cloturer</button></a></td>";
     }
     echo "</tr>";
-  }
+  }}
   ?>
