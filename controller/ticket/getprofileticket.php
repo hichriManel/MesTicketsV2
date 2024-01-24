@@ -2,9 +2,11 @@
 require_once "../../model/ticket.php";
 $ticket = new Ticket();
 require_once "../../crud/crudTickets.php";
+require_once "../../crud/crud_account.php";
+$acc = new CRUD();
 $crud = new CrudTicket();
-
-$table = $crud->getTickets();
+$email = $acc->getEmail($_GET["id"]);
+$table = $crud->getTicketByContact($email);
 $encour = $crud->getByStatutNum("enCours");
 $fait = $crud->getByStatutNum("Cloture");
 ?>
