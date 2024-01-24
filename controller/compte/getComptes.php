@@ -1,71 +1,48 @@
 <?php
 require_once '../../crud/Crud_account.php';
 $crud = new CRUD();
-$comptes = $crud->lister();
-?>
-<thead>
-    <tr>
-        <th>
-            <div class="form-check custom-checkbox ms-2">
-                <input type="checkbox" class="form-check-input" id="checkAll" required="">
-                <label class="form-check-label" for="checkAll"></label>
-            </div>
-        </th>
-        <th>Nom & Prenom</th>
-        <th>e-mail</th>
-        <th>Centre/Matricule</th>
-        <th>Type</th>
-        <th>Status</th>
-        <th>Telephone</th>
-        <th>Action</th>
-
-    </tr>
-</thead>
-<tbody>
-
-    <?php
-    for ($i = 0; $i < count($comptes); $i++) {
-        echo '<tr>
-        <td>
-            <div class="form-check custom-checkbox ms-2">
-                <input type="checkbox" class="form-check-input" id="customCheckBox17" required="">
-                <label class="form-check-label" for="customCheckBox17"></label>
-            </div>
-        </td>
-
-        <td>
-            <div>
-                <a href="#" class="h5">' . $comptes[$i][0] . ' ' . $comptes[$i][1] . '</a>
-            </div>
-        </td>
-        <td>' . $comptes[$i][2] . '</td>
-        <td>';
-        if ($comptes[$i][5] == "client") {
-            echo $comptes[$i][9];
-        } else {
-            echo $comptes[$i][6];
-        }
-        echo '</td>
-        <td>
-            ' . $comptes[$i][5] . '
-        </td>
-        <td>';
-        if ($comptes[$i][7] != "Verifie") {
-            echo '<span class="badge light badge-danger">' . $comptes[$i][7] . '</span>';
-        } else {
-            echo '<span class="badge light badge-success">' . $comptes[$i][7] . '</span>';
-        }
-        echo '</td>
-        <td>'
-             . $comptes[$i][3] . '
-        </td>
-        <td>
-            <div class="d-flex">
-                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-            </div>
-        </td>
-    </tr>';
+if (isset($_GET['type'])) {
+    if ($_GET['type'] != "tout") {
+        $comptes = $crud->listerParType($_GET['type']);
+    } else {
+        $comptes = $crud->lister();
     }
-    ?>
-</tbody>
+}
+json_encode($comptes);
+foreach ($comptes as $compte) {
+
+?>
+    <div class="col">
+        <div class="card teacher-card mr-1">
+            <div class="card-body d-flex">
+                <div class="profile-av pe-xl-4 pe-md-2 pe-sm-4 pe-4 text-center w220">
+                    <img src="assets/images/lg/avatar5.jpg" alt="" class="avatar xl rounded-circle img-thumbnail shadow-sm">
+                    <div class="about-info d-flex align-items-center mt-1 justify-content-center flex-column">
+                        <h6 class="mb-0 fw-bold d-block fs-6 mt-2"><?php echo $compte[5]; ?></h6>
+                        <div class="btn-group mt-2" role="group" aria-label="Basic outlined example">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editproject"><i class="icofont-edit text-success"></i></button>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#deleteproject"><i class="icofont-ui-delete text-danger"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher-info border-start ps-xl-4 ps-md-3 ps-sm-4 ps-4 w-100">
+                    <h6 class="mb-0 mt-2  fw-bold d-block fs-6"><?php echo $compte[0] . ' ' . $compte[1]; ?></h6>
+                    <span class="py-1 fw-bold small-11 mb-0 mt-1 text-muted"><?php echo $compte[2] ?></span>
+                    <div class="video-setting-icon mt-3 pt-3 border-top">
+                        <p><?php echo $compte[3] ?></p>
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center ct-btn-set">
+                        <a href="profile.php?id=<?php echo $compte[10] ?>" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+<?php
+}
+?>

@@ -87,15 +87,15 @@ if (isset($_GET["status"])) {
                 <!-- Menu: Sub menu ul -->
                 <ul class="sub-menu collapse" id="tikit-Components">
                   <li>
-                    <a class="ms-link" href="comptes.php?tout">
+                    <a class="ms-link" href="comptes.php?type=tout">
                       <span>Tout</span></a>
                   </li>
                   <li>
-                    <a class="ms-link" href="comptes.php?client">
+                    <a class="ms-link" href="comptes.php?type=Client">
                       <span>Client</span></a>
                   </li>
                   <li>
-                    <a class="ms-link" href="comptes.php?employe">
+                    <a class="ms-link" href="comptes.php?type=Employee">
                       <span>Employees</span></a>
                   </li>
                 </ul>
@@ -300,7 +300,7 @@ if (isset($_GET["status"])) {
                           <small class=""><?php echo $_SESSION["email"]; ?></small>
                         </div>
                       </div>
-                     <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php?id=1"><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
+                      <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php?id=1"><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
                       <div>
                         <hr class="dropdown-divider border-dark" />
                       </div>

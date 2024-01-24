@@ -1,4 +1,6 @@
-<html class="no-js" lang="en" dir="ltr" data-theme="light"><head>
+<html class="no-js" lang="en" dir="ltr" data-theme="light">
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,7 +11,106 @@
   <link rel="stylesheet" href="assets/plugin/datatables/dataTables.bootstrap5.min.css">
   <!-- project css file  -->
   <link rel="stylesheet" href="assets/css/my-task.style.min.css">
-<script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2c776523.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-9294da6c.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b383d.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-48f3b594.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-4fe9d5dd.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b9454.js"></script><script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-24d8db78.js"></script><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script><style type="text/css">@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#xqdhu4eu1tp81706068354316.open{animation : tawkMaxOpen .25s ease!important;}@keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}#xqdhu4eu1tp81706068354316.closed{animation: tawkMaxClose .25s ease!important}</style></head>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2c776523.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-9294da6c.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b383d.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-48f3b594.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-4fe9d5dd.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b9454.js"></script>
+  <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-24d8db78.js"></script>
+  <script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script>
+  <script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script>
+  <style type="text/css">
+    @keyframes tawkMaxOpen {
+      0% {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(0, 0px);
+      }
+    }
+
+    @-moz-keyframes tawkMaxOpen {
+      0% {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(0, 0px);
+      }
+    }
+
+    @-webkit-keyframes tawkMaxOpen {
+      0% {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(0, 0px);
+      }
+    }
+
+    #xqdhu4eu1tp81706068354316.open {
+      animation: tawkMaxOpen .25s ease !important;
+    }
+
+    @keyframes tawkMaxClose {
+      from {
+        opacity: 1;
+        transform: translate(0, 0px);
+        ;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+    }
+
+    @-moz-keyframes tawkMaxClose {
+      from {
+        opacity: 1;
+        transform: translate(0, 0px);
+        ;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+    }
+
+    @-webkit-keyframes tawkMaxClose {
+      from {
+        opacity: 1;
+        transform: translate(0, 0px);
+        ;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate(0, 30px);
+        ;
+      }
+    }
+
+    #xqdhu4eu1tp81706068354316.closed {
+      animation: tawkMaxClose .25s ease !important
+    }
+  </style>
+</head>
 
 <body onload="table()" data-mytask="theme-indigo">
 
@@ -33,13 +134,14 @@
 
 
           <li class="collapsed">
-                <a class="m-link" data-bs-target="#dashboard-Components" href="dashboard.php">
-                  <i class="icofont-home fs-5"></i> <span>Dashboard</span>
-                </a>
-                <!-- Menu: Sub menu ul -->
-              </li>          <li class="collapsed">
+            <a class="m-link" data-bs-target="#dashboard-Components" href="dashboard.php">
+              <i class="icofont-home fs-5"></i> <span>Dashboard</span>
+            </a>
+            <!-- Menu: Sub menu ul -->
+          </li>
+          <li class="collapsed">
             <a class="m-link " data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
-              <i class="icofont-ticket"></i><span>Tickets</span>              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+              <i class="icofont-ticket"></i><span>Tickets</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="project-Components">
               <li>
@@ -54,43 +156,43 @@
             </ul>
           </li>
           <li class="collapsed">
-                <a class="m-link " data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
-                  <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
-                <!-- Menu: Sub menu ul -->
-                <ul class="sub-menu collapse" id="tikit-Components">
-                  <li>
-                    <a class="ms-link" href="comptes.php?tout">
-                      <span>Tout</span></a>
-                  </li>
-                  <li>
-                    <a class="ms-link" href="comptes.php?client">
-                      <span>Client</span></a>
-                  </li>
-                  <li>
-                    <a class="ms-link" href="comptes.php?employe">
-                      <span>Employees</span></a>
-                  </li>
-                </ul>
+            <a class="m-link " data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
+              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+            <!-- Menu: Sub menu ul -->
+            <ul class="sub-menu collapse" id="tikit-Components">
+              <li>
+                <a class="ms-link" href="comptes.php?type=tout">
+                  <span>Tout</span></a>
               </li>
-              <li class="collapsed">
-                <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
-                  <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
-                <!-- Menu: Sub menu ul -->
-                <ul class="sub-menu collapse" id="client-Components">
-                  <li>
-                    <a class="ms-link" href="ajoutercompte.php">
-                      <span>Ajouter Comptes</span></a>
-                  </li>
-                  <li>
-                    <a class="ms-link" href="verifier.php">
-                      <span>Verifier Comptes</span></a>
-                  </li>
-                  <li>
-                    <a class="ms-link" href="supprimer.php">
-                      <span>Supprimer Comptes</span></a>
-                  </li>
-                </ul>
+              <li>
+                <a class="ms-link" href="comptes.php?type=Client">
+                  <span>Client</span></a>
               </li>
+              <li>
+                <a class="ms-link" href="comptes.php?type=Employee">
+                  <span>Employees</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="collapsed">
+            <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
+              <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
+            <!-- Menu: Sub menu ul -->
+            <ul class="sub-menu collapse" id="client-Components">
+              <li>
+                <a class="ms-link" href="ajoutercompte.php">
+                  <span>Ajouter Comptes</span></a>
+              </li>
+              <li>
+                <a class="ms-link" href="verifier.php">
+                  <span>Verifier Comptes</span></a>
+              </li>
+              <li>
+                <a class="ms-link" href="supprimer.php">
+                  <span>Supprimer Comptes</span></a>
+              </li>
+            </ul>
+          </li>
         </ul>
         <button type="button" class="btn btn-link sidebar-mini-btn text-light">
           <span class="ms-2"><i class="icofont-bubble-right"></i></span>
@@ -106,18 +208,18 @@
             <!-- header rightbar icon -->
             <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
               <!--Help-->
-                              <div class="d-flex">
-                  <div class="avatar-list avatar-list-stacked px-3">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="">
-                    <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
-                    <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
-                  </div>
+              <div class="d-flex">
+                <div class="avatar-list avatar-list-stacked px-3">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar4.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar7.jpg" alt="">
+                  <img class="avatar rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
+                  <span class="avatar rounded-circle text-center pointer" data-bs-toggle="modal" data-bs-target="#addUser"><i class="icofont-ui-add"></i></span>
                 </div>
-                            <!--Notification-->
+              </div>
+              <!--Notification-->
               <div class="dropdown notifications">
                 <a class="nav-link dropdown-toggle pulse" href="#" role="button" data-bs-toggle="dropdown">
                   <i class="icofont-alarm fs-5"></i>
@@ -242,19 +344,19 @@
                           <small class="">zimys@gmail.com</small>
                         </div>
                       </div>
-                     <div class="text-center"> <a href="editprofile.php"><button class="btn btn-primary"><i class="icofont-ui-edit"></i></button></a> <a href="profile.php"><button class="btn btn-primary"><i class="icofont-eye-open"></i></button> </a></div>
+                      <div class="text-center"> <a href="editprofile.php"><button class="btn btn-primary"><i class="icofont-ui-edit"></i></button></a> <a href="profile.php"><button class="btn btn-primary"><i class="icofont-eye-open"></i></button> </a></div>
                       <div>
                         <hr class="dropdown-divider border-dark">
                       </div>
                     </div>
                     <div class="list-group m-2">
                       <a href="deconnexion.php" class="list-group-item list-group-item-action border-0"><i class="icofont-logout fs-6 me-3"></i>Déconnexion</a>
-                                              <div>
-                          <hr class="dropdown-divider border-dark">
-                        </div>
-                        <a href="ajoutercompte.php" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
-                          un Compte</a>
-                      
+                      <div>
+                        <hr class="dropdown-divider border-dark">
+                      </div>
+                      <a href="ajoutercompte.php" class="list-group-item list-group-item-action border-0"><i class="icofont-contact-add fs-5 me-3"></i>Ajouter
+                        un Compte</a>
+
                     </div>
                   </div>
                 </div>
@@ -288,65 +390,65 @@
 
       <!-- Body: Body -->
       <div class="body d-flex py-lg-3 py-md-2">
-            <div class="container-xxl">
-                <div class="row clearfix">
-                    <div class="col-md-12">
-                        <div class="card border-0 mb-4 no-bg">
-                            <div class="card-header py-3 px-0 d-flex align-items-center  justify-content-between border-bottom">
-                                <h3 class=" fw-bold flex-fill mb-0">Clients</h3>
-                                <div class="col-auto d-flex">
-                                    <div class="dropdown ">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Status
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2" style="">
-                                        <li><a class="dropdown-item" href="#">Company</a></li>
-                                        <li><a class="dropdown-item" href="#">AgilSoft Tech</a></li>
-                                        <li><a class="dropdown-item" href="#">Macrosoft</a></li>
-                                        <li><a class="dropdown-item" href="#">Google</a></li>
-                                        <li><a class="dropdown-item" href="#">Pixelwibes</a></li>
-                                        <li><a class="dropdown-item" href="#">Deltasoft Tech</a></li>
-                                        <li><a class="dropdown-item" href="#">Design Tech</a></li>
-                                        </ul>
-                                    </div>
-                                    <a href="ajoutercompte.php"><button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button></a>
-                                </div>
-                            </div>
-                        </div>
+        <div class="container-xxl">
+          <div class="row clearfix">
+            <div class="col-md-12">
+              <div class="card border-0 mb-4 no-bg">
+                <div class="card-header py-3 px-0 d-flex align-items-center  justify-content-between border-bottom">
+                  <h3 class=" fw-bold flex-fill mb-0">Clients</h3>
+                  <div class="col-auto d-flex">
+                    <div class="dropdown ">
+                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        Status
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2" style="">
+                        <li><a class="dropdown-item" href="#">Company</a></li>
+                        <li><a class="dropdown-item" href="#">AgilSoft Tech</a></li>
+                        <li><a class="dropdown-item" href="#">Macrosoft</a></li>
+                        <li><a class="dropdown-item" href="#">Google</a></li>
+                        <li><a class="dropdown-item" href="#">Pixelwibes</a></li>
+                        <li><a class="dropdown-item" href="#">Deltasoft Tech</a></li>
+                        <li><a class="dropdown-item" href="#">Design Tech</a></li>
+                      </ul>
                     </div>
-                </div><!-- Row End -->
-                <div class="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-deck py-1 pb-4">
-                <div class="col">
-                        <div class="card teacher-card">
-                            <div class="card-body  d-flex">
-                                <div class="profile-av pe-xl-4 pe-md-2 pe-sm-4 pe-4 text-center w220">
-                                    <img src="assets/images/lg/avatar5.jpg" alt="" class="avatar xl rounded-circle img-thumbnail shadow-sm">
-                                    <div class="about-info d-flex align-items-center mt-1 justify-content-center flex-column">
-                                       <h6 class="mb-0 fw-bold d-block fs-6 mt-2">Manager</h6>
-                                        <div class="btn-group mt-2" role="group" aria-label="Basic outlined example">
-                                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editproject"><i class="icofont-edit text-success"></i></button>
-                                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#deleteproject"><i class="icofont-ui-delete text-danger"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="teacher-info border-start ps-xl-4 ps-md-3 ps-sm-4 ps-4 w-100">
-                                    <h6 class="mb-0 mt-2  fw-bold d-block fs-6">Rocobend</h6>
-                                    <span class="py-1 fw-bold small-11 mb-0 mt-1 text-muted">Piers Churchill</span>
-                                    <div class="video-setting-icon mt-3 pt-3 border-top">
-                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-                                    </div>
-                                    <div class="d-flex flex-wrap align-items-center ct-btn-set">
-                                        <a href="profile.php" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="ajoutercompte.php"><button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button></a>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div><!-- Row End -->
+          <div class="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-deck py-1 pb-4">
+            <div class="col">
+              <div class="card teacher-card">
+                <div class="card-body  d-flex">
+                  <div class="profile-av pe-xl-4 pe-md-2 pe-sm-4 pe-4 text-center w220">
+                    <img src="assets/images/lg/avatar5.jpg" alt="" class="avatar xl rounded-circle img-thumbnail shadow-sm">
+                    <div class="about-info d-flex align-items-center mt-1 justify-content-center flex-column">
+                      <h6 class="mb-0 fw-bold d-block fs-6 mt-2">Manager</h6>
+                      <div class="btn-group mt-2" role="group" aria-label="Basic outlined example">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editproject"><i class="icofont-edit text-success"></i></button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#deleteproject"><i class="icofont-ui-delete text-danger"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="teacher-info border-start ps-xl-4 ps-md-3 ps-sm-4 ps-4 w-100">
+                    <h6 class="mb-0 mt-2  fw-bold d-block fs-6">Rocobend</h6>
+                    <span class="py-1 fw-bold small-11 mb-0 mt-1 text-muted">Piers Churchill</span>
+                    <div class="video-setting-icon mt-3 pt-3 border-top">
+                      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center ct-btn-set">
+                      <a href="profile.php" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-<!-- Modal Members-->
-<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
+      </div>
+      <!-- Modal Members-->
+      <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -502,102 +604,109 @@
     </div>
   </div>
 
-      <!-- Add Tickit-->
-      <div class="modal fade" id="tickadd" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title  fw-bold" id="leaveaddLabel"> Tickit Add</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="sub" class="form-label">Subject</label>
-                <input type="text" class="form-control" id="sub">
+  <!-- Add Tickit-->
+  <div class="modal fade" id="tickadd" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title  fw-bold" id="leaveaddLabel"> Tickit Add</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="sub" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="sub">
+          </div>
+          <div class="deadline-form">
+            <form>
+              <div class="row g-3 mb-3">
+                <div class="col">
+                  <label for="depone" class="form-label">Assign Name</label>
+                  <input type="text" class="form-control" id="depone">
+                </div>
+                <div class="col">
+                  <label for="deptwo" class="form-label">Creted Date</label>
+                  <input type="date" class="form-control" id="deptwo">
+                </div>
               </div>
-              <div class="deadline-form">
-                <form>
-                  <div class="row g-3 mb-3">
-                    <div class="col">
-                      <label for="depone" class="form-label">Assign Name</label>
-                      <input type="text" class="form-control" id="depone">
-                    </div>
-                    <div class="col">
-                      <label for="deptwo" class="form-label">Creted Date</label>
-                      <input type="date" class="form-control" id="deptwo">
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Status</label>
-                <select class="form-select">
-                  <option selected="">In Progress</option>
-                  <option value="1">Completed</option>
-                  <option value="2">Wating</option>
-                  <option value="3">Decline</option>
-                </select>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
-              <button type="submit" class="btn btn-primary">sent</button>
-            </div>
+            </form>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Status</label>
+            <select class="form-select">
+              <option selected="">In Progress</option>
+              <option value="1">Completed</option>
+              <option value="2">Wating</option>
+              <option value="3">Decline</option>
+            </select>
           </div>
         </div>
-      </div>
-
-      <!-- Edit Tickit-->
-      <div class="modal fade" id="edittickit" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title  fw-bold" id="edittickitLabel"> Tickit Edit</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="sub1" class="form-label">Subject</label>
-                <input type="text" class="form-control" id="sub1" value="punching time not proper">
-              </div>
-              <div class="deadline-form">
-                <form>
-                  <div class="row g-3 mb-3">
-                    <div class="col">
-                      <label for="depone11" class="form-label">Assign Name</label>
-                      <input type="text" class="form-control" id="depone11" value="Victor Rampling">
-                    </div>
-                    <div class="col">
-                      <label for="deptwo56" class="form-label">Creted Date</label>
-                      <input type="date" class="form-control" id="deptwo56" value="2021-02-25">
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Status</label>
-                <select class="form-select">
-                  <option selected="">Completed</option>
-                  <option value="1">In Progress</option>
-                  <option value="2">Wating</option>
-                  <option value="3">Decline</option>
-                </select>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
-              <button type="submit" class="btn btn-primary">sent</button>
-            </div>
-          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+          <button type="submit" class="btn btn-primary">sent</button>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Edit Tickit-->
+  <div class="modal fade" id="edittickit" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title  fw-bold" id="edittickitLabel"> Tickit Edit</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="sub1" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="sub1" value="punching time not proper">
+          </div>
+          <div class="deadline-form">
+            <form>
+              <div class="row g-3 mb-3">
+                <div class="col">
+                  <label for="depone11" class="form-label">Assign Name</label>
+                  <input type="text" class="form-control" id="depone11" value="Victor Rampling">
+                </div>
+                <div class="col">
+                  <label for="deptwo56" class="form-label">Creted Date</label>
+                  <input type="date" class="form-control" id="deptwo56" value="2021-02-25">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Status</label>
+            <select class="form-select">
+              <option selected="">Completed</option>
+              <option value="1">In Progress</option>
+              <option value="2">Wating</option>
+              <option value="3">Decline</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+          <button type="submit" class="btn btn-primary">sent</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
 
   </div>
 
   <!-- Jquery Core Js -->
-  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-main.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-vendor.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-vendors.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-common.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-runtime.js" charset="UTF-8" crossorigin="*"></script><script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-app.js" charset="UTF-8" crossorigin="*"></script><script async="" src="https://embed.tawk.to/6051a040f7ce18270930e55a/1f3d4os21" charset="UTF-8" crossorigin="*"></script><script src="assets/bundles/libscripts.bundle.js"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-main.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-vendor.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-vendors.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-common.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-runtime.js" charset="UTF-8" crossorigin="*"></script>
+  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-app.js" charset="UTF-8" crossorigin="*"></script>
+  <script async="" src="https://embed.tawk.to/6051a040f7ce18270930e55a/1f3d4os21" charset="UTF-8" crossorigin="*"></script>
+  <script src="assets/bundles/libscripts.bundle.js"></script>
 
   <!-- Plugin Js-->
   <script src="assets/bundles/dataTables.bundle.js"></script>
@@ -610,8 +719,8 @@
       xhttp.onload = function() {
         document.getElementById("exemple").innerHTML = this.responseText;
       }
-            xhttp.open("GET", "controller/ticket/gettickets.php");
-        xhttp.send();
+      xhttp.open("GET", "controller/ticket/gettickets.php");
+      xhttp.send();
 
     }
     setInterval(table, 6000);
@@ -620,7 +729,9 @@
 
 
 
-<script async="" charset="UTF-8" src="https://embed.tawk.to/_s/v4/app/65839862293/languages/en.js">
+  <script async="" charset="UTF-8" src="https://embed.tawk.to/_s/v4/app/65839862293/languages/en.js">
 
-</script>
-</body></html>
+  </script>
+</body>
+
+</html>
