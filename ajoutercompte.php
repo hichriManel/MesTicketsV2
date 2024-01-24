@@ -338,7 +338,7 @@ session_start();
             </div>
             <!-- Theme switcher -->
             <div class="form-check form-switch theme-switch">
-              <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-switch" />
+              <input class="form-ch                                                                                                                     eck-input fs-6" type="checkbox" role="switch" id="theme-switch" />
             </div>
           </div>
         </nav>
