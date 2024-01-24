@@ -2,7 +2,7 @@
 session_start();
 if (isset($_GET['id'])) {
 } else {
-  header("location:comptes.php?type=tout");
+  header("location:profile.php?id=".$_SESSION['id']);
 }
 ?>
 <!doctype html>
@@ -369,7 +369,7 @@ if (isset($_GET['id'])) {
               </div>
               <h6 class="fw-bold  py-3 mb-3">Les Derniers Réclamations</h6>
               <div class="row g-3">
-                <div class="col-md-12">
+                <div class="col-md                                    -12">
                   <div class="card">
                     <div class="card-body">
                       <table id="exemple" class="table table-hover align-middle mb-0" style="width:100%">

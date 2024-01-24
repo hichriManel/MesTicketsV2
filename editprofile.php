@@ -264,16 +264,6 @@ if ($_SESSION["type"] == "client") {
                                                     ?></span>
                   </p>
                   <small><?php
-<<<<<<< HEAD
-                          if ($_SESSION["type"] == "supervisor") {
-                            echo "Superviseur";
-                          } else {
-                            if ($_SESSION["type"] == "supervisor") {
-                              echo "Admin";
-                            } else {
-                              echo "Client";
-                            }
-=======
                           if (isset($_SESSION['type'])) {
                             if ($_SESSION['type'] == "supervisor") {
                               echo "Superviseur";
@@ -282,7 +272,6 @@ if ($_SESSION["type"] == "client") {
                             }
                           } else {
                             echo "Client";
->>>>>>> 8d6f762d8ce23046792d7b8f88b5c5c112355d43
                           }
                           ?> Profile</small>
                 </div>
@@ -360,63 +349,6 @@ if ($_SESSION["type"] == "client") {
       </div>
 
       <div class="card mb-3">
-<<<<<<< HEAD
-                            <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6> 
-                            </div>
-                            <div class="card-body">
-                                <form>
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-md-6">
-                                            <label for="firstname" class="form-label">Prénom</label>
-                                            <input type="text" class="form-control" name="Prénom" required value="<?php echo $_SESSION['prenom']?>">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="lastname" class="form-label">Nom</label>
-                                            <input type="text" class="form-control" name="nom" value="<?php echo $_SESSION['nom']?>" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">Phone Number</label>
-                                            <input type="tel" class="form-control" name="tel"  required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="emailaddress" class="form-label">Email Address</label>
-                                            <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email']?>" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="admitdate" class="form-label">Votre Mot de Passe</label>
-                                            <input type="password" class="form-control" id="mdp" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="admitdate" class="form-label">Nouveau Mot de Passe</label>
-                                            <input type="password" class="form-control" name="cmdp" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="admitdate" class="form-label"><?php if ($_SESSION['type']=="client"){echo"Adresse de l'entreprise <input type='text' class='form-control' name='noms' id='admitdate' required>";}else{echo"Matricule<input type='text' class='form-control' name='mat' id='admitdate' required>";}?></label>
-                                            
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">Gender</label>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios11" value="option1" checked>
-                                                        <label class="form-check-label" for="exampleRadios11">
-                                                         Male
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios22" value="option2">
-                                                        <label class="form-check-label" for="exampleRadios22">
-                                                           Female
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-=======
         <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
           <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
         </div>
@@ -493,7 +425,6 @@ if ($_SESSION["type"] == "client") {
                   </div>
                 </div>
               </div>
->>>>>>> 8d6f762d8ce23046792d7b8f88b5c5c112355d43
 
             </div>
 
