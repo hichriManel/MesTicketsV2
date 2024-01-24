@@ -1,27 +1,31 @@
 <?php
 session_start();
+if (isset($_GET['id'])) {
+} else {
+  header("location:comptes.php");
+}
 ?>
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>:: My-Task:: Profile </title>
+  <title>Profile</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
   <!-- plugin css file  -->
   <link rel="stylesheet" href="assets/plugin/nestable/jquery-nestable.css" />
   <link rel="stylesheet" href="assets/plugin/datatables/responsive.dataTables.min.css">
   <link rel="stylesheet" href="assets/plugin/datatables/dataTables.bootstrap5.min.css">
-  <!-- project css file  -->
   <link rel="stylesheet" href="assets/css/my-task.style.min.css">
 </head>
 
-<body data-mytask="theme-indigo">
+<body data-mytask="theme-indigo" onload="profile();table();">
 
   <div id="mytask-layout">
-   <!--header nav-->
-   <div class="sidebar px-4 py-4 py-md-5 me-0">
+    <!--header nav-->
+    <div class="sidebar px-4 py-4 py-md-5 me-0">
       <div class="d-flex flex-column h-100">
         <a href="index.php" class="mb-0 brand-icon">
           <span class="logo-icon">
@@ -124,6 +128,7 @@ session_start();
         </button>
       </div>
     </div>
+
     <!-- main body area -->
     <div class="main px-lg-4 px-md-4">
       <!-- Body: Header -->
@@ -321,7 +326,30 @@ session_start();
               </div>
             </div>
 
+            <!-- menu toggler -->
+            <button class="navbar-toggler p-0 border-0 menu-toggle order-3" type="button" data-bs-toggle="collapse" data-bs-target="#mainHeader">
+              <span class="fa fa-bars"></span>
+            </button>
 
+            <!-- main menu Search-->
+            <div class="order-0 col-lg-4 col-md-4 col-sm-12 col-12 mb-3 mb-md-0">
+              <div class="input-group flex-nowrap input-group-lg">
+                <button type="button" class="input-group-text" id="addon-wrapping">
+                  <i class="fa fa-search"></i>
+                </button>
+                <input type="search" class="form-control" placeholder="Recherche" aria-label="search" aria-describedby="addon-wrapping" />
+                <button type="button" class="input-group-text add-member-top" id="addon-wrappingone" data-bs-toggle="modal" data-bs-target="#addUser">
+                  <i class="fa fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- Theme switcher -->
+            <div class="form-check form-switch theme-switch">
+              <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-switch" />
+            </div>
+          </div>
+        </nav>
+      </div>
       <!-- Body: Body -->
       <div class="body d-flex py-lg-3 py-md-2">
         <div class="container-xxl">
@@ -329,55 +357,15 @@ session_start();
             <div class="col-md-12">
               <div class="card border-0 mb-4 no-bg">
                 <div class="card-header py-3 px-0 d-flex align-items-center  justify-content-between border-bottom">
-                  <h3 class=" fw-bold flex-fill mb-0">Client Profile</h3>
+                  <h3 class=" fw-bold flex-fill mb-0">Profile du Client</h3>
                 </div>
               </div>
             </div>
           </div><!-- Row End -->
           <div class="row g-3">
             <div class="col-xxl-12 col-lg-12 col-md-12">
-              <div class="card teacher-card  mb-3">
-                <div class="card-body d-flex teacher-fulldeatil">
-                  <div class="profile-teacher pe-xl-4 pe-md-2 pe-sm-4 pe-4 text-center w220">
-                    <a href="#">
-                      <img src="assets/images/lg/avatar3.jpg" alt="" class="avatar xl rounded-circle img-thumbnail shadow-sm">
-                    </a>
-                    <div class="about-info d-flex align-items-center mt-3 justify-content-center flex-column">
-                      <h6 class="mb-0 fw-bold d-block fs-6"><?php  echo htmlspecialchars($_SESSION['nom']) ?> </h6>
-                    </div>
-                  </div>
-                  <div class="teacher-info border-start ps-xl-4 ps-md-4 ps-sm-4 ps-4 w-100">
-                    <h6 class="mb-0 mt-2  fw-bold d-block fs-6"><?php  echo htmlspecialchars($_SESSION['nom']).' '. htmlspecialchars($_SESSION['nom']) ?></h6>
-                    <span class="py-1 fw-bold small-11 mb-0 mt-1 text-muted"><?php  echo htmlspecialchars($_SESSION['type']) ?></span>
-                    
-                    <div class="row g-2 pt-2">
-                      <div class="col-xl-5">
-                        <div class="d-flex align-items-center">
-                          <i class="icofont-ui-touch-phone"></i>
-                          <span class="ms-2 small"></span>
-                        </div>
-                      </div>
-                      <div class="col-xl-5">
-                        <div class="d-flex align-items-center">
-                          <i class="icofont-email"></i>
-                          <span class="ms-2 small"><?php  echo htmlspecialchars($_SESSION['email']) ?> </span>
-                        </div>
-                      </div>
-                      <div class="col-xl-5">
-                        <div class="d-flex align-items-center">
-                          <i class="icofont-birthday-cake"></i>
-                          <span class="ms-2 small">19/03/1980</span>
-                        </div>
-                      </div>
-                      <div class="col-xl-5">
-                        <div class="d-flex align-items-center">
-                          <i class="icofont-address-book"></i>
-                          <span class="ms-2 small">2734 West Fork Street,EASTON 02334.</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="card teacher-card  mb-3" id="profil">
+
               </div>
               <h6 class="fw-bold  py-3 mb-3">Les Derniers Réclamations</h6>
               <div class="row g-3">
@@ -385,18 +373,7 @@ session_start();
                   <div class="card">
                     <div class="card-body">
                       <table id="exemple" class="table table-hover align-middle mb-0" style="width:100%">
-                        <script>
-                          function table() {
-                            const xhttp = new XMLHttpRequest();
-                            xhttp.onload = function() {
-                              document.getElementById("exemple").innerHTML = this.responseText;
-                            }
-                            xhttp.open("GET", "controller/ticket/gettickets.php");
-                            xhttp.send();
 
-                          }
-                          setInterval(table, 6000);
-                        </script>
                       </table>
                     </div>
                   </div>
@@ -407,210 +384,9 @@ session_start();
           </div><!-- Row End -->
         </div>
       </div>
-
-      <!-- Modal Members-->
-      <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title  fw-bold" id="addUserLabel">Employee Invitation</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="inviteby_email">
-                <div class="input-group mb-3">
-                  <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1">
-                  <button class="btn btn-dark" type="button" id="button-addon2">Sent</button>
-                </div>
-              </div>
-              <div class="members_list">
-                <h6 class="fw-bold ">Employee </h6>
-                <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
-                  <li class="list-group-item py-3 text-center text-md-start">
-                    <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
-                      <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
-                      </div>
-                      <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0  fw-bold">Rachel Carr(you)</h6>
-                        <span class="text-muted">rachel.carr@gmail.com</span>
-                      </div>
-                      <div class="members-action">
-                        <span class="members-role ">Admin</span>
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icofont-ui-settings  fs-6"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item py-3 text-center text-md-start">
-                    <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
-                      <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
-                      </div>
-                      <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0  fw-bold">Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a></h6>
-                        <span class="text-muted">lucas.baker@gmail.com</span>
-                      </div>
-                      <div class="members-action">
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Members
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="icofont-check-circled"></i>
-
-                                <span>All operations permission</span>
-                              </a>
-
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icofont-ui-settings  fs-6"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item py-3 text-center text-md-start">
-                    <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
-                      <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
-                      </div>
-                      <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0  fw-bold">Una Coleman</h6>
-                        <span class="text-muted">una.coleman@gmail.com</span>
-                      </div>
-                      <div class="members-action">
-                        <div class="btn-group">
-                          <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Members
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="icofont-check-circled"></i>
-
-                                <span>All operations permission</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="btn-group">
-                          <div class="btn-group">
-                            <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="icofont-ui-settings  fs-6"></i>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
 
-    <!-- start: template setting, and more. -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas_setting" aria-labelledby="offcanvas_setting">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Template Setting</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body d-flex flex-column">
-        <div class="mb-4">
-          <h6>Set Theme Color</h6>
-          <ul class="choose-skin list-unstyled mb-0">
-            <li data-theme="ValenciaRed">
-              <div style="--mytask-theme-color: #D63B38;"></div>
-            </li>
-            <li data-theme="SunOrange">
-              <div style="--mytask-theme-color: #F7A614;"></div>
-            </li>
-            <li data-theme="AppleGreen">
-              <div style="--mytask-theme-color: #5BC43A;"></div>
-            </li>
-            <li data-theme="CeruleanBlue">
-              <div style="--mytask-theme-color: #00B8D6;"></div>
-            </li>
-            <li data-theme="Mariner">
-              <div style="--mytask-theme-color: #0066FE;"></div>
-            </li>
-            <li data-theme="PurpleHeart" class="active">
-              <div style="--mytask-theme-color: #6238B3;"></div>
-            </li>
-            <li data-theme="FrenchRose">
-              <div style="--mytask-theme-color: #EB5393;"></div>
-            </li>
-          </ul>
-        </div>
-        <div class="mb-4 flex-grow-1">
-          <h6>Set Theme Light/Dark/RTL</h6>
-          <!-- Theme: Switch Theme -->
-          <ul class="list-unstyled mb-0">
-            <li>
-              <div class="form-check form-switch theme-switch">
-                <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-switch">
-                <label class="form-check-label mx-2" for="theme-switch">Enable Dark Mode!</label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check form-switch theme-rtl">
-                <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-rtl">
-                <label class="form-check-label mx-2" for="theme-rtl">Enable RTL Mode!</label>
-              </div>
-            </li>
-            <li>
-              <div class="form-check form-switch monochrome-toggle">
-                <input class="form-check-input fs-6" type="checkbox" role="switch" id="monochrome">
-                <label class="form-check-label mx-2" for="monochrome">Monochrome Mode</label>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="d-flex">
-          <a href="https://themeforest.net/item/mytask-hr-project-management-admin-template/31974551" class="btn w-100 me-1 py-2 btn-primary">Buy Now</a>
-          <a href="https://themeforest.net/user/pixelwibes/portfolio" class="btn w-100 ms-1 py-2 btn-dark">View Portfolio</a>
-        </div>
-      </div>
-    </div>
   </div>
-
   <!-- Jquery Core Js -->
   <script src="assets/bundles/libscripts.bundle.js"></script>
 
@@ -619,6 +395,7 @@ session_start();
 
   <!-- Jquery Page Js -->
   <script src="../js/template.js"></script>
+
   <script>
     // project data table
     $(document).ready(function() {
@@ -632,6 +409,26 @@ session_start();
           }]
         });
     });
+
+    function profile() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        document.getElementById("profil").innerHTML = this.responseText;
+        console.log(this.responseText);
+      }
+      xhttp.open("GET", "controller/compte/getprofile.php?id=<?php echo $_GET['id']; ?>");
+      xhttp.send();
+    }
+    function table() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        document.getElementById("exemple").innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "controller/ticket/getprofileticket.php");
+      xhttp.send();
+
+    }
+    setInterval(table, 6000);
   </script>
 </body>
 
