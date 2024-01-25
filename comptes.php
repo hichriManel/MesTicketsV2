@@ -1,4 +1,13 @@
-
+<?php
+session_start();
+if (isset($_SESSION["email"])) {
+  if($_SESSION["type"]=="client"){
+    header("location:index.php");
+  }
+} else {
+  header("location:index.php");
+}
+?>
 <html class="no-js" lang="en" dir="ltr" data-theme="light">
 
 <head>
