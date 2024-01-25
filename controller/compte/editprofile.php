@@ -116,14 +116,7 @@ if (isset($_SESSION['email'])) {
 
     } else {
     ?>
-        <div class="col-md-6">
-            <label for="emailaddress" class="form-label">Id de societe</label>
-            <?php
-            if ($_SESSION["type"] == 'supervisor') {
-            ?>
-                <input type="text" class="form-control" name="matricule" value="<?php echo $societe['id'] ?>" required><?php } else { ?><input type="text" class="form-control" name="matricule" value="<?php echo $societe['id'] ?>" required disabled>
-            <?php } ?>
-        </div>
+        
         <div class="col-md-6">
             <label for="emailaddress" class="form-label">Centre Adresse</label>
             <?php
