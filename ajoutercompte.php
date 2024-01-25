@@ -386,9 +386,8 @@ session_start();
 												<label class=" form-label required">Mot De Passe</label>
 												<div class="position-relative">
 													<input type="password" name="mdp" id="exampleInputPassword" class="form-control" placeholder="123456">
-													<span id="eye1" class="show-pass eye">
-														<i class="fa fa-eye-slash"></i>
-														<i class="fa fa-eye"></i>
+													
+													
 													</span>
 												</div>
 											</div>
@@ -416,9 +415,7 @@ session_start();
 												<label class=" form-label required">Confirmer Votre Mot De Passe</label>
 												<div class="position-relative">
 													<input type="password" name="cmdp" id="exampleRepeatPassword" class="form-control" placeholder="123456">
-													<span id="eye2" class="show-pass eye">
-														<i class="fa fa-eye-slash"></i>
-														<i class="fa fa-eye"></i>
+													
 													</span>
 												</div>
 											</div>
@@ -653,26 +650,7 @@ session_start();
 				}
 			});
 		});
-		$(document).ready(function() {
-			var eyeElement = $("#eye1");
-			var eyeElement2 = $("#eye2");
-			var passwordInput = $("#exampleInputPassword");
-			var passwordInput2 = $("#exampleRepeatPassword");
-			eyeElement.click(function() {
-				if (eyeElement.hasClass("show-pass") && eyeElement.hasClass("eye") && eyeElement.hasClass("active")) {
-					passwordInput.attr("type", "text");
-				} else {
-					passwordInput.attr("type", "password");
-				}
-			});
-			eyeElement2.click(function() {
-				if (eyeElement2.hasClass("show-pass") && eyeElement2.hasClass("eye") && eyeElement2.hasClass("active")) {
-					passwordInput2.attr("type", "text");
-				} else {
-					passwordInput2.attr("type", "password");
-				}
-			});
-		});
+		
 	</script>
   <script>
     // Employees Analytics
