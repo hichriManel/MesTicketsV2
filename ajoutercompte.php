@@ -349,83 +349,113 @@ session_start();
           <h6 class="mb-0 fw-bold ">Basic Form</h6>
         </div>
         <div class="card-body">
-          <form>
-            <div class="col-md-6">
-              <label class="form-label">Type de Compte</label>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="typec" value="client">
-                    <label class="form-check-label">
-                      client
-                    </label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="typec" value="admin" checked="checked">
-                    <label class="form-check-label">
-                      Admin
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row g-3 align-items-center">
-              <div class="col-md-6">
-                <label for="firstname" class="form-label">Prénom</label>
-                <input type="text" class="form-control" name="Prénom" required>
-              </div>
-              <div class="col-md-6">
-                <label for="lastname" class="form-label">Nom</label>
-                <input type="text" class="form-control" name="nom" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" name="tel" required>
-              </div>
-              <div class="col-md-6">
-                <label for="emailaddress" class="form-label">Email Address</label>
-                <input type="email" class="form-control" name="email" required>
-              </div>
-              <div class="col-md-6">
-                <label for="admitdate" class="form-label">Mot de Passe</label>
-                <input type="password" class="form-control" id="mdp" required>
-              </div>
-              <div class="col-md-6">
-                <label for="admitdate" class="form-label">Confirmer Mot de Passe</label>
-                <input type="password" class="form-control" name="cmdp" required>
-              </div>
-              <div class="col-md-6">
-                <label for="admitdate" class="form-label">Matricule</label>
-                <input type="text" class="form-control" id="admitdate" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Gender</label>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios11" value="option1" checked>
-                      <label class="form-check-label" for="exampleRadios11">
-                        Male
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios22" value="option2">
-                      <label class="form-check-label" for="exampleRadios22">
-                        Female
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <form class="profile-form" method="post" action="/controller/compte/register.php">
+								<div class="card-body ">
 
-            </div>
+									<div class="mb-3 text-center">
+										<label class="form-label required">Type de Compte</label>
+									</div>
 
-            <button type="submit" class="btn btn-primary mt-4">Submit</button>
-          </form>
+
+									<div class="mb-3 d-flex justify-content-center">
+										<div class="form-check form-check-inline mx-2">
+											<input class="form-check-input" type="radio" name="userType" id="adminRadio" value="admin">
+											<label class="form-check-label" for="adminRadio">Admin</label>
+										</div>
+										<div class="form-check form-check-inline mx-2">
+											<input class="form-check-input" type="radio" name="userType" id="clientRadio" value="client" checked>
+											<label class="form-check-label" for="clientRadio">Client</label>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-sm-6 mb-3">
+											<label class=" form-label required">Nom</label>
+											<input type="text" name="nom" class="form-control" placeholder="Entrer le nom" required="">
+										</div>
+										<div class="col-sm-6 mb-3">
+											<label class=" form-label required">Prenom</label>
+											<input type="text" name="prenom" class="form-control" placeholder="Entrer le prénom" required="">
+										</div>
+										<div class="col-sm-6 mb-3">
+											<label class=" form-label required">e-mail</label>
+											<input type="email" class="form-control" name="email" placeholder="Exemple@gmail.com" required>
+										</div>
+										<div class="col-sm-6 mb-3">
+											<div class="form-group">
+												<label class=" form-label required">Mot De Passe</label>
+												<div class="position-relative">
+													<input type="password" name="mdp" id="exampleInputPassword" class="form-control" placeholder="123456">
+													<span id="eye1" class="show-pass eye">
+														<i class="fa fa-eye-slash"></i>
+														<i class="fa fa-eye"></i>
+													</span>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="col-sm-6 mb-3">
+											<label class="form-label required">Sexe</label>
+
+
+
+											<div class="mb-3 d-flex ">
+												<div class="form-check form-check-inline mx-2">
+													<input class="form-check-input" type="radio" name="flexRadioDefault" id="hommeRadio" value="male" required>
+													<label class="form-check-label" for="hommeRadio">Homme</label>
+												</div>
+												<div class="form-check form-check-inline mx-2">
+													<input class="form-check-input" type="radio" name="flexRadioDefault" id="femaleRadio" value="female" required>
+													<label class="form-check-label" for="femaleRadio">Femme</label>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6 mb-3">
+											<div class="form-group">
+												<label class=" form-label required">Confirmer Votre Mot De Passe</label>
+												<div class="position-relative">
+													<input type="password" name="cmdp" id="exampleRepeatPassword" class="form-control" placeholder="123456">
+													<span id="eye2" class="show-pass eye">
+														<i class="fa fa-eye-slash"></i>
+														<i class="fa fa-eye"></i>
+													</span>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="col-sm-6 mb-3">
+											<label class=" form-label required">Numéro de téléphone mobile</label>
+											<input type="number" name="tel" class="form-control" placeholder="212-999-0000" required>
+										</div>
+										<div class="col-sm-6 mb-3" id="adminInput" style="display: none;">
+											<label class="form-label required">Matricule</label>
+											<input type="text" name="mat" class="form-control" placeholder="Entrer Votre Matricule">
+										</div>
+										<div class="col-sm-6 mb-3" id="clientInput" style="display: none;">
+											<label class="form-label required"> Centre</label>
+											<input type="text" name="noms" class="form-control" placeholder="" required>
+
+											<div class="col-sm-6 mb-3">
+												<label class="form-label required">Numéro de téléphone </label>
+												<input type="number" name="nums" class="form-control" placeholder="212-999-0000" required>
+											</div>
+											<div class="col-sm-6 mb-3">
+												<label class="form-label required">Adresse</label>
+												<input type="text" name="adresse" class="form-control" placeholder="" required>
+											</div>
+										</div>
+									</div>
+								</div>
+
+						</div>
+					</div>
+					<div class="card-footer justify-content-end">
+						<button type="submit" class="btn btn-primary" name="btn">Create Compte</button>
+					</div>
+
+					</form>
         </div>
       </div>
 
@@ -595,6 +625,55 @@ session_start();
   <!-- Jquery Page Js -->
   <script src="../js/template.js"></script>
   <script src="../js/page/hr.js"></script>
+  <script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var adminRadio = document.getElementById('adminRadio');
+			var clientRadio = document.getElementById('clientRadio');
+			var adminInput = document.getElementById('adminInput');
+			if (adminRadio.checked) {
+				adminInput.style.display = 'block';
+				clientInput.style.display = 'none';
+			}
+
+			if (clientRadio.checked) {
+				clientInput.style.display = 'block';
+				adminInput.style.display = 'none';
+			}
+			adminRadio.addEventListener('change', function() {
+				if (adminRadio.checked) {
+					adminInput.style.display = 'block';
+					clientInput.style.display = 'none';
+				}
+			});
+
+			clientRadio.addEventListener('change', function() {
+				if (clientRadio.checked) {
+					clientInput.style.display = 'block';
+					adminInput.style.display = 'none';
+				}
+			});
+		});
+		$(document).ready(function() {
+			var eyeElement = $("#eye1");
+			var eyeElement2 = $("#eye2");
+			var passwordInput = $("#exampleInputPassword");
+			var passwordInput2 = $("#exampleRepeatPassword");
+			eyeElement.click(function() {
+				if (eyeElement.hasClass("show-pass") && eyeElement.hasClass("eye") && eyeElement.hasClass("active")) {
+					passwordInput.attr("type", "text");
+				} else {
+					passwordInput.attr("type", "password");
+				}
+			});
+			eyeElement2.click(function() {
+				if (eyeElement2.hasClass("show-pass") && eyeElement2.hasClass("eye") && eyeElement2.hasClass("active")) {
+					passwordInput2.attr("type", "text");
+				} else {
+					passwordInput2.attr("type", "password");
+				}
+			});
+		});
+	</script>
   <script>
     // Employees Analytics
     $(document).ready(function() {
