@@ -7,7 +7,7 @@ if($_SESSION['type']!="supervisor"){
         require_once "../../crud/crudTickets.php";
         $crud = new CrudTicket();
         $crud->supprimer($_GET["id"]);
-        header("location:../../view/ticket/tickets.php");
+        header("location:../../tickets.php");
     }
 }
 ?>
