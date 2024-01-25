@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 <?php
 session_start();
 
 
 ?>
 <!doctype html>
+=======
+
+>>>>>>> c1f86a438618d379fe05c0c9650f1bb3c5260f26
 <html class="no-js" lang="en" dir="ltr" data-theme="light">
 
 <head>
