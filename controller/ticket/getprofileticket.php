@@ -36,7 +36,7 @@ $table = $crud->getTicketByContact($email);
                 echo "<td>" . $row[2] . "</td>";
                 echo "<td>" . $row[1] . "</td>";
 
-                echo "<td>" . $row[3] . "</td>";
+                echo "<td>" . $row[4] . "</td>";
 
                 echo "<td>" . $row[4] . "</td>";
                 if ($row[6] == "enCours") {
@@ -66,14 +66,14 @@ $table = $crud->getTicketByContact($email);
             echo "<td>" . $row[0] . "</td>";
             echo "<td>" . $row[2] . "</td>";
             echo "<td>" . $row[1] . "</td>";
-            echo "<td>" . $row[3] . "</td>";
             echo "<td>" . $row[4] . "</td>";
-            if ($row[6] == "enCours") {
-                echo "<td><span class='badge bg-danger'>" . $row[6] . "</span></td>";
+            echo "<td>" . $row[6] . "</td>";
+            if ($row[8] == "enCours") {
+                echo "<td><span class='badge bg-danger'>" . $row[8] . "</span></td>";
             } else {
-                echo "<td><span class='badge bg-success'>" . $row[6] . "</span></td>";
+                echo "<td><span class='badge bg-success'>" . $row[8] . "</span></td>";
             }
-            if ($row[6] == "enCours") {
+            if ($row[8] == "enCours") {
                 if ($_SESSION['type'] != "client") {
                     echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Cloturer</button></a></td>";
                 }
