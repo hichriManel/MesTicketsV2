@@ -146,25 +146,25 @@ LEFT JOIN
     {
 
         $req = "SELECT 
-    t.ticketId, 
-    t.demande, 
-    t.DateHeure, 
-    s.nom AS societe_nom, 
-    t.Diagnostic, 
-    a.nom AS account_nom, 
-    t.Categorie, 
-    t.Priorite, 
-    t.Status,
-    c.cloture_par,
-    c.dateheur AS cloture_dateheur
-FROM 
-    ticket t
-JOIN 
-    account a ON a.email = t.contact
-JOIN 
-    societe s ON s.id = a.centre
-LEFT JOIN
-    cloture c ON c.ticket_id = t.ticketId
+        t.ticketId, 
+        t.demande, 
+        t.DateHeure, 
+        s.nom AS societe_nom, 
+        t.Diagnostic, 
+        a.nom AS account_nom, 
+        t.Categorie, 
+        t.Priorite, 
+        t.Status,
+        c.cloture_par,
+        c.dateheur AS cloture_dateheur
+    FROM 
+        ticket t
+    JOIN 
+        account a ON a.email = t.contact
+    JOIN 
+        societe s ON s.id = a.centre
+    LEFT JOIN
+        cloture c ON c.ticket_id = t.ticketId;
  where t.contact='{$contact}'
  order by t.DateHeure 
  

@@ -11,14 +11,9 @@ if(isset($_POST["btn"])){
     $email = $_POST["email"];
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
-    $tel = $_POST["tel"];
-    $type = $_SESSION["type"];
-    
+    $tel = $_POST["tel"];    
     if($type == "client"){
-        $noms = $_POST["noms"];
-        $nums = $_POST["nums"];
-        $adresses = $_POST["adresses"];
-        $crud->Update($id, $nom, $prenom, $email, $tel, $noms,$nums,$adresses);
+        $crud->Update($id, $nom, $prenom, $email, $tel);
     }else{
         $matricule = $_POST["matricule"];
         $crud->Update_Admin($id, $nom, $prenom, $email, $tel, $matricule);
@@ -46,6 +41,7 @@ if (isset($_SESSION['email'])) {
 } else {
     header("location:index.php");
 }
+
 
 ?>
 
@@ -120,14 +116,7 @@ if (isset($_SESSION['email'])) {
 
     } else {
     ?>
-        <div class="col-md-6">
-            <label for="emailaddress" class="form-label">Id de societe</label>
-            <?php
-            if ($_SESSION["type"] == 'supervisor') {
-            ?>
-                <input type="text" class="form-control" name="matricule" value="<?php echo $societe['id'] ?>" required><?php } else { ?><input type="text" class="form-control" name="matricule" value="<?php echo $societe['id'] ?>" required disabled>
-            <?php } ?>
-        </div>
+        
         <div class="col-md-6">
             <label for="emailaddress" class="form-label">Centre Adresse</label>
             <?php
