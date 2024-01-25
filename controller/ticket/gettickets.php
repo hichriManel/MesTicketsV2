@@ -97,6 +97,9 @@ if ($_SESSION["type"] == "client") {
           }
         }
       }
+      if($_SESSION["type"]=="supervisor"){
+        echo "<td><a href='supprimer.php?id=" . $row[0] . "'><button class='btn btn-danger'>Supprimer</button></a></td>";
+      }
       echo "</tr>";
     }
   }

@@ -57,8 +57,8 @@ JOIN
 LEFT JOIN
     cloture c ON c.ticket_id = t.ticketId
 WHERE 
-    (c.cloture_par = '{$_SESSION['email']}' AND t.Status = 'Cloture') OR (t.Status = 'enCours');
-";
+    (c.cloture_par = '{$_SESSION['email']}' AND t.Status = 'Cloture') OR (t.Status = 'enCours')
+    order by t.DateHeure desc ;";
         } else {
             $req = "SELECT 
     t.ticketId, 
@@ -80,7 +80,7 @@ JOIN
     societe s ON s.id = a.centre
 LEFT JOIN
     cloture c ON c.ticket_id = t.ticketId;
-";
+    order by t.DateHeure desc";
         }
         $stmt = $this->pdo->prepare($req);
         $stmt->execute();
@@ -165,7 +165,10 @@ JOIN
     societe s ON s.id = a.centre
 LEFT JOIN
     cloture c ON c.ticket_id = t.ticketId
- where t.contact='{$contact}';";
+ where t.contact='{$contact}'
+ order by t.DateHeure desc
+ 
+ ;";
 
         $stmt = $this->pdo->prepare($req);
         $stmt->execute();
