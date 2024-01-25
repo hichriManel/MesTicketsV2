@@ -57,8 +57,8 @@ JOIN
 LEFT JOIN
     cloture c ON c.ticket_id = t.ticketId
 WHERE 
-    (c.cloture_par = '{$_SESSION['email']}' AND t.Status = 'Cloture') OR (t.Status = 'enCours');
-";
+    (c.cloture_par = '{$_SESSION['email']}' AND t.Status = 'Cloture') OR (t.Status = 'enCours')
+    order by t.DateHeure  ;";
         } else {
             $req = "SELECT 
     t.ticketId, 
@@ -80,7 +80,7 @@ JOIN
     societe s ON s.id = a.centre
 LEFT JOIN
     cloture c ON c.ticket_id = t.ticketId;
-";
+    order by t.ticketId desc ;";
         }
         $stmt = $this->pdo->prepare($req);
         $stmt->execute();
@@ -131,7 +131,7 @@ LEFT JOIN
     {
         $this->updateDiag($id, $diag);
         if ($this->clotureExist($id) == 0) {
-            $req = "INSERT INTO cloture VALUES({$id},'{$_SESSION['email']}',now())";
+            $req = "INSERT INTO cloture VALUES(null,{$id},'{$_SESSION['email']}',now())";
             $stmt = $this->pdo->exec($req);
             return $stmt;
         }
@@ -145,22 +145,37 @@ LEFT JOIN
     public function getTicketByContact($contact)
     {
 
-        $req = "SELECT
-    t.ticketId, 
-    t.demande, 
-    t.DateHeure, 
-    t.Diagnostic, 
-    t.Categorie, 
-    t.Priorite, 
-    t.Status
-FROM 
-    ticket t
-WHERE 
-    (t.contact  = '$contact' );
-";
+        $req = "SELECT 
+        t.ticketId, 
+        t.demande, 
+        t.DateHeure, 
+        s.nom AS societe_nom, 
+        t.Diagnostic, 
+        a.nom AS account_nom, 
+        t.Categorie, 
+        t.Priorite, 
+        t.Status,
+        c.cloture_par,
+        c.dateheur AS cloture_dateheur
+    FROM 
+        ticket t
+    JOIN 
+        account a ON a.email = t.contact
+    JOIN 
+        societe s ON s.id = a.centre
+    LEFT JOIN
+        cloture c ON c.ticket_id = t.ticketId;
+ where t.contact='{$contact}'
+ order by t.DateHeure 
+ 
+ ;";
 
         $stmt = $this->pdo->prepare($req);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_NUM);
     }
+function supprimer($id){
+    $req = "DELETE FROM ticket WHERE ticketId={$id}";
+    $stmt = $this->pdo->exec($req);
+    return $stmt;}
 }

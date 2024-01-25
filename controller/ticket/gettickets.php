@@ -3,10 +3,14 @@ require_once "../../model/ticket.php";
 $ticket = new Ticket();
 require_once "../../crud/crudTickets.php";
 $crud = new CrudTicket();
+if ($_SESSION["type"] == "client") {
+  $table = $crud->getTicketByContact($_SESSION["email"]);
+} else {
+  $table = $crud->getTickets();
+  $encour = $crud->getByStatutNum("enCours");
+  $fait = $crud->getByStatutNum("Cloture");
+}
 
-$table = $crud->getTickets();
-$encour = $crud->getByStatutNum("enCours");
-$fait = $crud->getByStatutNum("Cloture");
 ?>
 <thead>
   <tr>
@@ -92,6 +96,9 @@ $fait = $crud->getByStatutNum("Cloture");
             echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Modifier</button></a></td>";
           }
         }
+      }
+      if($_SESSION["type"]=="supervisor"){
+        echo "<td><a href='controller/ticket/supprimer.php?id=" . $row[0] . "'><button class='btn btn-danger text-white'>Supprimer</button></a></td>";
       }
       echo "</tr>";
     }
