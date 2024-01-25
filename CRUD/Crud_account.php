@@ -139,7 +139,7 @@ class CRUD
     function Lister()
     {
 
-        $sql = "select *  from  account where type != 'supervisor';";
+        $sql = "select *  from  account where type != 'supervisor' and status='Verifie';";
         $res = $this->pdo->query($sql);
         return $res->fetchAll(PDO::FETCH_NUM);
     }

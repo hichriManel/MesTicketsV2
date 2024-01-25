@@ -717,13 +717,6 @@
   </div>
 
   <!-- Jquery Core Js -->
-  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-main.js" charset="UTF-8" crossorigin="*"></script>
-  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-vendor.js" charset="UTF-8" crossorigin="*"></script>
-  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-vendors.js" charset="UTF-8" crossorigin="*"></script>
-  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-common.js" charset="UTF-8" crossorigin="*"></script>
-  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-runtime.js" charset="UTF-8" crossorigin="*"></script>
-  <script src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-app.js" charset="UTF-8" crossorigin="*"></script>
-  <script async="" src="https://embed.tawk.to/6051a040f7ce18270930e55a/1f3d4os21" charset="UTF-8" crossorigin="*"></script>
   <script src="assets/bundles/libscripts.bundle.js"></script>
 
   <!-- Plugin Js-->
