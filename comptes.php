@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+?>
+<!doctype html>
 <html class="no-js" lang="en" dir="ltr" data-theme="light">
 
 <head>
@@ -379,9 +385,9 @@
               <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                 <div class="u-info me-2">
                   <p class="mb-0 text-end line-height-sm">
-                    <span class="font-weight-bold">Superviseur</span>
+                    <span class="font-weight-bold"><?php echo $_SESSION["nom"].' '.$_SESSION["prenom"] ?></span>
                   </p>
-                  <small>Superviseur Profile</small>
+                  <small><?php echo $_SESSION["type"]; ?> Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
                   <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile">
