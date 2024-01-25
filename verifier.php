@@ -465,13 +465,9 @@
                         Status
                       </button>
                       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#">Company</a></li>
-                        <li><a class="dropdown-item" href="#">AgilSoft Tech</a></li>
-                        <li><a class="dropdown-item" href="#">Macrosoft</a></li>
-                        <li><a class="dropdown-item" href="#">Google</a></li>
-                        <li><a class="dropdown-item" href="#">Pixelwibes</a></li>
-                        <li><a class="dropdown-item" href="#">Deltasoft Tech</a></li>
-                        <li><a class="dropdown-item" href="#">Design Tech</a></li>
+                        <li><a class="dropdown-item" href="#">Verifie</a></li>
+                        <li><a class="dropdown-item" href="#">Non verifie</a></li>
+                    
                       </ul>
                     </div>
                     <a href="ajoutercompte.php"><button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button></a>
