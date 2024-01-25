@@ -354,7 +354,7 @@ if (!isset($_GET['id'])) {
           <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
         </div>
         <div class="card-body">
-          <form id="edit-form">
+          <form id="edit-form" method="post" action="controller/compte/editprofile.php?id=<?php echo $_GET["id"] ?>">
           </form>
         </div>
       </div>

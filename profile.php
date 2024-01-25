@@ -379,10 +379,10 @@ if (isset($_GET['id'])) {
                     </div>
                   </div>
                 </div>
-              </div><!-- Row End -->
+              </div>
             </div>
 
-          </div><!-- Row End -->
+          </div>
         </div>
       </div>
     </div>
@@ -393,8 +393,6 @@ if (isset($_GET['id'])) {
 
   <!-- Plugin Js-->
   <script src="assets/bundles/dataTables.bundle.js"></script>
-
-  <!-- Jquery Page Js -->
   <script src="../js/template.js"></script>
 
   <script>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+?>
+<!doctype html>
 <html class="no-js" lang="en" dir="ltr" data-theme="light">
 
 <head>
@@ -381,9 +387,9 @@
               <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
                 <div class="u-info me-2">
                   <p class="mb-0 text-end line-height-sm">
-                    <span class="font-weight-bold">Superviseur</span>
+                  <span class="font-weight-bold"><?php echo $_SESSION["nom"].' '.$_SESSION["prenom"] ?></span>
                   </p>
-                  <small>Superviseur Profile</small>
+                  <small><?php echo $_SESSION["type"]; ?> Profile</small>
                 </div>
                 <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
                   <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile">
@@ -465,13 +471,9 @@
                         Status
                       </button>
                       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#">Company</a></li>
-                        <li><a class="dropdown-item" href="#">AgilSoft Tech</a></li>
-                        <li><a class="dropdown-item" href="#">Macrosoft</a></li>
-                        <li><a class="dropdown-item" href="#">Google</a></li>
-                        <li><a class="dropdown-item" href="#">Pixelwibes</a></li>
-                        <li><a class="dropdown-item" href="#">Deltasoft Tech</a></li>
-                        <li><a class="dropdown-item" href="#">Design Tech</a></li>
+                        <li><a class="dropdown-item" href="#">Verifie</a></li>
+                        <li><a class="dropdown-item" href="#">Non verifie</a></li>
+                    
                       </ul>
                     </div>
                     <a href="ajoutercompte.php"><button type="button" class="btn btn-dark ms-1 " data-bs-toggle="modal" data-bs-target="#createproject"><i class="icofont-plus-circle me-2 fs-6"></i>Add Client</button></a>

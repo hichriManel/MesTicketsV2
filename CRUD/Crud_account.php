@@ -124,7 +124,7 @@ class CRUD
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM)[0];
     }
-    function SupprimerApp($email)
+    function Supprimeraccount($email)
     {
         $sql = "delete from account where email=$email;";
         $res = $this->pdo->exec($sql);
@@ -149,13 +149,11 @@ class CRUD
         $res = $this->pdo->exec($sql);
         return $res;
     }
-    function Update($id, $nom, $prenom, $email, $tel, $noms,$nums,$adresses)
+    function Update($id, $nom, $prenom, $email, $tel)
     {
         $sql = "update account set nom='$nom',prenom='$prenom',email='$email',tel='$tel' where id='$id';";
         $res = $this->pdo->exec($sql);
-        $soc = new Societe();
-        $soc->updateSociete($id,$noms,$nums,$adresses);
-        $res2 = $this->pdo->exec($sql);
-        return $res&&$res2;
+
+        return $res;
     }
 }
