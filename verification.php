@@ -33,11 +33,7 @@ if (isset($_GET['token'])) {
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
     <script>
         const xhttp = new XMLHttpRequest();
@@ -49,7 +45,7 @@ if (isset($_GET['token'])) {
                 }
             };
 
-            xhttp.open("GET", "http://localhost:4000../ReclamationTickets/controller/compte/verification.php?token=<?php echo $token; ?>", true);
+            xhttp.open("GET", "http://localhost:4000/controller/compte/verification.php?token=<?php echo $token; ?>", true);
             xhttp.send();
         }
     </script>

@@ -4,12 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Tickets</title>
+  <title>Comptes</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
-  <!-- plugin css file  -->
   <link rel="stylesheet" href="assets/plugin/datatables/responsive.dataTables.min.css">
   <link rel="stylesheet" href="assets/plugin/datatables/dataTables.bootstrap5.min.css">
-  <!-- project css file  -->
   <link rel="stylesheet" href="assets/css/my-task.style.min.css">
   <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2c776523.js"></script>
   <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-9294da6c.js"></script>
@@ -18,6 +16,65 @@
   <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-4fe9d5dd.js"></script>
   <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-2d0b9454.js"></script>
   <script charset="utf-8" src="https://embed.tawk.to/_s/v4/app/65839862293/js/twk-chunk-24d8db78.js"></script>
+  <style type="text/css">
+    #un3g1m7horv81706068354275 {
+      outline: none !important;
+      visibility: visible !important;
+      resize: none !important;
+      box-shadow: none !important;
+      overflow: visible !important;
+      background: none !important;
+      opacity: 1 !important;
+      filter: alpha(opacity=100) !important;
+      -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity 1) !important;
+      -mz-opacity: 1 !important;
+      -khtml-opacity: 1 !important;
+      top: auto !important;
+      right: 0px !important;
+      bottom: 0px !important;
+      left: auto !important;
+      position: fixed !important;
+      border: 0 !important;
+      min-height: 0px !important;
+      min-width: 0px !important;
+      max-height: none !important;
+      max-width: none !important;
+      padding: 0px !important;
+      margin: 0px !important;
+      -moz-transition-property: none !important;
+      -webkit-transition-property: none !important;
+      -o-transition-property: none !important;
+      transition-property: none !important;
+      transform: none !important;
+      -webkit-transform: none !important;
+      -ms-transform: none !important;
+      width: auto !important;
+      height: auto !important;
+      display: none !important;
+      z-index: 2000000000 !important;
+      background-color: transparent !important;
+      cursor: none !important;
+      float: none !important;
+      border-radius: unset !important;
+      pointer-events: auto !important;
+      clip: auto !important;
+      color-scheme: light !important;
+    }
+
+    #un3g1m7horv81706068354275.widget-hidden {
+      display: none !important;
+    }
+
+    #un3g1m7horv81706068354275.widget-visible {
+      display: block !important;
+    }
+
+    @media print {
+      #un3g1m7horv81706068354275.widget-visible {
+        display: none !important;
+      }
+    }
+  </style>
   <script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script>
   <script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js" type="text/javascript" async="" defer=""></script>
   <style type="text/css">
@@ -140,7 +197,7 @@
             <!-- Menu: Sub menu ul -->
           </li>
           <li class="collapsed">
-            <a class="m-link " data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
+            <a class="m-link" data-bs-toggle="collapse" data-bs-target="#project-Components" href="tickets.php">
               <i class="icofont-ticket"></i><span>Tickets</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="project-Components">
@@ -156,7 +213,7 @@
             </ul>
           </li>
           <li class="collapsed">
-            <a class="m-link " data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
+            <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#tikit-Components" href="#"><i class="icofont-users-alt-5"></i> <span>Les Comptes</span>
               <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="tikit-Components">
@@ -175,7 +232,7 @@
             </ul>
           </li>
           <li class="collapsed">
-            <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
+            <a class="m-link " data-bs-toggle="collapse" data-bs-target="#client-Components" href="#"><i class="icofont-user-male"></i> <span>Gestion Comptes</span>
               <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
             <!-- Menu: Sub menu ul -->
             <ul class="sub-menu collapse" id="client-Components">
@@ -395,13 +452,19 @@
             <div class="col-md-12">
               <div class="card border-0 mb-4 no-bg">
                 <div class="card-header py-3 px-0 d-flex align-items-center  justify-content-between border-bottom">
-                  <h3 class=" fw-bold flex-fill mb-0">Clients</h3>
+                  <?php
+                  if (isset($_GET['type'])) {
+                    echo '<h6 class="mb-0 fw-bold">' . $_GET['type'] . 's</h6>';
+                  } else {
+                    echo '<h6 class="mb-0 fw-bold">Tout les Comptes</h6>';
+                  }
+                  ?>
                   <div class="col-auto d-flex">
                     <div class="dropdown ">
                       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                         Status
                       </button>
-                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2" style="">
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
                         <li><a class="dropdown-item" href="#">Company</a></li>
                         <li><a class="dropdown-item" href="#">AgilSoft Tech</a></li>
                         <li><a class="dropdown-item" href="#">Macrosoft</a></li>
@@ -417,80 +480,48 @@
               </div>
             </div>
           </div><!-- Row End -->
-          <div class="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-deck py-1 pb-4">
-            <div class="col">
-              <div class="card teacher-card">
-                <div class="card-body  d-flex">
-                  <div class="profile-av pe-xl-4 pe-md-2 pe-sm-4 pe-4 text-center w220">
-                    <img src="assets/images/lg/avatar5.jpg" alt="" class="avatar xl rounded-circle img-thumbnail shadow-sm">
-                    <div class="about-info d-flex align-items-center mt-1 justify-content-center flex-column">
-                      <h6 class="mb-0 fw-bold d-block fs-6 mt-2">Manager</h6>
-                      <div class="btn-group mt-2" role="group" aria-label="Basic outlined example">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editproject"><i class="icofont-edit text-success"></i></button>
-                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#deleteproject"><i class="icofont-ui-delete text-danger"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="teacher-info border-start ps-xl-4 ps-md-3 ps-sm-4 ps-4 w-100">
-                    <h6 class="mb-0 mt-2  fw-bold d-block fs-6">Rocobend</h6>
-                    <span class="py-1 fw-bold small-11 mb-0 mt-1 text-muted">Piers Churchill</span>
-                    <div class="video-setting-icon mt-3 pt-3 border-top">
-                      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices</p>
-                    </div>
-                    <div class="d-flex flex-wrap align-items-center ct-btn-set">
-                      <a href="profile.php" class="btn btn-dark btn-sm mt-1"><i class="icofont-invisible me-2 fs-6"></i>Profile</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-deck py-1 pb-4" id="table">
+
           </div>
         </div>
       </div>
+
       <!-- Modal Members-->
       <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title fw-bold" id="addUserLabel">
-                Employee Invitation
-              </h5>
+              <h5 class="modal-title  fw-bold" id="addUserLabel">Employee Invitation</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="inviteby_email">
                 <div class="input-group mb-3">
-                  <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1" />
-                  <button class="btn btn-dark" type="button" id="button-addon2">
-                    Sent
-                  </button>
+                  <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" aria-describedby="exampleInputEmail1">
+                  <button class="btn btn-dark" type="button" id="button-addon2">Sent</button>
                 </div>
               </div>
               <div class="members_list">
-                <h6 class="fw-bold">Employee</h6>
+                <h6 class="fw-bold ">Employee </h6>
                 <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
                   <li class="list-group-item py-3 text-center text-md-start">
                     <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
                       <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="" />
+                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
                       </div>
                       <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0 fw-bold">Rachel Carr(you)</h6>
+                        <h6 class="mb-0  fw-bold">Rachel Carr(you)</h6>
                         <span class="text-muted">rachel.carr@gmail.com</span>
                       </div>
                       <div class="members-action">
-                        <span class="members-role">Admin</span>
+                        <span class="members-role ">Admin</span>
                         <div class="btn-group">
                           <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icofont-ui-settings fs-6"></i>
+                            <i class="icofont-ui-settings  fs-6"></i>
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
-                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a></li>
                           </ul>
                         </div>
                       </div>
@@ -499,12 +530,10 @@
                   <li class="list-group-item py-3 text-center text-md-start">
                     <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
                       <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="" />
+                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
                       </div>
                       <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0 fw-bold">
-                          Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a>
-                        </h6>
+                        <h6 class="mb-0  fw-bold">Lucas Baker<a href="#" class="link-secondary ms-2">(Resend invitation)</a></h6>
                         <span class="text-muted">lucas.baker@gmail.com</span>
                       </div>
                       <div class="members-action">
@@ -519,23 +548,22 @@
 
                                 <span>All operations permission</span>
                               </a>
+
                             </li>
                             <li>
                               <a class="dropdown-item" href="#">
                                 <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
+                                <span>Only Invite &amp; manage team</span>
                               </a>
                             </li>
                           </ul>
                         </div>
                         <div class="btn-group">
                           <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="icofont-ui-settings fs-6"></i>
+                            <i class="icofont-ui-settings  fs-6"></i>
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                              <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a>
-                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Delete Member</a></li>
                           </ul>
                         </div>
                       </div>
@@ -544,10 +572,10 @@
                   <li class="list-group-item py-3 text-center text-md-start">
                     <div class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-lg-row">
                       <div class="no-thumbnail mb-2 mb-md-0">
-                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="" />
+                        <img class="avatar lg rounded-circle" src="assets/images/xs/avatar8.jpg" alt="">
                       </div>
                       <div class="flex-fill ms-3 text-truncate">
-                        <h6 class="mb-0 fw-bold">Una Coleman</h6>
+                        <h6 class="mb-0  fw-bold">Una Coleman</h6>
                         <span class="text-muted">una.coleman@gmail.com</span>
                       </div>
                       <div class="members-action">
@@ -566,7 +594,7 @@
                             <li>
                               <a class="dropdown-item" href="#">
                                 <i class="fs-6 p-2 me-1"></i>
-                                <span>Only Invite & manage team</span>
+                                <span>Only Invite &amp; manage team</span>
                               </a>
                             </li>
                           </ul>
@@ -574,21 +602,13 @@
                         <div class="btn-group">
                           <div class="btn-group">
                             <button type="button" class="btn bg-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="icofont-ui-settings fs-6"></i>
+                              <i class="icofont-ui-settings  fs-6"></i>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a>
-                              </li>
+                              <li><a class="dropdown-item" href="#"><i class="icofont-ui-password fs-6 me-2"></i>ResetPassword</a></li>
+                              <li><a class="dropdown-item" href="#"><i class="icofont-chart-line fs-6 me-2"></i>ActivityReport</a></li>
+                              <li><a class="dropdown-item" href="#"><i class="icofont-delete-alt fs-6 me-2"></i>Suspend member</a></li>
+                              <li><a class="dropdown-item" href="#"><i class="icofont-not-allowed fs-6 me-2"></i>Delete Member</a></li>
                             </ul>
                           </div>
                         </div>
@@ -601,99 +621,97 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Add Tickit-->
-  <div class="modal fade" id="tickadd" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title  fw-bold" id="leaveaddLabel"> Tickit Add</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="sub" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="sub">
-          </div>
-          <div class="deadline-form">
-            <form>
-              <div class="row g-3 mb-3">
-                <div class="col">
-                  <label for="depone" class="form-label">Assign Name</label>
-                  <input type="text" class="form-control" id="depone">
-                </div>
-                <div class="col">
-                  <label for="deptwo" class="form-label">Creted Date</label>
-                  <input type="date" class="form-control" id="deptwo">
-                </div>
+      <!-- Add Tickit-->
+      <div class="modal fade" id="tickadd" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title  fw-bold" id="leaveaddLabel"> Tickit Add</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="sub" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="sub">
               </div>
-            </form>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Status</label>
-            <select class="form-select">
-              <option selected="">In Progress</option>
-              <option value="1">Completed</option>
-              <option value="2">Wating</option>
-              <option value="3">Decline</option>
-            </select>
+              <div class="deadline-form">
+                <form>
+                  <div class="row g-3 mb-3">
+                    <div class="col">
+                      <label for="depone" class="form-label">Assign Name</label>
+                      <input type="text" class="form-control" id="depone">
+                    </div>
+                    <div class="col">
+                      <label for="deptwo" class="form-label">Creted Date</label>
+                      <input type="date" class="form-control" id="deptwo">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Status</label>
+                <select class="form-select">
+                  <option selected="">In Progress</option>
+                  <option value="1">Completed</option>
+                  <option value="2">Wating</option>
+                  <option value="3">Decline</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+              <button type="submit" class="btn btn-primary">sent</button>
+            </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
-          <button type="submit" class="btn btn-primary">sent</button>
+      </div>
+
+      <!-- Edit Tickit-->
+      <div class="modal fade" id="edittickit" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title  fw-bold" id="edittickitLabel"> Tickit Edit</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="sub1" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="sub1" value="punching time not proper">
+              </div>
+              <div class="deadline-form">
+                <form>
+                  <div class="row g-3 mb-3">
+                    <div class="col">
+                      <label for="depone11" class="form-label">Assign Name</label>
+                      <input type="text" class="form-control" id="depone11" value="Victor Rampling">
+                    </div>
+                    <div class="col">
+                      <label for="deptwo56" class="form-label">Creted Date</label>
+                      <input type="date" class="form-control" id="deptwo56" value="2021-02-25">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Status</label>
+                <select class="form-select">
+                  <option selected="">Completed</option>
+                  <option value="1">In Progress</option>
+                  <option value="2">Wating</option>
+                  <option value="3">Decline</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+              <button type="submit" class="btn btn-primary">sent</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Edit Tickit-->
-  <div class="modal fade" id="edittickit" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title  fw-bold" id="edittickitLabel"> Tickit Edit</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="sub1" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="sub1" value="punching time not proper">
-          </div>
-          <div class="deadline-form">
-            <form>
-              <div class="row g-3 mb-3">
-                <div class="col">
-                  <label for="depone11" class="form-label">Assign Name</label>
-                  <input type="text" class="form-control" id="depone11" value="Victor Rampling">
-                </div>
-                <div class="col">
-                  <label for="deptwo56" class="form-label">Creted Date</label>
-                  <input type="date" class="form-control" id="deptwo56" value="2021-02-25">
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Status</label>
-            <select class="form-select">
-              <option selected="">Completed</option>
-              <option value="1">In Progress</option>
-              <option value="2">Wating</option>
-              <option value="3">Decline</option>
-            </select>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
-          <button type="submit" class="btn btn-primary">sent</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
 
 
   </div>
@@ -717,9 +735,9 @@
     function table() {
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function() {
-        document.getElementById("exemple").innerHTML = this.responseText;
+        document.getElementById("table").innerHTML = this.responseText;
       }
-      xhttp.open("GET", "controller/ticket/gettickets.php");
+      xhttp.open("GET", "controller/compte/allverif.php");
       xhttp.send();
 
     }

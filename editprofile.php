@@ -298,7 +298,7 @@ if (!isset($_GET['id'])) {
                           <small class=""><?php echo $_SESSION["email"]; ?></small>
                         </div>
                       </div>
-                      <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php?id="><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
+                      <div class="text-center"> <a href="editprofile.php"><BUtton class="btn btn-primary"><i class="icofont-ui-edit"></i></BUtton></a> <a href="profile.php?id=<?php echo $_SESSION['id']; ?>"><BUtton class="btn btn-primary"><i class="icofont-eye-open"></i></BUtton> </a></div>
 
                       <div>
                         <hr class="dropdown-divider border-dark" />
@@ -354,7 +354,7 @@ if (!isset($_GET['id'])) {
           <h6 class="mb-0 fw-bold ">Modifier Votre Profile</h6>
         </div>
         <div class="card-body">
-          <form id="edit-form">
+          <form id="edit-form" method="post" action="controller/compte/editprofile.php?id=<?php echo $_GET["id"] ?>">
           </form>
         </div>
       </div>

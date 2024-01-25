@@ -11,6 +11,12 @@ class CRUD
         $obj = new connection();
         $this->pdo = $obj->getConnection();
     }
+    function listerNonVerif()
+    {
+        $sql = "select * from account where status='enCours';";
+        $res = $this->pdo->query($sql);
+        return $res->fetchAll(PDO::FETCH_NUM);
+    }   
     function updatePassword($email, $mdp)
     {
         $mdp = password_hash($mdp, PASSWORD_DEFAULT);
@@ -87,6 +93,12 @@ class CRUD
 
         return $res;
     }
+    function getTypeById($id)
+    {
+        $sql = "select type from account where id='$id';";
+        $res = $this->pdo->query($sql);
+        return $res->fetch(PDO::FETCH_NUM)[0];
+    }
     function getType($email)
     {
         $sql = "select type from account where email='$email';";
@@ -130,5 +142,20 @@ class CRUD
         $sql = "select *  from  account where type != 'supervisor';";
         $res = $this->pdo->query($sql);
         return $res->fetchAll(PDO::FETCH_NUM);
+    }
+    function Update_Admin($id, $nom, $prenom, $email, $tel, $matricule)
+    {
+        $sql = "update account set nom='$nom',prenom='$prenom',email='$email',tel='$tel',matricule='$matricule',type='admin' where id='$id';";
+        $res = $this->pdo->exec($sql);
+        return $res;
+    }
+    function Update($id, $nom, $prenom, $email, $tel, $noms,$nums,$adresses)
+    {
+        $sql = "update account set nom='$nom',prenom='$prenom',email='$email',tel='$tel' where id='$id';";
+        $res = $this->pdo->exec($sql);
+        $soc = new Societe();
+        $soc->updateSociete($id,$noms,$nums,$adresses);
+        $res2 = $this->pdo->exec($sql);
+        return $res&&$res2;
     }
 }
