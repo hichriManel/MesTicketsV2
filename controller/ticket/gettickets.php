@@ -3,10 +3,14 @@ require_once "../../model/ticket.php";
 $ticket = new Ticket();
 require_once "../../crud/crudTickets.php";
 $crud = new CrudTicket();
+if ($_SESSION["type"] == "client") {
+  $table = $crud->getTicketByContact($_SESSION["email"]);
+} else {
+  $table = $crud->getTickets();
+  $encour = $crud->getByStatutNum("enCours");
+  $fait = $crud->getByStatutNum("Cloture");
+}
 
-$table = $crud->getTickets();
-$encour = $crud->getByStatutNum("enCours");
-$fait = $crud->getByStatutNum("Cloture");
 ?>
 <thead>
   <tr>

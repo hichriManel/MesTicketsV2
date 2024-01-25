@@ -131,7 +131,7 @@ LEFT JOIN
     {
         $this->updateDiag($id, $diag);
         if ($this->clotureExist($id) == 0) {
-            $req = "INSERT INTO cloture VALUES({$id},'{$_SESSION['email']}',now())";
+            $req = "INSERT INTO cloture VALUES(null,{$id},'{$_SESSION['email']}',now())";
             $stmt = $this->pdo->exec($req);
             return $stmt;
         }
@@ -145,19 +145,27 @@ LEFT JOIN
     public function getTicketByContact($contact)
     {
 
-        $req = "SELECT
+        $req = "SELECT 
     t.ticketId, 
     t.demande, 
     t.DateHeure, 
+    s.nom AS societe_nom, 
     t.Diagnostic, 
+    a.nom AS account_nom, 
     t.Categorie, 
     t.Priorite, 
-    t.Status
+    t.Status,
+    c.cloture_par,
+    c.dateheur AS cloture_dateheur
 FROM 
     ticket t
-WHERE 
-    (t.contact  = '$contact' );
-";
+JOIN 
+    account a ON a.email = t.contact
+JOIN 
+    societe s ON s.id = a.centre
+LEFT JOIN
+    cloture c ON c.ticket_id = t.ticketId
+ where t.contact='{$contact}';";
 
         $stmt = $this->pdo->prepare($req);
         $stmt->execute();
